@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import Image from 'next/image';
@@ -10,10 +11,18 @@ const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showNavbarLogo, setShowNavbarLogo] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
+    // Only apply scroll logic on home page
+    if (!isHomePage) {
+      setShowNavbarLogo(true);
+      return;
+    }
+
     const handleScroll = () => {
-      // Show navbar logo when scrolled past 200px
+      // Show navbar logo when scrolled past 200px (only on home page)
       if (window.scrollY > 200) {
         setShowNavbarLogo(true);
       } else {
@@ -24,7 +33,7 @@ const Navbar = () => {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -41,7 +50,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass dark:glass">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo - Fades in on scroll */}
+          {/* Logo - Always visible on non-home pages, fade in on scroll on home page */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src={theme === 'dark' 
