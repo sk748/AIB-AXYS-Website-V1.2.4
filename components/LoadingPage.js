@@ -1,37 +1,49 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useTheme } from '@/contexts/ThemeContext';
 import Image from 'next/image';
 
 const LoadingPage = () => {
-  const { theme } = useTheme();
   const [progress, setProgress] = useState(0);
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
-    // Animate progress bar from 0 to 100%
-    const duration = 800; // 800ms
-    const steps = 60;
-    const increment = 100 / steps;
-    let currentStep = 0;
+    // Get theme from localStorage
+    const storedTheme = localStorage.getItem('aib-theme') || 'dark';
+    setTheme(storedTheme);
+  }, []);
 
-    const timer = setInterval(() => {
-      currentStep++;
-      if (currentStep <= steps) {
-        setProgress(currentStep * increment);
-      } else {
-        clearInterval(timer);
-        setProgress(100);
+  useEffect(() => {
+    // Simulate realistic loading progress
+    const intervals = [
+      { progress: 30, delay: 100 },   // Quick initial load
+      { progress: 50, delay: 200 },   // Component loading
+      { progress: 70, delay: 150 },   // Data fetching
+      { progress: 85, delay: 100 },   // Rendering
+      { progress: 95, delay: 80 },    // Almost done
+      { progress: 100, delay: 50 },   // Complete
+    ];
+
+    let currentIndex = 0;
+    
+    const runNextInterval = () => {
+      if (currentIndex < intervals.length) {
+        const { progress, delay } = intervals[currentIndex];
+        setTimeout(() => {
+          setProgress(progress);
+          currentIndex++;
+          runNextInterval();
+        }, delay);
       }
-    }, duration / steps);
+    };
 
-    return () => clearInterval(timer);
+    runNextInterval();
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white dark:bg-background">
+    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white dark:bg-[#0a0a0f]">
       {/* Logo */}
-      <div className="mb-12">
+      <div className="mb-12 animate-fade-in">
         <Image
           src={theme === 'dark' 
             ? 'https://customer-assets.emergentagent.com/job_33cba548-cc10-4443-ba2a-5d85d6be63d5/artifacts/83rf6q6x_NEW%20AIB%20AXYS%20AFRICA%20LOGO%20DARK%20BG.svg'
@@ -49,9 +61,14 @@ const LoadingPage = () => {
       <div className="w-[400px] max-w-[90vw] h-1.5 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
         {/* Progress Bar */}
         <div 
-          className="h-full bg-primary rounded-full transition-all duration-100 ease-out"
+          className="h-full bg-primary rounded-full transition-all duration-300 ease-out"
           style={{ width: `${progress}%` }}
         ></div>
+      </div>
+
+      {/* Loading percentage */}
+      <div className="mt-4 text-sm text-muted-foreground">
+        {progress}%
       </div>
     </div>
   );
