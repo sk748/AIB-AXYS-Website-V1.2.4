@@ -36,7 +36,7 @@ const TeamMemberModal = ({ member, onClose }) => {
             {/* Left: Name and Title */}
             <div className="flex-1">
               <h2 className="text-3xl font-bold text-foreground mb-2">{member.name}</h2>
-              <p className="text-xl text-primary font-semibold">{member.role}</p>
+              <p className="text-xl text-[#2E5CB8] font-semibold">{member.role}</p>
             </div>
 
             {/* Right: Image */}
