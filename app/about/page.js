@@ -66,8 +66,64 @@ export default function AboutPage() {
           </GlassCard>
         </div>
 
+        {/* Team Section - Centered */}
+        <div className="max-w-5xl mx-auto mb-16 animate-stagger-2">
+          <div className="text-center mb-12">
+            <Users className="w-16 h-16 text-[#2E5CB8] mx-auto mb-4" />
+            <h2 className="text-3xl font-bold mb-4 text-[#2E5CB8]">Key Personnel</h2>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              Our dedicated team of financial experts, market analysts, and technology professionals work tirelessly
+              to provide you with the best trading experience.
+            </p>
+          </div>
+
+          {/* Management Team */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-[#2E5CB8] mb-6 text-center">Leadership</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              {teamData.management.map((member) => (
+                <GlassCard 
+                  key={member.id} 
+                  hover3d 
+                  className="p-6 cursor-pointer transition-all duration-300 hover:border-[#2E5CB8]/50 hover:shadow-lg"
+                  onClick={() => {
+                    console.log('Clicked:', member.name);
+                    setSelectedMember(member);
+                  }}
+                >
+                  <h4 className="text-xl font-bold text-foreground mb-2">{member.name}</h4>
+                  <p className="text-[#2E5CB8] font-semibold">{member.role}</p>
+                  <p className="text-sm text-muted-foreground mt-3">Click to read more →</p>
+                </GlassCard>
+              ))}
+            </div>
+          </div>
+
+          {/* Team Members */}
+          <div>
+            <h3 className="text-2xl font-bold text-[#2E5CB8] mb-6 text-center">Heads of Department</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {teamData.team.map((member) => (
+                <GlassCard 
+                  key={member.id} 
+                  hover3d 
+                  className="p-6 cursor-pointer transition-all duration-300 hover:border-[#2E5CB8]/50 hover:shadow-lg"
+                  onClick={() => {
+                    console.log('Clicked:', member.name);
+                    setSelectedMember(member);
+                  }}
+                >
+                  <h4 className="text-lg font-bold text-foreground mb-2">{member.name}</h4>
+                  <p className="text-[#2E5CB8] font-semibold text-sm">{member.role}</p>
+                  <p className="text-sm text-muted-foreground mt-3">Click to read more →</p>
+                </GlassCard>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 animate-stagger-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 animate-stagger-3">
           {values.map((value, index) => (
             <GlassCard key={index} hover3d>
               <div className="flex flex-col items-center text-center space-y-4">
@@ -78,63 +134,16 @@ export default function AboutPage() {
             </GlassCard>
           ))}
         </div>
-
-        {/* Team Section */}
-        <div className="max-w-6xl mx-auto animate-stagger-3">
-          <div className="text-center mb-12">
-            <Users className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h2 className="text-3xl font-bold mb-4">Our Team</h2>
-            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Our dedicated team of financial experts, market analysts, and technology professionals work tirelessly
-              to provide you with the best trading experience.
-            </p>
-          </div>
-
-          {/* Management Team */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-primary mb-6">Leadership</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {teamData.management.map((member) => (
-                <GlassCard 
-                  key={member.id} 
-                  hover3d 
-                  className="p-6 cursor-pointer transition-all duration-300 hover:border-primary/50"
-                  onClick={() => setSelectedMember(member)}
-                >
-                  <h4 className="text-xl font-bold text-foreground mb-2">{member.name}</h4>
-                  <p className="text-primary font-semibold">{member.role}</p>
-                  <p className="text-sm text-muted-foreground mt-3">Click to read more →</p>
-                </GlassCard>
-              ))}
-            </div>
-          </div>
-
-          {/* Team Members */}
-          <div>
-            <h3 className="text-2xl font-bold text-primary mb-6">Heads of Department</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {teamData.team.map((member) => (
-                <GlassCard 
-                  key={member.id} 
-                  hover3d 
-                  className="p-6 cursor-pointer transition-all duration-300 hover:border-primary/50"
-                  onClick={() => setSelectedMember(member)}
-                >
-                  <h4 className="text-lg font-bold text-foreground mb-2">{member.name}</h4>
-                  <p className="text-primary font-semibold text-sm">{member.role}</p>
-                  <p className="text-sm text-muted-foreground mt-3">Click to read more →</p>
-                </GlassCard>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Team Member Modal */}
       {selectedMember && (
         <TeamMemberModal 
           member={selectedMember} 
-          onClose={() => setSelectedMember(null)} 
+          onClose={() => {
+            console.log('Closing modal');
+            setSelectedMember(null);
+          }} 
         />
       )}
     </div>
