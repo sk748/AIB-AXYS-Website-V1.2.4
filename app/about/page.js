@@ -1,14 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import GlassCard from '@/components/GlassCard';
-import TeamMemberModal from '@/components/TeamMemberModal';
 import { Target, Eye, Award, Users } from 'lucide-react';
 import { teamData } from '@/data/teamData';
 
 export default function AboutPage() {
-  const [selectedMember, setSelectedMember] = useState(null);
-
   const values = [
     {
       icon: <Target className="w-8 h-8 text-primary" />,
@@ -83,17 +79,11 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               {teamData.management.map((member) => (
                 <GlassCard 
-                  key={member.id} 
-                  hover3d 
-                  className="p-6 cursor-pointer transition-all duration-300 hover:border-[#2E5CB8]/50 hover:shadow-lg"
-                  onClick={() => {
-                    console.log('Clicked:', member.name);
-                    setSelectedMember(member);
-                  }}
+                  key={member.id}
+                  className="p-6 transition-all duration-500 hover:backdrop-blur-xl hover:bg-white/10 dark:hover:bg-white/5 hover:shadow-xl hover:shadow-[#2E5CB8]/20 hover:scale-105"
                 >
                   <h4 className="text-xl font-bold text-foreground mb-2">{member.name}</h4>
                   <p className="text-[#2E5CB8] font-semibold">{member.role}</p>
-                  <p className="text-sm text-muted-foreground mt-3">Click to read more →</p>
                 </GlassCard>
               ))}
             </div>
@@ -105,17 +95,11 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {teamData.team.map((member) => (
                 <GlassCard 
-                  key={member.id} 
-                  hover3d 
-                  className="p-6 cursor-pointer transition-all duration-300 hover:border-[#2E5CB8]/50 hover:shadow-lg"
-                  onClick={() => {
-                    console.log('Clicked:', member.name);
-                    setSelectedMember(member);
-                  }}
+                  key={member.id}
+                  className="p-6 transition-all duration-500 hover:backdrop-blur-xl hover:bg-white/10 dark:hover:bg-white/5 hover:shadow-xl hover:shadow-[#2E5CB8]/20 hover:scale-105"
                 >
                   <h4 className="text-lg font-bold text-foreground mb-2">{member.name}</h4>
                   <p className="text-[#2E5CB8] font-semibold text-sm">{member.role}</p>
-                  <p className="text-sm text-muted-foreground mt-3">Click to read more →</p>
                 </GlassCard>
               ))}
             </div>
@@ -135,17 +119,6 @@ export default function AboutPage() {
           ))}
         </div>
       </div>
-
-      {/* Team Member Modal */}
-      {selectedMember && (
-        <TeamMemberModal 
-          member={selectedMember} 
-          onClose={() => {
-            console.log('Closing modal');
-            setSelectedMember(null);
-          }} 
-        />
-      )}
     </div>
   );
 }
