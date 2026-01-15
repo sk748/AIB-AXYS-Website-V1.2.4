@@ -47,7 +47,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass dark:glass">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 dark:bg-[#0a0a0f]/60 border-b border-gray-200/20 dark:border-white/10">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo - Always visible on non-home pages, fade in on scroll on home page */}
