@@ -70,29 +70,29 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-foreground mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4 text-primary" />
+                <MapPin className="w-4 h-4 text-accent" />
                 <span>Nairobi, Kenya</span>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <Phone className="w-4 h-4 text-primary" />
-                <span>+254 700 000 000</span>
+                <Phone className="w-4 h-4 text-accent" />
+                <span>+254 711 047 000</span>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4 text-primary" />
-                <span>info@aib-axys.com</span>
+                <Mail className="w-4 h-4 text-accent" />
+                <span>info@aib-axysafrica.com</span>
               </li>
             </ul>
             
             {/* Social Links */}
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="p-2 rounded-lg glass hover:bg-primary/20 transition-all duration-300">
-                <Facebook className="w-4 h-4 text-primary" />
+              <a href="#" className="p-2 rounded-lg glass hover:bg-accent/20 transition-all duration-300">
+                <Facebook className="w-4 h-4 text-accent" />
               </a>
-              <a href="#" className="p-2 rounded-lg glass hover:bg-primary/20 transition-all duration-300">
-                <Twitter className="w-4 h-4 text-primary" />
+              <a href="#" className="p-2 rounded-lg glass hover:bg-accent/20 transition-all duration-300">
+                <Twitter className="w-4 h-4 text-accent" />
               </a>
-              <a href="#" className="p-2 rounded-lg glass hover:bg-primary/20 transition-all duration-300">
-                <Linkedin className="w-4 h-4 text-primary" />
+              <a href="#" className="p-2 rounded-lg glass hover:bg-accent/20 transition-all duration-300">
+                <Linkedin className="w-4 h-4 text-accent" />
               </a>
             </div>
           </div>
