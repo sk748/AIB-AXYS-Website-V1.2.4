@@ -108,15 +108,20 @@ const Navbar = () => {
 
       {/* Animated Logo that slides from center to navbar */}
       <div
-        className="fixed z-[60] pointer-events-none"
+        className="fixed z-[60] transition-all duration-500 ease-out"
         style={{
-          top: scrollProgress < 1 ? `calc(50vh - 100px - ${scrollProgress * (50 * window.innerHeight / 100 - 120)}px)` : '16px',
-          left: scrollProgress < 1 ? '50%' : '80px',
-          transform: `translateX(-50%) scale(${1 + (1 - scrollProgress) * 1.5})`,
-          transition: scrollProgress === 0 ? 'none' : 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          top: scrollProgress < 1 
+            ? `calc(50vh - ${100 + scrollProgress * (50 * (typeof window !== 'undefined' ? window.innerHeight : 800) / 100 - 120)}px)` 
+            : '20px',
+          left: scrollProgress < 1 
+            ? '50%' 
+            : 'max(2rem, calc((100vw - 1400px) / 2 + 2rem))',
+          transform: scrollProgress < 1 
+            ? `translateX(-50%) scale(${1 + (1 - scrollProgress) * 2})` 
+            : 'translateX(0) scale(1)',
         }}
       >
-        <Link href="/" className="pointer-events-auto block">
+        <Link href="/" className="block">
           <Image
             src={theme === 'dark' 
               ? 'https://customer-assets.emergentagent.com/job_33cba548-cc10-4443-ba2a-5d85d6be63d5/artifacts/83rf6q6x_NEW%20AIB%20AXYS%20AFRICA%20LOGO%20DARK%20BG.svg'
@@ -126,9 +131,7 @@ const Navbar = () => {
             width={180}
             height={60}
             className="h-12 w-auto"
-            style={{
-              transform: scrollProgress >= 1 ? 'translateX(0)' : 'translateX(0)',
-            }}
+            priority
           />
         </Link>
       </div>
