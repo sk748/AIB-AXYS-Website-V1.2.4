@@ -85,22 +85,24 @@ export default function Home() {
       </section>
 
       {/* Stats Strip */}
-      <section className="py-16 glass dark:glass animate-stagger-3">
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-            <div>
-              <div className="text-5xl md:text-6xl font-bold text-primary mb-2">
-                {stats.years}+
+          <GlassCard className="animate-stagger-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center py-8">
+              <div>
+                <div className="text-6xl md:text-7xl font-bold text-primary mb-3">
+                  {stats.years}+
+                </div>
+                <div className="text-xl text-muted-foreground font-medium">Years in Market</div>
               </div>
-              <div className="text-xl text-muted-foreground">Years in Market</div>
-            </div>
-            <div>
-              <div className="text-5xl md:text-6xl font-bold text-primary mb-2">
-                {stats.clients.toLocaleString()}+
+              <div>
+                <div className="text-6xl md:text-7xl font-bold text-primary mb-3">
+                  {stats.clients.toLocaleString()}+
+                </div>
+                <div className="text-xl text-muted-foreground font-medium">Clients Served</div>
               </div>
-              <div className="text-xl text-muted-foreground">Clients Served</div>
             </div>
-          </div>
+          </GlassCard>
         </div>
       </section>
 
