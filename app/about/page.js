@@ -111,7 +111,7 @@ export default function AboutPage() {
           {values.map((value, index) => (
             <GlassCard key={index} hover3d>
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-4 rounded-full bg-primary/10">{value.icon}</div>
+                <div className="p-4 rounded-full backdrop-blur-xl bg-white/20 dark:bg-white/10 border border-primary/20">{value.icon}</div>
                 <h3 className="text-xl font-bold">{value.title}</h3>
                 <p className="text-muted-foreground">{value.description}</p>
               </div>
