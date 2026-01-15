@@ -43,7 +43,7 @@ export default function PlatformsPage() {
           {platforms.map((platform, index) => (
             <GlassCard key={index} hover3d className="p-8">
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-4 rounded-full bg-primary/10">{platform.icon}</div>
+                <div className="p-4 rounded-full backdrop-blur-xl bg-white/20 dark:bg-white/10 border border-primary/20">{platform.icon}</div>
                 <h3 className="text-2xl font-bold">{platform.title}</h3>
                 <p className="text-muted-foreground">{platform.description}</p>
 
