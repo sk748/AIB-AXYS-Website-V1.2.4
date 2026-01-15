@@ -1,9 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import GlassCard from '@/components/GlassCard';
+import TeamMemberModal from '@/components/TeamMemberModal';
 import { Target, Eye, Award, Users } from 'lucide-react';
+import { teamData } from '@/data/teamData';
 
 export default function AboutPage() {
+  const [selectedMember, setSelectedMember] = useState(null);
+
   const values = [
     {
       icon: <Target className="w-8 h-8 text-primary" />,
@@ -75,18 +80,63 @@ export default function AboutPage() {
         </div>
 
         {/* Team Section */}
-        <div className="max-w-4xl mx-auto animate-stagger-3">
-          <GlassCard className="p-8 text-center">
+        <div className="max-w-6xl mx-auto animate-stagger-3">
+          <div className="text-center mb-12">
             <Users className="w-16 h-16 text-primary mx-auto mb-4" />
             <h2 className="text-3xl font-bold mb-4">Our Team</h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Our dedicated team of financial experts, market analysts, and technology professionals work tirelessly
-              to provide you with the best trading experience. With decades of combined experience in African and
-              global markets, we're here to guide you every step of the way.
+              to provide you with the best trading experience.
             </p>
-          </GlassCard>
+          </div>
+
+          {/* Management Team */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-primary mb-6">Leadership</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {teamData.management.map((member) => (
+                <GlassCard 
+                  key={member.id} 
+                  hover3d 
+                  className="p-6 cursor-pointer transition-all duration-300 hover:border-primary/50"
+                  onClick={() => setSelectedMember(member)}
+                >
+                  <h4 className="text-xl font-bold text-foreground mb-2">{member.name}</h4>
+                  <p className="text-primary font-semibold">{member.role}</p>
+                  <p className="text-sm text-muted-foreground mt-3">Click to read more →</p>
+                </GlassCard>
+              ))}
+            </div>
+          </div>
+
+          {/* Team Members */}
+          <div>
+            <h3 className="text-2xl font-bold text-primary mb-6">Heads of Department</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {teamData.team.map((member) => (
+                <GlassCard 
+                  key={member.id} 
+                  hover3d 
+                  className="p-6 cursor-pointer transition-all duration-300 hover:border-primary/50"
+                  onClick={() => setSelectedMember(member)}
+                >
+                  <h4 className="text-lg font-bold text-foreground mb-2">{member.name}</h4>
+                  <p className="text-primary font-semibold text-sm">{member.role}</p>
+                  <p className="text-sm text-muted-foreground mt-3">Click to read more →</p>
+                </GlassCard>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* Team Member Modal */}
+      {selectedMember && (
+        <TeamMemberModal 
+          member={selectedMember} 
+          onClose={() => setSelectedMember(null)} 
+        />
+      )}
     </div>
   );
 }
