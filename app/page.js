@@ -85,7 +85,7 @@ export default function Home() {
       </section>
 
       {/* Stats Strip */}
-      <section className="py-20 bg-white dark:bg-background">
+      <section className="py-20 bg-white dark:bg-[#0a0a0f]">
         <div className="container mx-auto px-4">
           <GlassCard className="animate-stagger-3 bg-gray-50/80 dark:bg-transparent">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center py-8">
@@ -107,7 +107,7 @@ export default function Home() {
       </section>
 
       {/* Feature Grid */}
-      <section className="py-24 animate-stagger-4 bg-white dark:bg-background">
+      <section className="py-24 animate-stagger-4 bg-white dark:bg-[#0a0a0f]">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">
             Our Services
@@ -178,7 +178,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-white dark:bg-background">
+      <section className="py-24 bg-white dark:bg-[#0a0a0f]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <GlassCard className="text-center p-16 bg-gray-50/80 dark:bg-transparent">
