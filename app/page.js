@@ -43,27 +43,39 @@ export default function Home() {
         <div className="absolute inset-0 breathing-gradient opacity-20"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center space-y-6 animate-fade-up">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="gradient-text">Leading Stock Trading</span>
-              <br />
-              <span className="text-foreground">in Kenya</span>
+          <div className="text-center space-y-8 animate-fade-up max-w-4xl mx-auto">
+            {/* Large Centered Logo */}
+            <div className="mb-8">
+              <img
+                src="https://customer-assets.emergentagent.com/job_33cba548-cc10-4443-ba2a-5d85d6be63d5/artifacts/83rf6q6x_NEW%20AIB%20AXYS%20AFRICA%20LOGO%20DARK%20BG.svg"
+                alt="AIB-AXYS Africa"
+                className="dark:block hidden w-full max-w-2xl mx-auto h-auto"
+              />
+              <img
+                src="https://customer-assets.emergentagent.com/job_33cba548-cc10-4443-ba2a-5d85d6be63d5/artifacts/c84w37kp_NEW%20AIB%20AXYS%20AFRICA%20LOGO%20WHITE%20BG.svg"
+                alt="AIB-AXYS Africa"
+                className="dark:hidden block w-full max-w-2xl mx-auto h-auto"
+              />
+            </div>
+            
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+              Leading Stock Trading in Kenya
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-stagger-1">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-stagger-1">
               IPOs, Leverage & Global Funds
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-stagger-2">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 animate-stagger-2">
               <Link href="/ipo">
-                <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98 flex items-center space-x-2">
+                <button className="w-full sm:w-auto px-10 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98 flex items-center justify-center space-x-2">
                   <span>Explore IPOs</span>
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
               
               <Link href="/platforms">
-                <button className="px-8 py-4 glass rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 active:scale-98">
+                <button className="w-full sm:w-auto px-10 py-4 glass rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 active:scale-98">
                   Trading Platforms
                 </button>
               </Link>
