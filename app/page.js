@@ -39,8 +39,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#0a0a0f]">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#0a0a0f]">
-        <div className="absolute inset-0 dark:breathing-gradient dark:opacity-20"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#0a0a0f] -mt-8 pt-8">
+        <div className="absolute inset-0 -top-20 dark:breathing-gradient dark:opacity-20"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center space-y-8 animate-fade-up max-w-4xl mx-auto">
