@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Sun, Moon, Menu, X } from 'lucide-react';
@@ -9,6 +9,21 @@ import Image from 'next/image';
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showLogo, setShowLogo] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show logo when scrolled past 500px
+      if (window.scrollY > 500) {
+        setShowLogo(true);
+      } else {
+        setShowLogo(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -25,7 +40,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass dark:glass">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - Hidden initially, fades in on scroll */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src={theme === 'dark' 
@@ -35,7 +50,9 @@ const Navbar = () => {
               alt="AIB-AXYS Africa Logo"
               width={180}
               height={60}
-              className="h-12 w-auto"
+              className={`h-12 w-auto transition-all duration-500 ${
+                showLogo ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+              }`}
             />
           </Link>
 
