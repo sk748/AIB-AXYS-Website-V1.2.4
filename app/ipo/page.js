@@ -41,19 +41,19 @@ export default function IPOPage() {
                 
                 <div className="grid grid-cols-4 gap-4 text-center">
                   <div className="glass p-4 rounded-lg bg-white/5 dark:bg-white/5">
-                    <div className="text-4xl font-bold text-white dark:text-white mb-1">{countdown.days}</div>
+                    <div className="text-4xl font-bold text-accent mb-1">{countdown.days}</div>
                     <div className="text-sm text-muted-foreground mt-2">Days</div>
                   </div>
                   <div className="glass p-4 rounded-lg bg-white/5 dark:bg-white/5">
-                    <div className="text-4xl font-bold text-white dark:text-white mb-1">{countdown.hours}</div>
+                    <div className="text-4xl font-bold text-accent mb-1">{countdown.hours}</div>
                     <div className="text-sm text-muted-foreground mt-2">Hours</div>
                   </div>
                   <div className="glass p-4 rounded-lg bg-white/5 dark:bg-white/5">
-                    <div className="text-4xl font-bold text-white dark:text-white mb-1">{countdown.minutes}</div>
+                    <div className="text-4xl font-bold text-accent mb-1">{countdown.minutes}</div>
                     <div className="text-sm text-muted-foreground mt-2">Minutes</div>
                   </div>
                   <div className="glass p-4 rounded-lg bg-white/5 dark:bg-white/5">
-                    <div className="text-4xl font-bold text-white dark:text-white mb-1">{countdown.seconds}</div>
+                    <div className="text-4xl font-bold text-accent mb-1">{countdown.seconds}</div>
                     <div className="text-sm text-muted-foreground mt-2">Seconds</div>
                   </div>
                 </div>
