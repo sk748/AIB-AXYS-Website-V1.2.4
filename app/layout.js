@@ -2,7 +2,6 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import Navbar from '@/components/Navbar';
-import StockTicker from '@/components/StockTicker';
 import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -18,8 +17,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-white dark:bg-[#0a0a0f]`}>
         <ThemeProvider>
           <Navbar />
-          <StockTicker />
-          <main className="pt-8 bg-white dark:bg-[#0a0a0f]">{children}</main>
+          <main className="pt-16 bg-white dark:bg-[#0a0a0f]">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

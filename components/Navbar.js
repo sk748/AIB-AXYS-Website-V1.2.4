@@ -51,7 +51,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo - Always visible on non-home pages, fade in on scroll on home page */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2 w-[180px]">
             <Image
               src={theme === 'dark' 
                 ? 'https://customer-assets.emergentagent.com/job_33cba548-cc10-4443-ba2a-5d85d6be63d5/artifacts/83rf6q6x_NEW%20AIB%20AXYS%20AFRICA%20LOGO%20DARK%20BG.svg'
@@ -66,8 +66,8 @@ const Navbar = () => {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center justify-center flex-1 space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -81,7 +81,7 @@ const Navbar = () => {
           </div>
 
           {/* Theme Toggle & Mobile Menu Button */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 w-[180px] justify-end">
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg glass hover:bg-primary/20 transition-all duration-300 hover:scale-110 active:scale-95"
