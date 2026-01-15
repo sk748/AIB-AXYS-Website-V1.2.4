@@ -116,10 +116,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {/* IPO Applications */}
             <Link href="/ipo">
-              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300">
+              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <div className="p-5 rounded-2xl bg-primary/10">
-                    <TrendingUp className="w-10 h-10 text-primary" />
+                  <div className="p-5 rounded-2xl bg-accent/10">
+                    <TrendingUp className="w-10 h-10 text-accent" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">IPO Applications</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -131,10 +131,10 @@ export default function Home() {
 
             {/* Leveraged Trading */}
             <Link href="/leverage">
-              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300">
+              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <div className="p-5 rounded-2xl bg-primary/10">
-                    <BarChart3 className="w-10 h-10 text-primary" />
+                  <div className="p-5 rounded-2xl bg-accent/10">
+                    <BarChart3 className="w-10 h-10 text-accent" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">Leveraged Trading</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -146,10 +146,10 @@ export default function Home() {
 
             {/* Global Markets */}
             <Link href="/global-markets">
-              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300">
+              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <div className="p-5 rounded-2xl bg-primary/10">
-                    <Globe className="w-10 h-10 text-primary" />
+                  <div className="p-5 rounded-2xl bg-accent/10">
+                    <Globe className="w-10 h-10 text-accent" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">Global Markets</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -161,10 +161,10 @@ export default function Home() {
 
             {/* Research */}
             <Link href="/research">
-              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300">
+              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <div className="p-5 rounded-2xl bg-primary/10">
-                    <Shield className="w-10 h-10 text-primary" />
+                  <div className="p-5 rounded-2xl bg-accent/10">
+                    <Shield className="w-10 h-10 text-accent" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">Expert Research</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
