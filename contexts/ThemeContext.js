@@ -21,9 +21,14 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     setMounted(true);
+    // Get theme from localStorage only (no system preference detection)
     const storedTheme = localStorage.getItem('aib-theme');
-    if (storedTheme) {
+    if (storedTheme === 'light' || storedTheme === 'dark') {
       setTheme(storedTheme);
+    } else {
+      // Default to dark mode
+      setTheme('dark');
+      localStorage.setItem('aib-theme', 'dark');
     }
   }, []);
 
