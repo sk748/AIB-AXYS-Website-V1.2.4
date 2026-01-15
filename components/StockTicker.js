@@ -1,10 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const StockTicker = () => {
+  const { theme } = useTheme();
+  
   // Sample NSE stocks with realistic data
-  const [stocks] = useState([
+  const stocks = [
     { symbol: 'SCOM', name: 'Safaricom', price: 15.45, change: 0.65, changePercent: 4.21 },
     { symbol: 'KCB', name: 'KCB Group', price: 28.50, change: -0.35, changePercent: -1.21 },
     { symbol: 'EQTY', name: 'Equity Bank', price: 42.75, change: 1.25, changePercent: 2.93 },
@@ -15,13 +17,17 @@ const StockTicker = () => {
     { symbol: 'SCBK', name: 'Standard Chartered', price: 152.00, change: 3.00, changePercent: 1.97 },
     { symbol: 'DTK', name: 'Diamond Trust Bank', price: 68.50, change: 0.50, changePercent: 0.73 },
     { symbol: 'NCBA', name: 'NCBA Group', price: 34.25, change: -0.75, changePercent: -2.14 },
-  ]);
+  ];
 
   // Duplicate stocks for seamless scrolling
   const duplicatedStocks = [...stocks, ...stocks, ...stocks];
 
   return (
-    <div className="w-full bg-[#1a1a2e] dark:bg-[#0f0f1e] border-y border-primary/30 overflow-hidden py-3 mt-[72px]">
+    <div className={`w-full border-y overflow-hidden py-3 mt-[72px] ${
+      theme === 'dark' 
+        ? 'bg-[#0f0f1e] border-primary/30' 
+        : 'bg-white border-gray-300'
+    }`}>
       <div className="ticker-wrapper">
         <div className="ticker-content">
           {duplicatedStocks.map((stock, index) => (
@@ -30,16 +36,22 @@ const StockTicker = () => {
               className="ticker-item inline-flex items-center px-6 space-x-3"
             >
               {/* Stock Symbol */}
-              <span className="font-bold text-white text-sm">{stock.symbol}</span>
+              <span className={`font-bold text-sm ${
+                theme === 'dark' ? 'text-white' : 'text-black'
+              }`}>
+                {stock.symbol}
+              </span>
               
               {/* Stock Price */}
-              <span className="text-white font-semibold">
+              <span className={`font-semibold ${
+                theme === 'dark' ? 'text-white' : 'text-black'
+              }`}>
                 KES {stock.price.toFixed(2)}
               </span>
               
               {/* Change */}
               <span
-                className={`text-xs font-medium flex items-center space-x-1`}
+                className="text-xs font-medium flex items-center space-x-1"
                 style={{ color: stock.change >= 0 ? '#09a129' : '#c1121f' }}
               >
                 <span>{stock.change >= 0 ? '▲' : '▼'}</span>
