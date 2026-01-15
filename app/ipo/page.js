@@ -35,31 +35,31 @@ export default function IPOPage() {
             ) : (
               <div>
                 <div className="flex items-center justify-center mb-6">
-                  <Clock className="w-8 h-8 text-primary mr-2" />
+                  <Clock className="w-8 h-8 text-accent mr-2" />
                   <h2 className="text-2xl font-bold">IPO Closes In:</h2>
                 </div>
                 
                 <div className="grid grid-cols-4 gap-4 text-center">
                   <div className="glass p-4 rounded-lg">
-                    <div className="text-4xl font-bold text-primary">{countdown.days}</div>
+                    <div className="text-4xl font-bold text-accent">{countdown.days}</div>
                     <div className="text-sm text-muted-foreground mt-2">Days</div>
                   </div>
                   <div className="glass p-4 rounded-lg">
-                    <div className="text-4xl font-bold text-primary">{countdown.hours}</div>
+                    <div className="text-4xl font-bold text-accent">{countdown.hours}</div>
                     <div className="text-sm text-muted-foreground mt-2">Hours</div>
                   </div>
                   <div className="glass p-4 rounded-lg">
-                    <div className="text-4xl font-bold text-primary">{countdown.minutes}</div>
+                    <div className="text-4xl font-bold text-accent">{countdown.minutes}</div>
                     <div className="text-sm text-muted-foreground mt-2">Minutes</div>
                   </div>
                   <div className="glass p-4 rounded-lg">
-                    <div className="text-4xl font-bold text-primary">{countdown.seconds}</div>
+                    <div className="text-4xl font-bold text-accent">{countdown.seconds}</div>
                     <div className="text-sm text-muted-foreground mt-2">Seconds</div>
                   </div>
                 </div>
 
                 <div className="mt-8 text-center">
-                  <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98">
+                  <button className="px-8 py-4 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-secondary/50 transition-all duration-300 hover:scale-105 active:scale-98">
                     Apply Now
                   </button>
                 </div>
