@@ -107,22 +107,22 @@ export default function Home() {
       </section>
 
       {/* Feature Grid */}
-      <section className="py-20 animate-stagger-4">
+      <section className="py-24 animate-stagger-4">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            <span className="gradient-text">Our Services</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">
+            Our Services
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {/* IPO Applications */}
             <Link href="/ipo">
-              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="p-4 rounded-full bg-primary/10">
-                    <TrendingUp className="w-8 h-8 text-primary" />
+              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300">
+                <div className="flex flex-col items-center text-center space-y-5 p-4">
+                  <div className="p-5 rounded-2xl bg-primary/10">
+                    <TrendingUp className="w-10 h-10 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold">IPO Applications</h3>
-                  <p className="text-muted-foreground text-sm">
+                  <h3 className="text-xl font-bold text-foreground">IPO Applications</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     Access exclusive IPO opportunities in the Kenyan market with expert guidance.
                   </p>
                 </div>
@@ -131,13 +131,13 @@ export default function Home() {
 
             {/* Leveraged Trading */}
             <Link href="/leverage">
-              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="p-4 rounded-full bg-primary/10">
-                    <BarChart3 className="w-8 h-8 text-primary" />
+              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300">
+                <div className="flex flex-col items-center text-center space-y-5 p-4">
+                  <div className="p-5 rounded-2xl bg-primary/10">
+                    <BarChart3 className="w-10 h-10 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold">Leveraged Trading</h3>
-                  <p className="text-muted-foreground text-sm">
+                  <h3 className="text-xl font-bold text-foreground">Leveraged Trading</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     Amplify your trading potential with competitive leverage rates and risk management.
                   </p>
                 </div>
@@ -146,13 +146,13 @@ export default function Home() {
 
             {/* Global Markets */}
             <Link href="/global-markets">
-              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="p-4 rounded-full bg-primary/10">
-                    <Globe className="w-8 h-8 text-primary" />
+              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300">
+                <div className="flex flex-col items-center text-center space-y-5 p-4">
+                  <div className="p-5 rounded-2xl bg-primary/10">
+                    <Globe className="w-10 h-10 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold">Global Markets</h3>
-                  <p className="text-muted-foreground text-sm">
+                  <h3 className="text-xl font-bold text-foreground">Global Markets</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     Trade international stocks and access global investment opportunities.
                   </p>
                 </div>
@@ -161,13 +161,13 @@ export default function Home() {
 
             {/* Research */}
             <Link href="/research">
-              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="p-4 rounded-full bg-primary/10">
-                    <Shield className="w-8 h-8 text-primary" />
+              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300">
+                <div className="flex flex-col items-center text-center space-y-5 p-4">
+                  <div className="p-5 rounded-2xl bg-primary/10">
+                    <Shield className="w-10 h-10 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold">Expert Research</h3>
-                  <p className="text-muted-foreground text-sm">
+                  <h3 className="text-xl font-bold text-foreground">Expert Research</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     In-depth market analysis and insights to guide your investment decisions.
                   </p>
                 </div>
