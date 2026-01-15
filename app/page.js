@@ -178,21 +178,23 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <GlassCard className="text-center p-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Start Trading?
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-              Join thousands of investors who trust AIB-AXYS Africa for their trading needs.
-            </p>
-            <Link href="/contact">
-              <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98">
-                Get Started Today
-              </button>
-            </Link>
-          </GlassCard>
+          <div className="max-w-4xl mx-auto">
+            <GlassCard className="text-center p-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
+                Ready to Start Trading?
+              </h2>
+              <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+                Join thousands of investors who trust AIB-AXYS Africa for their trading needs.
+              </p>
+              <Link href="/contact">
+                <button className="px-12 py-5 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98">
+                  Get Started Today
+                </button>
+              </Link>
+            </GlassCard>
+          </div>
         </div>
       </section>
     </div>
