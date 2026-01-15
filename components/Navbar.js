@@ -13,9 +13,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Total animation happens over 800px scroll
+      // Complete animation in just 300px scroll - much faster!
       const scrollY = window.scrollY;
-      const progress = Math.min(scrollY / 800, 1);
+      const progress = Math.min(scrollY / 300, 1);
       setScrollProgress(progress);
     };
 
@@ -24,9 +24,9 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Animation has two phases:
-  // Phase 1 (0-0.5): Logo moves up and shrinks, stays centered
-  // Phase 2 (0.5-1): Logo slides left to navbar position
+  // Animation has two phases but completes quickly:
+  // Phase 1 (0-0.6): Logo moves up and shrinks, stays centered
+  // Phase 2 (0.6-1): Logo slides left to navbar position
   
   const getLogoStyles = () => {
     if (scrollProgress === 0) {
@@ -36,30 +36,30 @@ const Navbar = () => {
         left: '50%',
         transform: 'translateX(-50%) scale(3)',
       };
-    } else if (scrollProgress < 0.5) {
-      // Phase 1: Move up and shrink, stay centered
-      const phase1Progress = scrollProgress / 0.5; // 0 to 1
-      const topOffset = 100 - (phase1Progress * 80); // Move from 50vh-100px to 50vh-20px (closer to top)
+    } else if (scrollProgress < 0.6) {
+      // Phase 1: Move up and shrink, stay centered (0-180px scroll)
+      const phase1Progress = scrollProgress / 0.6; // 0 to 1
+      const topOffset = 100 - (phase1Progress * 80);
       const scale = 3 - (phase1Progress * 2); // Scale from 3 to 1
       
       return {
-        top: `calc(50vh - ${topOffset}px - ${phase1Progress * 40}vh)`, // Move up
+        top: `calc(50vh - ${topOffset}px - ${phase1Progress * 40}vh)`,
         left: '50%',
         transform: `translateX(-50%) scale(${scale})`,
       };
     } else {
-      // Phase 2: Slide left to navbar position
-      const phase2Progress = (scrollProgress - 0.5) / 0.5; // 0 to 1
+      // Phase 2: Slide left to navbar position (180-300px scroll)
+      const phase2Progress = (scrollProgress - 0.6) / 0.4; // 0 to 1
       const leftPosition = phase2Progress < 1 
-        ? `calc(50% - ${phase2Progress * 50}%)` // Slide from center (50%) to left
-        : 'max(2rem, calc((100vw - 1400px) / 2 + 2rem))'; // Final navbar position
+        ? `calc(50% - ${phase2Progress * 50}%)` 
+        : 'max(2rem, calc((100vw - 1400px) / 2 + 2rem))';
       
       return {
-        top: '20px', // Fixed at navbar height
+        top: '20px',
         left: leftPosition,
         transform: phase2Progress < 1 
-          ? `translateX(-50%) scale(1)` // Still centered during slide
-          : 'translateX(0) scale(1)', // Final position, no center offset
+          ? `translateX(-50%) scale(1)` 
+          : 'translateX(0) scale(1)',
       };
     }
   };
