@@ -4,7 +4,6 @@ import { ThemeProvider } from '@/contexts/ThemeContext';
 import Navbar from '@/components/Navbar';
 import StockTicker from '@/components/StockTicker';
 import Footer from '@/components/Footer';
-import RouteLoadingWrapper from '@/components/RouteLoadingWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,14 +15,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-white dark:bg-[#0a0a0f]`}>
         <ThemeProvider>
-          <RouteLoadingWrapper>
-            <Navbar />
-            <StockTicker />
-            <main className="pt-8">{children}</main>
-            <Footer />
-          </RouteLoadingWrapper>
+          <Navbar />
+          <StockTicker />
+          <main className="pt-8 bg-white dark:bg-[#0a0a0f]">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
