@@ -33,9 +33,9 @@ const Navbar = () => {
                 : 'https://customer-assets.emergentagent.com/job_33cba548-cc10-4443-ba2a-5d85d6be63d5/artifacts/c84w37kp_NEW%20AIB%20AXYS%20AFRICA%20LOGO%20WHITE%20BG.svg'
               }
               alt="AIB-AXYS Africa Logo"
-              width={120}
-              height={40}
-              className="h-8 w-auto"
+              width={180}
+              height={60}
+              className="h-12 w-auto"
             />
           </Link>
 
