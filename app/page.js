@@ -85,9 +85,9 @@ export default function Home() {
       </section>
 
       {/* Stats Strip */}
-      <section className="py-20">
+      <section className="py-20 bg-white dark:bg-background">
         <div className="container mx-auto px-4">
-          <GlassCard className="animate-stagger-3">
+          <GlassCard className="animate-stagger-3 bg-gray-50/80 dark:bg-transparent">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center py-8">
               <div>
                 <div className="text-6xl md:text-7xl font-bold text-primary mb-3">
@@ -107,7 +107,7 @@ export default function Home() {
       </section>
 
       {/* Feature Grid */}
-      <section className="py-24 animate-stagger-4">
+      <section className="py-24 animate-stagger-4 bg-white dark:bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">
             Our Services
@@ -116,10 +116,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {/* IPO Applications */}
             <Link href="/ipo">
-              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300">
+              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <div className="p-5 rounded-2xl bg-accent/10">
-                    <TrendingUp className="w-10 h-10 text-accent" />
+                  <div className="p-5 rounded-2xl bg-accent/20 dark:bg-accent/10">
+                    <TrendingUp className="w-10 h-10 text-accent dark:text-accent" style={{ filter: 'brightness(0.8) saturate(1.5)' }} />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">IPO Applications</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -131,10 +131,10 @@ export default function Home() {
 
             {/* Leveraged Trading */}
             <Link href="/leverage">
-              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300">
+              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <div className="p-5 rounded-2xl bg-accent/10">
-                    <BarChart3 className="w-10 h-10 text-accent" />
+                  <div className="p-5 rounded-2xl bg-accent/20 dark:bg-accent/10">
+                    <BarChart3 className="w-10 h-10 text-accent dark:text-accent" style={{ filter: 'brightness(0.8) saturate(1.5)' }} />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">Leveraged Trading</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -146,10 +146,10 @@ export default function Home() {
 
             {/* Global Markets */}
             <Link href="/global-markets">
-              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300">
+              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <div className="p-5 rounded-2xl bg-accent/10">
-                    <Globe className="w-10 h-10 text-accent" />
+                  <div className="p-5 rounded-2xl bg-accent/20 dark:bg-accent/10">
+                    <Globe className="w-10 h-10 text-accent dark:text-accent" style={{ filter: 'brightness(0.8) saturate(1.5)' }} />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">Global Markets</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -161,10 +161,10 @@ export default function Home() {
 
             {/* Research */}
             <Link href="/research">
-              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300">
+              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <div className="p-5 rounded-2xl bg-accent/10">
-                    <Shield className="w-10 h-10 text-accent" />
+                  <div className="p-5 rounded-2xl bg-accent/20 dark:bg-accent/10">
+                    <Shield className="w-10 h-10 text-accent dark:text-accent" style={{ filter: 'brightness(0.8) saturate(1.5)' }} />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">Expert Research</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -178,10 +178,10 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24">
+      <section className="py-24 bg-white dark:bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <GlassCard className="text-center p-16">
+            <GlassCard className="text-center p-16 bg-gray-50/80 dark:bg-transparent">
               <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
                 Ready to Start Trading?
               </h2>
