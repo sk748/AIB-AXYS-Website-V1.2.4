@@ -109,7 +109,7 @@
 
   /* Breathing gradient background */
   .breathing-gradient {
-    background: linear-gradient(135deg, #191970, #4169E1, #191970, #4169E1);
+    background: linear-gradient(135deg, #0037C1, #0050FF, #0037C1, #001F8F);
     background-size: 400% 400%;
     animation: gradient-move 8s ease infinite;
   }
