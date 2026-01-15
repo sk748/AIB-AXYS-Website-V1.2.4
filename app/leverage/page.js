@@ -8,7 +8,7 @@ export default function LeveragePage() {
     {
       icon: <TrendingUp className="w-8 h-8 text-primary" />,
       title: 'Competitive Rates',
-      description: 'Access leverage up to 1:10 with competitive interest rates',
+      description: 'Access leverage up to 5x (1:4) with competitive interest rates',
     },
     {
       icon: <Shield className="w-8 h-8 text-primary" />,
@@ -24,7 +24,7 @@ export default function LeveragePage() {
 
   const benefits = [
     'Amplify your trading potential',
-    'Flexible leverage options',
+    '5x leverage for qualified investors',
     'Professional trading tools',
     'Dedicated support team',
     'Transparent fee structure',
@@ -40,7 +40,7 @@ export default function LeveragePage() {
             <span className="gradient-text">Leveraged Trading</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Maximize your trading potential with our competitive leverage solutions
+            Maximize your trading potential with 5x leverage
           </p>
         </div>
 
@@ -72,32 +72,24 @@ export default function LeveragePage() {
             </ul>
           </GlassCard>
 
-          {/* Leverage Tiers */}
+          {/* Leverage Details */}
           <GlassCard className="p-8">
-            <h2 className="text-2xl font-bold mb-6">Leverage Tiers</h2>
+            <h2 className="text-2xl font-bold mb-6">Leverage Offering</h2>
             <div className="space-y-4">
-              <div className="p-4 glass rounded-lg">
-                <div className="flex justify-between items-center mb-2">
-                  <h3 className="font-bold">Standard</h3>
-                  <span className="text-primary font-bold">1:5</span>
+              <div className="p-6 glass rounded-lg border-2 border-primary/30">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-2xl font-bold">5x Leverage</h3>
+                  <span className="text-3xl font-bold text-primary">1:4</span>
                 </div>
-                <p className="text-sm text-muted-foreground">Perfect for conservative traders</p>
-              </div>
-
-              <div className="p-4 glass rounded-lg">
-                <div className="flex justify-between items-center mb-2">
-                  <h3 className="font-bold">Advanced</h3>
-                  <span className="text-primary font-bold">1:7</span>
-                </div>
-                <p className="text-sm text-muted-foreground">For experienced market participants</p>
-              </div>
-
-              <div className="p-4 glass rounded-lg">
-                <div className="flex justify-between items-center mb-2">
-                  <h3 className="font-bold">Professional</h3>
-                  <span className="text-primary font-bold">1:10</span>
-                </div>
-                <p className="text-sm text-muted-foreground">Maximum leverage for pro traders</p>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Multiply your trading power by 5 with our professional leverage offering
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Suitable for experienced traders</li>
+                  <li>• Professional risk management required</li>
+                  <li>• Competitive interest rates</li>
+                  <li>• Real-time margin monitoring</li>
+                </ul>
               </div>
             </div>
           </GlassCard>
@@ -108,7 +100,7 @@ export default function LeveragePage() {
           <GlassCard className="p-8 max-w-2xl mx-auto">
             <h2 className="text-2xl font-bold mb-4">Ready to Start?</h2>
             <p className="text-muted-foreground mb-6">
-              Contact our team to discuss your leverage trading requirements
+              Contact our team to discuss leverage trading requirements
             </p>
             <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98">
               Get Started
