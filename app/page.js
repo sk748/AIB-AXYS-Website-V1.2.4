@@ -43,31 +43,93 @@ export default function Home() {
         {/* Base breathing gradient */}
         <div className="absolute inset-0 -top-20 dark:breathing-gradient dark:opacity-20"></div>
         
-        {/* Diagonal slanted shading - light beam effect from top-right */}
+        {/* Multiple diagonal shades at 335 degrees - Dark mode */}
         <div 
           className="absolute inset-0 dark:block hidden"
           style={{
-            background: 'linear-gradient(135deg, transparent 0%, transparent 25%, rgba(65, 105, 225, 0.15) 40%, rgba(65, 105, 225, 0.08) 50%, rgba(25, 25, 112, 0.1) 60%, transparent 75%, transparent 100%)',
-            transform: 'skewY(-6deg) scale(1.5)',
-            transformOrigin: 'top right',
+            background: `linear-gradient(335deg, 
+              transparent 0%, 
+              transparent 8%,
+              rgba(65, 105, 225, 0.12) 10%, 
+              rgba(65, 105, 225, 0.06) 14%,
+              transparent 16%,
+              transparent 22%,
+              rgba(25, 25, 112, 0.15) 24%,
+              rgba(25, 25, 112, 0.08) 28%,
+              transparent 30%,
+              transparent 38%,
+              rgba(65, 105, 225, 0.18) 40%,
+              rgba(65, 105, 225, 0.1) 46%,
+              transparent 48%,
+              transparent 54%,
+              rgba(0, 55, 193, 0.12) 56%,
+              rgba(0, 55, 193, 0.05) 60%,
+              transparent 62%,
+              transparent 70%,
+              rgba(65, 105, 225, 0.08) 72%,
+              rgba(65, 105, 225, 0.04) 76%,
+              transparent 78%,
+              transparent 85%,
+              rgba(25, 25, 112, 0.1) 87%,
+              rgba(25, 25, 112, 0.05) 92%,
+              transparent 94%,
+              transparent 100%
+            )`,
           }}
         ></div>
         
-        {/* Secondary diagonal highlight */}
+        {/* Additional offset diagonal stripes - Dark mode */}
         <div 
           className="absolute inset-0 dark:block hidden"
           style={{
-            background: 'radial-gradient(ellipse 80% 60% at 60% 40%, rgba(65, 105, 225, 0.12) 0%, transparent 70%)',
+            background: `linear-gradient(335deg, 
+              transparent 0%,
+              transparent 5%,
+              rgba(0, 188, 212, 0.04) 7%,
+              transparent 9%,
+              transparent 18%,
+              rgba(65, 105, 225, 0.06) 20%,
+              transparent 22%,
+              transparent 33%,
+              rgba(25, 25, 112, 0.08) 35%,
+              transparent 37%,
+              transparent 50%,
+              rgba(0, 55, 193, 0.05) 52%,
+              transparent 54%,
+              transparent 65%,
+              rgba(65, 105, 225, 0.07) 67%,
+              transparent 69%,
+              transparent 80%,
+              rgba(25, 25, 112, 0.06) 82%,
+              transparent 84%,
+              transparent 100%
+            )`,
           }}
         ></div>
         
-        {/* Light mode diagonal shading */}
+        {/* Light mode multiple diagonal shades at 335 degrees */}
         <div 
           className="absolute inset-0 dark:hidden block"
           style={{
-            background: 'linear-gradient(135deg, transparent 0%, transparent 30%, rgba(65, 105, 225, 0.05) 45%, rgba(65, 105, 225, 0.03) 55%, transparent 70%, transparent 100%)',
-            transform: 'skewY(-6deg) scale(1.5)',
-            transformOrigin: 'top right',
+            background: `linear-gradient(335deg, 
+              transparent 0%, 
+              transparent 10%,
+              rgba(65, 105, 225, 0.04) 12%, 
+              transparent 16%,
+              transparent 25%,
+              rgba(65, 105, 225, 0.06) 27%,
+              transparent 31%,
+              transparent 42%,
+              rgba(65, 105, 225, 0.05) 44%,
+              transparent 48%,
+              transparent 58%,
+              rgba(65, 105, 225, 0.03) 60%,
+              transparent 64%,
+              transparent 75%,
+              rgba(65, 105, 225, 0.04) 77%,
+              transparent 81%,
+              transparent 100%
+            )`,
           }}
         ></div>
         
