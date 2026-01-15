@@ -13,9 +13,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Calculate scroll progress from 0 to 1 over 600px
+      // Total animation happens over 800px scroll
       const scrollY = window.scrollY;
-      const progress = Math.min(scrollY / 600, 1);
+      const progress = Math.min(scrollY / 800, 1);
       setScrollProgress(progress);
     };
 
@@ -23,6 +23,46 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Animation has two phases:
+  // Phase 1 (0-0.5): Logo moves up and shrinks, stays centered
+  // Phase 2 (0.5-1): Logo slides left to navbar position
+  
+  const getLogoStyles = () => {
+    if (scrollProgress === 0) {
+      // Start: large and centered in hero
+      return {
+        top: 'calc(50vh - 100px)',
+        left: '50%',
+        transform: 'translateX(-50%) scale(3)',
+      };
+    } else if (scrollProgress < 0.5) {
+      // Phase 1: Move up and shrink, stay centered
+      const phase1Progress = scrollProgress / 0.5; // 0 to 1
+      const topOffset = 100 - (phase1Progress * 80); // Move from 50vh-100px to 50vh-20px (closer to top)
+      const scale = 3 - (phase1Progress * 2); // Scale from 3 to 1
+      
+      return {
+        top: `calc(50vh - ${topOffset}px - ${phase1Progress * 40}vh)`, // Move up
+        left: '50%',
+        transform: `translateX(-50%) scale(${scale})`,
+      };
+    } else {
+      // Phase 2: Slide left to navbar position
+      const phase2Progress = (scrollProgress - 0.5) / 0.5; // 0 to 1
+      const leftPosition = phase2Progress < 1 
+        ? `calc(50% - ${phase2Progress * 50}%)` // Slide from center (50%) to left
+        : 'max(2rem, calc((100vw - 1400px) / 2 + 2rem))'; // Final navbar position
+      
+      return {
+        top: '20px', // Fixed at navbar height
+        left: leftPosition,
+        transform: phase2Progress < 1 
+          ? `translateX(-50%) scale(1)` // Still centered during slide
+          : 'translateX(0) scale(1)', // Final position, no center offset
+      };
+    }
+  };
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -106,20 +146,10 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Animated Logo that slides from center to navbar */}
+      {/* Animated Logo - Single smooth animation with two phases */}
       <div
-        className="fixed z-[60] transition-all duration-500 ease-out"
-        style={{
-          top: scrollProgress < 1 
-            ? `calc(50vh - ${100 + scrollProgress * (50 * (typeof window !== 'undefined' ? window.innerHeight : 800) / 100 - 120)}px)` 
-            : '20px',
-          left: scrollProgress < 1 
-            ? '50%' 
-            : 'max(2rem, calc((100vw - 1400px) / 2 + 2rem))',
-          transform: scrollProgress < 1 
-            ? `translateX(-50%) scale(${1 + (1 - scrollProgress) * 2})` 
-            : 'translateX(0) scale(1)',
-        }}
+        className="fixed z-[60] transition-all duration-300 ease-out"
+        style={getLogoStyles()}
       >
         <Link href="/" className="block">
           <Image
