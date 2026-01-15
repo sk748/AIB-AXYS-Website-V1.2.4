@@ -21,7 +21,7 @@ const StockTicker = () => {
   const duplicatedStocks = [...stocks, ...stocks, ...stocks];
 
   return (
-    <div className="w-full bg-secondary/10 dark:bg-secondary/20 backdrop-blur-sm border-y border-primary/20 overflow-hidden py-2">
+    <div className="w-full bg-[#1a1a2e] dark:bg-[#0f0f1e] border-y border-primary/30 overflow-hidden py-3 mt-[72px]">
       <div className="ticker-wrapper">
         <div className="ticker-content">
           {duplicatedStocks.map((stock, index) => (
@@ -30,18 +30,17 @@ const StockTicker = () => {
               className="ticker-item inline-flex items-center px-6 space-x-3"
             >
               {/* Stock Symbol */}
-              <span className="font-bold text-foreground text-sm">{stock.symbol}</span>
+              <span className="font-bold text-white text-sm">{stock.symbol}</span>
               
               {/* Stock Price */}
-              <span className="text-foreground font-semibold">
+              <span className="text-white font-semibold">
                 KES {stock.price.toFixed(2)}
               </span>
               
               {/* Change */}
               <span
-                className={`text-xs font-medium flex items-center space-x-1 ${
-                  stock.change >= 0 ? 'text-green-500' : 'text-red-500'
-                }`}
+                className={`text-xs font-medium flex items-center space-x-1`}
+                style={{ color: stock.change >= 0 ? '#09a129' : '#c1121f' }}
               >
                 <span>{stock.change >= 0 ? '▲' : '▼'}</span>
                 <span>{Math.abs(stock.change).toFixed(2)}</span>
@@ -49,7 +48,7 @@ const StockTicker = () => {
               </span>
               
               {/* Separator */}
-              <span className="text-primary/30">|</span>
+              <span className="text-primary/40">|</span>
             </div>
           ))}
         </div>
