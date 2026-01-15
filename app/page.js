@@ -37,9 +37,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-background">
+    <div className="min-h-screen bg-white dark:bg-[#0a0a0f]">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-transparent">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#0a0a0f]">
         <div className="absolute inset-0 dark:breathing-gradient dark:opacity-20"></div>
         
         <div className="container mx-auto px-4 relative z-10">
