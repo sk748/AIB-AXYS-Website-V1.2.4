@@ -40,7 +40,36 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-[#0a0a0f]">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#0a0a0f] -mt-8 pt-8">
+        {/* Base breathing gradient */}
         <div className="absolute inset-0 -top-20 dark:breathing-gradient dark:opacity-20"></div>
+        
+        {/* Diagonal slanted shading - light beam effect from top-right */}
+        <div 
+          className="absolute inset-0 dark:block hidden"
+          style={{
+            background: 'linear-gradient(135deg, transparent 0%, transparent 25%, rgba(65, 105, 225, 0.15) 40%, rgba(65, 105, 225, 0.08) 50%, rgba(25, 25, 112, 0.1) 60%, transparent 75%, transparent 100%)',
+            transform: 'skewY(-6deg) scale(1.5)',
+            transformOrigin: 'top right',
+          }}
+        ></div>
+        
+        {/* Secondary diagonal highlight */}
+        <div 
+          className="absolute inset-0 dark:block hidden"
+          style={{
+            background: 'radial-gradient(ellipse 80% 60% at 60% 40%, rgba(65, 105, 225, 0.12) 0%, transparent 70%)',
+          }}
+        ></div>
+        
+        {/* Light mode diagonal shading */}
+        <div 
+          className="absolute inset-0 dark:hidden block"
+          style={{
+            background: 'linear-gradient(135deg, transparent 0%, transparent 30%, rgba(65, 105, 225, 0.05) 45%, rgba(65, 105, 225, 0.03) 55%, transparent 70%, transparent 100%)',
+            transform: 'skewY(-6deg) scale(1.5)',
+            transformOrigin: 'top right',
+          }}
+        ></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center space-y-8 animate-fade-up max-w-4xl mx-auto">
