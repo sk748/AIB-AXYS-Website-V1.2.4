@@ -18,8 +18,10 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ThemeProvider>
           <Navbar />
-          <StockTicker />
-          <main className="pt-20">{children}</main>
+          <div className="fixed top-[72px] left-0 right-0 z-40">
+            <StockTicker />
+          </div>
+          <main className="pt-28">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
