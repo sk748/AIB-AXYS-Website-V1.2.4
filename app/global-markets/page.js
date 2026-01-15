@@ -89,7 +89,7 @@ export default function GlobalMarketsPage() {
             {benefits.map((benefit, index) => (
               <GlassCard key={index} hover3d>
                 <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="p-4 rounded-full bg-primary/10">{benefit.icon}</div>
+                  <div className="p-4 rounded-full backdrop-blur-xl bg-white/20 dark:bg-white/10 border border-primary/20">{benefit.icon}</div>
                   <h3 className="text-lg font-bold">{benefit.title}</h3>
                   <p className="text-sm text-muted-foreground">{benefit.description}</p>
                 </div>
