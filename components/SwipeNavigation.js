@@ -159,7 +159,7 @@ const SwipeNavigation = ({ children }) => {
         }`}
       >
         <div 
-          className="w-2 h-24 bg-gradient-to-r from-[#00BCD4] to-transparent rounded-r-full"
+          className="w-2 h-24 bg-gradient-to-r from-primary to-transparent rounded-r-full"
           style={{ 
             transform: `scaleX(${Math.min(swipeProgress / 20, 2.5)})`,
             transformOrigin: 'left'
@@ -174,7 +174,7 @@ const SwipeNavigation = ({ children }) => {
         }`}
       >
         <div 
-          className="w-2 h-24 bg-gradient-to-l from-[#00BCD4] to-transparent rounded-l-full"
+          className="w-2 h-24 bg-gradient-to-l from-primary to-transparent rounded-l-full"
           style={{ 
             transform: `scaleX(${Math.min(swipeProgress / 20, 2.5)})`,
             transformOrigin: 'right'
