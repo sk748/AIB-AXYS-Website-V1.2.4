@@ -65,8 +65,8 @@ export default function AboutPage() {
         {/* Team Section - Centered */}
         <div className="max-w-5xl mx-auto mb-16 animate-stagger-2">
           <div className="text-center mb-12">
-            <Users className="w-16 h-16 text-[#2E5CB8] mx-auto mb-4" />
-            <h2 className="text-3xl font-bold mb-4 text-[#2E5CB8]">Key Personnel</h2>
+            <Users className="w-16 h-16 text-[#0017BF] mx-auto mb-4" />
+            <h2 className="text-3xl font-bold mb-4 text-[#0017BF]">Key Personnel</h2>
             <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Our dedicated team of financial experts, market analysts, and technology professionals work tirelessly
               to provide you with the best trading experience.
