@@ -1,52 +1,73 @@
 'use client';
 
 import GlassCard from '@/components/GlassCard';
-import { Globe, TrendingUp, DollarSign, Activity } from 'lucide-react';
+import { Download, TrendingUp, DollarSign, Globe, Building, Briefcase } from 'lucide-react';
 
-export default function GlobalMarketsPage() {
-  const markets = [
+export default function GlobalFundsPage() {
+  const funds = [
     {
-      region: 'North America',
-      exchanges: ['NYSE', 'NASDAQ', 'TSX'],
-      description: 'Access leading US and Canadian stocks',
+      name: 'AXIOM Equity Fund',
+      shortName: 'AEF',
+      icon: <TrendingUp className="w-10 h-10 text-[#00BCD4]" />,
+      description: 'AEF adopts a blended investment strategy which consists of investment in both growth and value stocks, favouring stocks with sound fundamentals, strong management and sustainable growth driven strategies.',
+      documents: [
+        { name: 'Factsheet Class I', url: '#' },
+        { name: 'Factsheet Class R', url: '#' },
+        { name: 'Net Asset Value', url: '#' },
+        { name: 'Flyer', url: '#' },
+        { name: 'Prospectus', url: '#' },
+      ],
     },
     {
-      region: 'Europe',
-      exchanges: ['LSE', 'Euronext', 'Deutsche Börse'],
-      description: 'Trade European blue-chip companies',
+      name: 'AXIOM Yield Fund',
+      shortName: 'AYF',
+      icon: <DollarSign className="w-10 h-10 text-[#00BCD4]" />,
+      description: 'Provides Investors with regular income and aims to outperform the average savings rate plus a premium by maximising risk adjusted returns.',
+      documents: [
+        { name: 'Flyer', url: '#' },
+        { name: 'Factsheet', url: '#' },
+        { name: 'Net Asset Value', url: '#' },
+        { name: 'Prospectus', url: '#' },
+      ],
     },
     {
-      region: 'Asia Pacific',
-      exchanges: ['Tokyo', 'Hong Kong', 'SGX'],
-      description: 'Explore opportunities in Asian markets',
+      name: 'AXIOM Africa Equity Fund',
+      shortName: 'AAEF',
+      icon: <Globe className="w-10 h-10 text-[#00BCD4]" />,
+      description: 'Designed to offer investors a unique opportunity to invest in best-in-class African stocks. The fund carefully selects and invests in companies that are expected to benefit from the various socio-economic structural changes unfolding in the region, such as the demographic wave and the digitisation revolution.',
+      documents: [
+        { name: 'Flyer', url: '#' },
+        { name: 'Factsheet Class I', url: '#' },
+        { name: 'Factsheet Class R', url: '#' },
+        { name: 'Net Asset Value', url: '#' },
+        { name: 'Prospectus', url: '#' },
+      ],
     },
     {
-      region: 'Africa',
-      exchanges: ['JSE', 'NSE', 'EGX'],
-      description: 'Invest in African growth stories',
-    },
-  ];
-
-  const benefits = [
-    {
-      icon: <Globe className="w-8 h-8 text-[#00BCD4]" />,
-      title: 'Global Diversification',
-      description: 'Spread risk across multiple markets and sectors',
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8 text-[#00BCD4]" />,
-      title: 'Growth Opportunities',
-      description: 'Access high-growth companies worldwide',
+      name: 'Dynamic Global Equity',
+      shortName: 'DGE',
+      icon: <Building className="w-10 h-10 text-[#00BCD4]" />,
+      description: 'The fund is a feeder fund which invests directly and solely in Fundsmith Equity Fund. The aim of the underlying fund is to provide long-term growth by investing in equities on a global basis and adopting a specific investment philosophy.',
+      documents: [
+        { name: 'Flyer', url: '#' },
+        { name: 'Factsheet Class I', url: '#' },
+        { name: 'Factsheet Class R', url: '#' },
+        { name: 'Net Asset Value', url: '#' },
+        { name: 'Prospectus', url: '#' },
+      ],
     },
     {
-      icon: <DollarSign className="w-8 h-8 text-[#00BCD4]" />,
-      title: 'Currency Exposure',
-      description: 'Benefit from favorable exchange rates',
-    },
-    {
-      icon: <Activity className="w-8 h-8 text-[#00BCD4]" />,
-      title: '24/5 Trading',
-      description: 'Trade across different time zones',
+      name: 'AXIOM Patrimoine',
+      shortName: 'AP',
+      icon: <Briefcase className="w-10 h-10 text-[#00BCD4]" />,
+      description: 'AXIOM Patrimoine is a multi-asset class investment fund designed to strengthen the financial security of investors. This investment fund benefits from different asset types, both domestically and internationally. When you invest in AXIOM Patrimoine, you will have the pleasure of seeing your capital sustainably grow in a risk-balanced way while retaining the possibility of accessing your capital at any time.',
+      documents: [
+        { name: 'Flyer', url: '#' },
+        { name: 'Factsheet Class I', url: '#' },
+        { name: 'Factsheet Class R', url: '#' },
+        { name: 'Prospectus', url: '#' },
+        { name: 'Net Asset Value', url: '#' },
+      ],
     },
   ];
 
@@ -56,59 +77,76 @@ export default function GlobalMarketsPage() {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="gradient-text">Global Markets</span>
+            <span className="gradient-text">Global Funds</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Access international markets and diversify your portfolio globally
+            Diversified investment solutions for every investor
           </p>
         </div>
 
-        {/* Markets Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 animate-stagger-1">
-          {markets.map((market, index) => (
-            <GlassCard key={index} hover3d className="p-6">
-              <h3 className="text-2xl font-bold mb-3">{market.region}</h3>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {market.exchanges.map((exchange, idx) => (
-                  <span key={idx} className="px-3 py-1 text-xs font-semibold rounded-full bg-primary/20 text-primary">
-                    {exchange}
-                  </span>
-                ))}
-              </div>
-              <p className="text-muted-foreground">{market.description}</p>
-            </GlassCard>
+        {/* Funds Grid */}
+        <div className="space-y-8 max-w-5xl mx-auto">
+          {funds.map((fund, index) => (
+            <div 
+              key={index} 
+              className={`animate-stagger-${Math.min(index + 1, 4)}`}
+            >
+              <GlassCard className="p-8">
+                <div className="flex flex-col md:flex-row gap-6">
+                  {/* Icon and Title */}
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center gap-4 mb-4 md:mb-0">
+                      {fund.icon}
+                      <div>
+                        <h2 className="text-2xl font-bold text-foreground">{fund.name}</h2>
+                        <span className="text-sm text-muted-foreground">({fund.shortName})</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-muted-foreground leading-relaxed mt-4 mb-6">
+                  {fund.description}
+                </p>
+
+                {/* Document Downloads */}
+                <div className="border-t border-border pt-6">
+                  <h3 className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wider">
+                    Documents
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {fund.documents.map((doc, docIndex) => (
+                      <a
+                        key={docIndex}
+                        href={doc.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 text-sm font-medium"
+                      >
+                        <Download className="w-4 h-4" />
+                        {doc.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </GlassCard>
+            </div>
           ))}
         </div>
 
-        {/* Benefits */}
-        <div className="max-w-6xl mx-auto mb-16 animate-stagger-2">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            <span className="gradient-text">Why Trade Globally?</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit, index) => (
-              <GlassCard key={index} hover3d>
-                <div className="flex flex-col items-center text-center space-y-4">
-                  {benefit.icon}
-                  <h3 className="text-lg font-bold">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
-                </div>
-              </GlassCard>
-            ))}
-          </div>
-        </div>
-
         {/* CTA */}
-        <div className="max-w-4xl mx-auto animate-stagger-3">
+        <div className="max-w-4xl mx-auto mt-16 animate-stagger-4">
           <GlassCard className="p-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Start Trading Globally Today</h2>
+            <h2 className="text-3xl font-bold mb-4">Interested in Our Funds?</h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Open a global trading account and get access to international markets with competitive rates and expert
-              support.
+              Contact our investment team to learn more about our fund offerings and find the right investment solution for your needs.
             </p>
-            <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98">
-              Open Account
-            </button>
+            <a href="/contact">
+              <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98">
+                Contact Us
+              </button>
+            </a>
           </GlassCard>
         </div>
       </div>
