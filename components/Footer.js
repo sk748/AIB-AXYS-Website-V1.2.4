@@ -1,18 +1,18 @@
 'use client';
 
 import Link from 'next/link';
-import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="glass dark:glass mt-20 py-12">
+    <footer className="bg-gray-50 dark:bg-[#0d1320] mt-20 py-12 border-t border-gray-200 dark:border-[#1e2a3d]">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div>
             <h3 className="text-lg font-bold text-primary mb-4">AIB-AXYS Africa</h3>
             <p className="text-sm text-muted-foreground">
-              Leading stock trading platform in Kenya, specializing in IPOs, leveraged trading, and global market access.
+              Leading stock trading platform in Kenya, specializing in IPOs, leveraged trading, and global fund access.
             </p>
           </div>
 
@@ -33,6 +33,11 @@ const Footer = () => {
               <li>
                 <Link href="/research" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Research
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  FAQ
                 </Link>
               </li>
               <li>
@@ -59,7 +64,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/global-markets" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Global Markets
+                  Global Funds
                 </Link>
               </li>
             </ul>
@@ -70,35 +75,26 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-foreground mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4 text-accent" />
+                <MapPin className="w-4 h-4 text-primary dark:text-white" />
                 <span>Nairobi, Kenya</span>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <Phone className="w-4 h-4 text-accent" />
+                <Phone className="w-4 h-4 text-primary dark:text-white" />
                 <span>+254 711 047 000</span>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4 text-accent" />
+                <Mail className="w-4 h-4 text-primary dark:text-white" />
                 <span>info@aib-axysafrica.com</span>
               </li>
+              <li className="flex items-center space-x-2 text-sm text-muted-foreground">
+                <Clock className="w-4 h-4 text-primary dark:text-white" />
+                <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
+              </li>
             </ul>
-            
-            {/* Social Links */}
-            <div className="flex space-x-4 mt-4">
-              <a href="#" className="p-2 rounded-lg glass hover:bg-accent/20 transition-all duration-300">
-                <Facebook className="w-4 h-4 text-accent" />
-              </a>
-              <a href="#" className="p-2 rounded-lg glass hover:bg-accent/20 transition-all duration-300">
-                <Twitter className="w-4 h-4 text-accent" />
-              </a>
-              <a href="#" className="p-2 rounded-lg glass hover:bg-accent/20 transition-all duration-300">
-                <Linkedin className="w-4 h-4 text-accent" />
-              </a>
-            </div>
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center">
+        <div className="border-t border-gray-200 dark:border-[#1e2a3d] mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} AIB-AXYS Africa. All rights reserved.
           </p>
