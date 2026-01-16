@@ -30,7 +30,7 @@ export default function AboutPage() {
     <div className="min-h-screen py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-up">
+        <div className="text-center mb-20 animate-fade-up">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             <span className="gradient-text">About AIB-AXYS</span>
           </h1>
@@ -40,7 +40,7 @@ export default function AboutPage() {
         </div>
 
         {/* Story Section */}
-        <div className="max-w-4xl mx-auto mb-16 animate-stagger-1">
+        <div className="max-w-4xl mx-auto mb-24 animate-stagger-1">
           <GlassCard className="p-8">
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -63,8 +63,8 @@ export default function AboutPage() {
         </div>
 
         {/* Team Section - Centered */}
-        <div className="max-w-5xl mx-auto mb-16 animate-stagger-2">
-          <div className="text-center mb-12">
+        <div className="max-w-5xl mx-auto mb-24 animate-stagger-2">
+          <div className="text-center mb-16">
             <Users className="w-16 h-16 text-brand-blue mx-auto mb-4" />
             <h2 className="text-3xl font-bold mb-4 text-brand-blue">Key Personnel</h2>
             <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -74,8 +74,8 @@ export default function AboutPage() {
           </div>
 
           {/* Management Team */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-brand-blue mb-6 text-center">Leadership</h3>
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-brand-blue mb-8 text-center">Leadership</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               {teamData.management.map((member) => (
                 <GlassCard 
@@ -91,7 +91,7 @@ export default function AboutPage() {
 
           {/* Team Members */}
           <div>
-            <h3 className="text-2xl font-bold text-brand-blue mb-6 text-center">Heads of Department</h3>
+            <h3 className="text-2xl font-bold text-brand-blue mb-8 text-center">Heads of Department</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {teamData.team.map((member) => (
                 <GlassCard 
@@ -107,7 +107,7 @@ export default function AboutPage() {
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 animate-stagger-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 animate-stagger-3">
           {values.map((value, index) => (
             <GlassCard key={index} hover3d>
               <div className="flex flex-col items-center text-center space-y-4">
