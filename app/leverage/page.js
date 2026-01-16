@@ -65,7 +65,7 @@ export default function LeveragePage() {
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-brand-blue mt-0.5 flex-shrink-0" />
                   <span className="text-muted-foreground">{benefit}</span>
                 </li>
               ))}
@@ -79,7 +79,7 @@ export default function LeveragePage() {
               <div className="p-6 glass rounded-lg border-2 border-primary/30">
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="text-2xl font-bold">5x Leverage</h3>
-                  <span className="text-3xl font-bold text-primary">1:4</span>
+                  <span className="text-3xl font-bold text-brand-blue">1:4</span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
                   Multiply your trading power by 5 with our professional leverage offering
