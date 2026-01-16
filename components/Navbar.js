@@ -85,11 +85,11 @@ const Navbar = () => {
           <div className="flex items-center space-x-4 w-[180px] justify-end">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg glass hover:bg-primary/20 transition-all duration-300 hover:scale-110 active:scale-95"
+              className="p-2 rounded-lg glass hover:bg-primary/20 dark:hover:bg-white/20 transition-all duration-300 hover:scale-110 active:scale-95"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-primary" />
+                <Sun className="w-5 h-5 text-white" />
               ) : (
                 <Moon className="w-5 h-5 text-primary" />
               )}
@@ -98,13 +98,13 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg glass hover:bg-primary/20 transition-all duration-300"
+              className="md:hidden p-2 rounded-lg glass hover:bg-primary/20 dark:hover:bg-white/20 transition-all duration-300"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
-                <X className="w-5 h-5 text-primary" />
+                <X className="w-5 h-5 text-primary dark:text-white" />
               ) : (
-                <Menu className="w-5 h-5 text-primary" />
+                <Menu className="w-5 h-5 text-primary dark:text-white" />
               )}
             </button>
           </div>
