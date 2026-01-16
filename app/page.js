@@ -181,7 +181,7 @@ export default function Home() {
       </section>
 
       {/* Stats Strip */}
-      <section className="py-20 bg-white dark:bg-[#0a0a0f]">
+      <section className="py-20 bg-white dark:bg-[#121929]">
         <div className="container mx-auto px-4">
           <GlassCard className="animate-stagger-3 bg-gray-50/80 dark:bg-transparent">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center py-8">
@@ -203,7 +203,7 @@ export default function Home() {
       </section>
 
       {/* Feature Grid */}
-      <section className="py-24 animate-stagger-4 bg-white dark:bg-[#0a0a0f]">
+      <section className="py-24 animate-stagger-4 bg-white dark:bg-[#121929]">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">
             Our Services
@@ -212,9 +212,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {/* IPO Applications */}
             <Link href="/ipo">
-              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
+              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <TrendingUp className="w-10 h-10 text-[#00BCD4]" />
+                  <TrendingUp className="w-10 h-10 text-[#0017BF]" />
                   <h3 className="text-xl font-bold text-foreground">IPO Applications</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Access exclusive IPO opportunities in the Kenyan market with expert guidance.
@@ -225,9 +225,9 @@ export default function Home() {
 
             {/* Leveraged Trading */}
             <Link href="/leverage">
-              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
+              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <BarChart3 className="w-10 h-10 text-[#00BCD4]" />
+                  <BarChart3 className="w-10 h-10 text-[#0017BF]" />
                   <h3 className="text-xl font-bold text-foreground">Leveraged Trading</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Amplify your trading potential with competitive leverage rates and risk management.
@@ -236,14 +236,14 @@ export default function Home() {
               </GlassCard>
             </Link>
 
-            {/* Global Markets */}
+            {/* Global Funds */}
             <Link href="/global-markets">
-              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
+              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <Globe className="w-10 h-10 text-[#00BCD4]" />
-                  <h3 className="text-xl font-bold text-foreground">Global Markets</h3>
+                  <Globe className="w-10 h-10 text-[#0017BF]" />
+                  <h3 className="text-xl font-bold text-foreground">Global Funds</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    Trade international stocks and access global investment opportunities.
+                    Diversified investment solutions and global fund access.
                   </p>
                 </div>
               </GlassCard>
@@ -251,9 +251,9 @@ export default function Home() {
 
             {/* Research */}
             <Link href="/research">
-              <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
+              <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <Shield className="w-10 h-10 text-[#00BCD4]" />
+                  <Shield className="w-10 h-10 text-[#0017BF]" />
                   <h3 className="text-xl font-bold text-foreground">Expert Research</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     In-depth market analysis and insights to guide your investment decisions.
@@ -266,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-white dark:bg-[#0a0a0f]">
+      <section className="py-24 bg-white dark:bg-[#121929]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <GlassCard className="text-center p-16 bg-gray-50/80 dark:bg-transparent">
