@@ -7,19 +7,19 @@ import { teamData } from '@/data/teamData';
 export default function AboutPage() {
   const values = [
     {
-      icon: <Target className="w-8 h-8 text-[#0017BF]" />,
+      icon: <Target className="w-8 h-8 text-brand-blue" />,
       title: 'Our Mission',
       description:
         'To democratize access to financial markets across Africa, providing cutting-edge trading solutions and expert guidance.',
     },
     {
-      icon: <Eye className="w-8 h-8 text-[#0017BF]" />,
+      icon: <Eye className="w-8 h-8 text-brand-blue" />,
       title: 'Our Vision',
       description:
         'To become the leading stock brokerage firm in East Africa, empowering investors with world-class trading infrastructure.',
     },
     {
-      icon: <Award className="w-8 h-8 text-[#0017BF]" />,
+      icon: <Award className="w-8 h-8 text-brand-blue" />,
       title: 'Our Values',
       description:
         'Integrity, transparency, innovation, and client-centricity guide every decision we make and service we provide.',
