@@ -59,7 +59,7 @@ export default function IPOPage() {
                 </div>
 
                 <div className="mt-8 text-center">
-                  <button className="px-8 py-4 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-secondary/50 transition-all duration-300 hover:scale-105 active:scale-98">
+                  <button className="px-8 py-4 bg-[#FF3B3F] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#FF3B3F]/50 transition-all duration-300 hover:scale-105 active:scale-98">
                     Apply Now
                   </button>
                 </div>
@@ -76,7 +76,7 @@ export default function IPOPage() {
 
           <div className="relative">
             {/* Vertical Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-secondary"></div>
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#4169E1] to-[#FF3B3F]"></div>
 
             {/* Timeline Items */}
             <div className="space-y-8">
