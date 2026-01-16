@@ -209,9 +209,7 @@ export default function Home() {
             <Link href="/ipo">
               <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <div className="p-5 rounded-2xl backdrop-blur-xl bg-white/20 dark:bg-white/10 border border-accent/20">
-                    <TrendingUp className="w-10 h-10 text-accent dark:text-accent" style={{ filter: 'brightness(0.8) saturate(1.5)' }} />
-                  </div>
+                  <TrendingUp className="w-10 h-10 text-[#00BCD4]" />
                   <h3 className="text-xl font-bold text-foreground">IPO Applications</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Access exclusive IPO opportunities in the Kenyan market with expert guidance.
@@ -224,9 +222,7 @@ export default function Home() {
             <Link href="/leverage">
               <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <div className="p-5 rounded-2xl backdrop-blur-xl bg-white/20 dark:bg-white/10 border border-accent/20">
-                    <BarChart3 className="w-10 h-10 text-accent dark:text-accent" style={{ filter: 'brightness(0.8) saturate(1.5)' }} />
-                  </div>
+                  <BarChart3 className="w-10 h-10 text-[#00BCD4]" />
                   <h3 className="text-xl font-bold text-foreground">Leveraged Trading</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Amplify your trading potential with competitive leverage rates and risk management.
@@ -239,9 +235,7 @@ export default function Home() {
             <Link href="/global-markets">
               <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <div className="p-5 rounded-2xl backdrop-blur-xl bg-white/20 dark:bg-white/10 border border-accent/20">
-                    <Globe className="w-10 h-10 text-accent dark:text-accent" style={{ filter: 'brightness(0.8) saturate(1.5)' }} />
-                  </div>
+                  <Globe className="w-10 h-10 text-[#00BCD4]" />
                   <h3 className="text-xl font-bold text-foreground">Global Markets</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Trade international stocks and access global investment opportunities.
@@ -254,9 +248,7 @@ export default function Home() {
             <Link href="/research">
               <GlassCard hover3d className="h-full hover:border-accent/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <div className="p-5 rounded-2xl backdrop-blur-xl bg-white/20 dark:bg-white/10 border border-accent/20">
-                    <Shield className="w-10 h-10 text-accent dark:text-accent" style={{ filter: 'brightness(0.8) saturate(1.5)' }} />
-                  </div>
+                  <Shield className="w-10 h-10 text-[#00BCD4]" />
                   <h3 className="text-xl font-bold text-foreground">Expert Research</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     In-depth market analysis and insights to guide your investment decisions.
