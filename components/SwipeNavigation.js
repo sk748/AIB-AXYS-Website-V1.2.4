@@ -182,16 +182,18 @@ const SwipeNavigation = ({ children }) => {
         />
       </div>
 
-      {/* Page dots indicator */}
+      {/* Page dots indicator - clickable */}
       <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 flex space-x-2 md:hidden">
         {pages.map((page, index) => (
-          <div
+          <button
             key={page}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+            onClick={() => router.push(page)}
+            className={`h-2 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? 'bg-[#00BCD4] w-4'
-                : 'bg-white/30'
+                ? 'bg-primary w-4'
+                : 'bg-white/30 w-2 hover:bg-white/50'
             }`}
+            aria-label={`Go to ${page === '/' ? 'Home' : page.slice(1)}`}
           />
         ))}
       </div>
