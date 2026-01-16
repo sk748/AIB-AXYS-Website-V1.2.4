@@ -53,7 +53,7 @@ export default function ResearchPage() {
             <GlassCard key={item.id} hover3d className="flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 text-xs font-semibold rounded-full bg-primary/20 text-primary">
+                  <span className="px-3 py-1 text-xs font-semibold rounded-full bg-primary/20 text-brand-blue">
                     {item.category}
                   </span>
                   <div className="flex items-center text-sm text-muted-foreground">
