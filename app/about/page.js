@@ -80,7 +80,7 @@ export default function AboutPage() {
               {teamData.management.map((member) => (
                 <GlassCard 
                   key={member.id}
-                  className="p-6 transition-all duration-500 hover:backdrop-blur-xl hover:bg-white/10 dark:hover:bg-white/5 hover:shadow-xl hover:shadow-[#2E5CB8]/20 hover:scale-105"
+                  className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#2E5CB8]/20 hover:scale-105"
                 >
                   <h4 className="text-xl font-bold text-foreground mb-2">{member.name}</h4>
                   <p className="text-[#2E5CB8] font-semibold">{member.role}</p>
@@ -96,7 +96,7 @@ export default function AboutPage() {
               {teamData.team.map((member) => (
                 <GlassCard 
                   key={member.id}
-                  className="p-6 transition-all duration-500 hover:backdrop-blur-xl hover:bg-white/10 dark:hover:bg-white/5 hover:shadow-xl hover:shadow-[#2E5CB8]/20 hover:scale-105"
+                  className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#2E5CB8]/20 hover:scale-105"
                 >
                   <h4 className="text-lg font-bold text-foreground mb-2">{member.name}</h4>
                   <p className="text-[#2E5CB8] font-semibold text-sm">{member.role}</p>
