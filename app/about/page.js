@@ -65,8 +65,8 @@ export default function AboutPage() {
         {/* Team Section - Centered */}
         <div className="max-w-5xl mx-auto mb-16 animate-stagger-2">
           <div className="text-center mb-12">
-            <Users className="w-16 h-16 text-[#0017BF] mx-auto mb-4" />
-            <h2 className="text-3xl font-bold mb-4 text-[#0017BF]">Key Personnel</h2>
+            <Users className="w-16 h-16 text-brand-blue mx-auto mb-4" />
+            <h2 className="text-3xl font-bold mb-4 text-brand-blue">Key Personnel</h2>
             <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Our dedicated team of financial experts, market analysts, and technology professionals work tirelessly
               to provide you with the best trading experience.
@@ -75,7 +75,7 @@ export default function AboutPage() {
 
           {/* Management Team */}
           <div className="mb-12">
-            <h3 className="text-2xl font-bold text-[#0017BF] mb-6 text-center">Leadership</h3>
+            <h3 className="text-2xl font-bold text-brand-blue mb-6 text-center">Leadership</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               {teamData.management.map((member) => (
                 <GlassCard 
@@ -83,7 +83,7 @@ export default function AboutPage() {
                   className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105"
                 >
                   <h4 className="text-xl font-bold text-foreground mb-2">{member.name}</h4>
-                  <p className="text-[#0017BF] font-semibold">{member.role}</p>
+                  <p className="text-brand-blue font-semibold">{member.role}</p>
                 </GlassCard>
               ))}
             </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
 
           {/* Team Members */}
           <div>
-            <h3 className="text-2xl font-bold text-[#0017BF] mb-6 text-center">Heads of Department</h3>
+            <h3 className="text-2xl font-bold text-brand-blue mb-6 text-center">Heads of Department</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {teamData.team.map((member) => (
                 <GlassCard 
@@ -99,7 +99,7 @@ export default function AboutPage() {
                   className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105"
                 >
                   <h4 className="text-lg font-bold text-foreground mb-2">{member.name}</h4>
-                  <p className="text-[#0017BF] font-semibold text-sm">{member.role}</p>
+                  <p className="text-brand-blue font-semibold text-sm">{member.role}</p>
                 </GlassCard>
               ))}
             </div>

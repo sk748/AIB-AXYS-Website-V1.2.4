@@ -126,7 +126,7 @@ export default function FAQPage() {
         <div className="max-w-4xl mx-auto space-y-8">
           {faqs.map((category, categoryIndex) => (
             <div key={categoryIndex} className={`animate-stagger-${Math.min(categoryIndex + 1, 4)}`}>
-              <h2 className="text-2xl font-bold text-[#0017BF] mb-4">{category.category}</h2>
+              <h2 className="text-2xl font-bold text-brand-blue mb-4">{category.category}</h2>
               <GlassCard className="p-0 overflow-hidden">
                 {category.questions.map((faq, questionIndex) => {
                   const isOpen = openIndex === `${categoryIndex}-${questionIndex}`;
