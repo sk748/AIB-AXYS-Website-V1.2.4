@@ -7,19 +7,19 @@ import { teamData } from '@/data/teamData';
 export default function AboutPage() {
   const values = [
     {
-      icon: <Target className="w-8 h-8 text-primary" />,
+      icon: <Target className="w-8 h-8 text-[#00BCD4]" />,
       title: 'Our Mission',
       description:
         'To democratize access to financial markets across Africa, providing cutting-edge trading solutions and expert guidance.',
     },
     {
-      icon: <Eye className="w-8 h-8 text-primary" />,
+      icon: <Eye className="w-8 h-8 text-[#00BCD4]" />,
       title: 'Our Vision',
       description:
         'To become the leading stock brokerage firm in East Africa, empowering investors with world-class trading infrastructure.',
     },
     {
-      icon: <Award className="w-8 h-8 text-primary" />,
+      icon: <Award className="w-8 h-8 text-[#00BCD4]" />,
       title: 'Our Values',
       description:
         'Integrity, transparency, innovation, and client-centricity guide every decision we make and service we provide.',
@@ -111,7 +111,7 @@ export default function AboutPage() {
           {values.map((value, index) => (
             <GlassCard key={index} hover3d>
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-4 rounded-full backdrop-blur-xl bg-white/20 dark:bg-white/10 border border-primary/20">{value.icon}</div>
+                {value.icon}
                 <h3 className="text-xl font-bold">{value.title}</h3>
                 <p className="text-muted-foreground">{value.description}</p>
               </div>
