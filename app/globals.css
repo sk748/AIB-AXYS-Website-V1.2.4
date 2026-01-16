@@ -107,6 +107,22 @@
     background-clip: text;
   }
 
+  .dark .gradient-text {
+    background: linear-gradient(135deg, #00BCD4 0%, #4169E1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Blue text that adapts to theme */
+  .text-brand-blue {
+    color: #0017BF;
+  }
+
+  .dark .text-brand-blue {
+    color: #4169E1;
+  }
+
   /* Breathing gradient background */
   .breathing-gradient {
     background: linear-gradient(135deg, #191970, #4169E1, #191970, #4169E1);
