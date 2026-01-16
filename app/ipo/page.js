@@ -89,7 +89,7 @@ export default function IPOPage() {
                   <div className="ml-20">
                     <GlassCard hover3d className="p-6">
                       <div className="flex items-center space-x-3 mb-2">
-                        <Calendar className="w-5 h-5 text-primary" />
+                        <Calendar className="w-5 h-5 text-brand-blue" />
                         <h3 className="text-xl font-bold">{item.phase}</h3>
                       </div>
                       <p className="text-muted-foreground">{item.date}</p>
