@@ -1,8 +1,6 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@/contexts/ThemeContext';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import ClientLayout from '@/components/ClientLayout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,11 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} bg-white dark:bg-[#0a0a0f]`}>
-        <ThemeProvider>
-          <Navbar />
-          <main className="pt-16 bg-white dark:bg-[#0a0a0f]">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
