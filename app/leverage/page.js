@@ -6,17 +6,17 @@ import { TrendingUp, Shield, Zap, CheckCircle } from 'lucide-react';
 export default function LeveragePage() {
   const features = [
     {
-      icon: <TrendingUp className="w-8 h-8 text-primary" />,
+      icon: <TrendingUp className="w-8 h-8 text-[#00BCD4]" />,
       title: 'Competitive Rates',
       description: 'Access leverage up to 5x (1:4) with competitive interest rates',
     },
     {
-      icon: <Shield className="w-8 h-8 text-primary" />,
+      icon: <Shield className="w-8 h-8 text-[#00BCD4]" />,
       title: 'Risk Management',
       description: 'Advanced tools to help you manage and mitigate trading risks',
     },
     {
-      icon: <Zap className="w-8 h-8 text-primary" />,
+      icon: <Zap className="w-8 h-8 text-[#00BCD4]" />,
       title: 'Fast Execution',
       description: 'Lightning-fast trade execution with real-time market data',
     },
