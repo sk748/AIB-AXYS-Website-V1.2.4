@@ -35,24 +35,24 @@ export default function IPOPage() {
             ) : (
               <div>
                 <div className="flex items-center justify-center mb-6">
-                  <Clock className="w-8 h-8 text-accent mr-2" />
+                  <Clock className="w-8 h-8 text-[#00BCD4] mr-2" />
                   <h2 className="text-2xl font-bold">IPO Closes In:</h2>
                 </div>
                 
                 <div className="grid grid-cols-4 gap-4 text-center">
-                  <div className="glass p-4 rounded-lg bg-white/5 dark:bg-white/5">
+                  <div className="p-4 rounded-lg">
                     <div className="text-4xl font-bold text-[#00BCD4] mb-1">{countdown.days}</div>
                     <div className="text-sm text-muted-foreground mt-2">Days</div>
                   </div>
-                  <div className="glass p-4 rounded-lg bg-white/5 dark:bg-white/5">
+                  <div className="p-4 rounded-lg">
                     <div className="text-4xl font-bold text-[#00BCD4] mb-1">{countdown.hours}</div>
                     <div className="text-sm text-muted-foreground mt-2">Hours</div>
                   </div>
-                  <div className="glass p-4 rounded-lg bg-white/5 dark:bg-white/5">
+                  <div className="p-4 rounded-lg">
                     <div className="text-4xl font-bold text-[#00BCD4] mb-1">{countdown.minutes}</div>
                     <div className="text-sm text-muted-foreground mt-2">Minutes</div>
                   </div>
-                  <div className="glass p-4 rounded-lg bg-white/5 dark:bg-white/5">
+                  <div className="p-4 rounded-lg">
                     <div className="text-4xl font-bold text-[#00BCD4] mb-1">{countdown.seconds}</div>
                     <div className="text-sm text-muted-foreground mt-2">Seconds</div>
                   </div>
