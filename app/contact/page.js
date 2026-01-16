@@ -76,8 +76,8 @@ export default function ContactPage() {
           <div className="space-y-6 animate-stagger-1">
             <GlassCard hover3d className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-lg bg-accent/10">
-                  <MapPin className="w-6 h-6 text-accent" />
+                <div className="p-3 rounded-lg bg-primary/10">
+                  <MapPin className="w-6 h-6 text-brand-blue" />
                 </div>
                 <div>
                   <h3 className="font-bold mb-1">Office Address</h3>
@@ -92,21 +92,21 @@ export default function ContactPage() {
 
             <GlassCard hover3d className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-lg bg-accent/10">
-                  <Phone className="w-6 h-6 text-accent" />
+                <div className="p-3 rounded-lg bg-primary/10">
+                  <Phone className="w-6 h-6 text-brand-blue" />
                 </div>
                 <div>
                   <h3 className="font-bold mb-1">Phone</h3>
                   <p className="text-sm text-muted-foreground">+254 711 047 000</p>
-                  <p className="text-sm text-muted-foreground">Mon-Fri, 8AM-5PM EAT</p>
+                  <p className="text-sm text-muted-foreground">Mon-Fri, 9AM-5PM EAT</p>
                 </div>
               </div>
             </GlassCard>
 
             <GlassCard hover3d className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-lg bg-accent/10">
-                  <Mail className="w-6 h-6 text-accent" />
+                <div className="p-3 rounded-lg bg-primary/10">
+                  <Mail className="w-6 h-6 text-brand-blue" />
                 </div>
                 <div>
                   <h3 className="font-bold mb-1">Email</h3>
