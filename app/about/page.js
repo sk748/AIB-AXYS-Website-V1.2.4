@@ -75,15 +75,15 @@ export default function AboutPage() {
 
           {/* Management Team */}
           <div className="mb-12">
-            <h3 className="text-2xl font-bold text-[#2E5CB8] mb-6 text-center">Leadership</h3>
+            <h3 className="text-2xl font-bold text-[#0017BF] mb-6 text-center">Leadership</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               {teamData.management.map((member) => (
                 <GlassCard 
                   key={member.id}
-                  className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#2E5CB8]/20 hover:scale-105"
+                  className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105"
                 >
                   <h4 className="text-xl font-bold text-foreground mb-2">{member.name}</h4>
-                  <p className="text-[#2E5CB8] font-semibold">{member.role}</p>
+                  <p className="text-[#0017BF] font-semibold">{member.role}</p>
                 </GlassCard>
               ))}
             </div>
@@ -91,15 +91,15 @@ export default function AboutPage() {
 
           {/* Team Members */}
           <div>
-            <h3 className="text-2xl font-bold text-[#2E5CB8] mb-6 text-center">Heads of Department</h3>
+            <h3 className="text-2xl font-bold text-[#0017BF] mb-6 text-center">Heads of Department</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {teamData.team.map((member) => (
                 <GlassCard 
                   key={member.id}
-                  className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#2E5CB8]/20 hover:scale-105"
+                  className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105"
                 >
                   <h4 className="text-lg font-bold text-foreground mb-2">{member.name}</h4>
-                  <p className="text-[#2E5CB8] font-semibold text-sm">{member.role}</p>
+                  <p className="text-[#0017BF] font-semibold text-sm">{member.role}</p>
                 </GlassCard>
               ))}
             </div>
