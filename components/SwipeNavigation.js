@@ -23,6 +23,7 @@ const SwipeNavigation = ({ children }) => {
     '/about',
     '/research',
     '/global-markets',
+    '/faq',
     '/contact',
   ];
 
