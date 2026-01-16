@@ -76,7 +76,7 @@ export default function IPOPage() {
 
           <div className="relative">
             {/* Vertical Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#4169E1] to-[#FF3B3F]"></div>
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#0017BF] to-[#FF3B3F]"></div>
 
             {/* Timeline Items */}
             <div className="space-y-8">
