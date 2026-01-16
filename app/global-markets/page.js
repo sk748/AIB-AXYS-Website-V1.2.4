@@ -29,22 +29,22 @@ export default function GlobalMarketsPage() {
 
   const benefits = [
     {
-      icon: <Globe className="w-8 h-8 text-primary" />,
+      icon: <Globe className="w-8 h-8 text-[#00BCD4]" />,
       title: 'Global Diversification',
       description: 'Spread risk across multiple markets and sectors',
     },
     {
-      icon: <TrendingUp className="w-8 h-8 text-primary" />,
+      icon: <TrendingUp className="w-8 h-8 text-[#00BCD4]" />,
       title: 'Growth Opportunities',
       description: 'Access high-growth companies worldwide',
     },
     {
-      icon: <DollarSign className="w-8 h-8 text-primary" />,
+      icon: <DollarSign className="w-8 h-8 text-[#00BCD4]" />,
       title: 'Currency Exposure',
       description: 'Benefit from favorable exchange rates',
     },
     {
-      icon: <Activity className="w-8 h-8 text-primary" />,
+      icon: <Activity className="w-8 h-8 text-[#00BCD4]" />,
       title: '24/5 Trading',
       description: 'Trade across different time zones',
     },
@@ -89,7 +89,7 @@ export default function GlobalMarketsPage() {
             {benefits.map((benefit, index) => (
               <GlassCard key={index} hover3d>
                 <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="p-4 rounded-full backdrop-blur-xl bg-white/20 dark:bg-white/10 border border-primary/20">{benefit.icon}</div>
+                  {benefit.icon}
                   <h3 className="text-lg font-bold">{benefit.title}</h3>
                   <p className="text-sm text-muted-foreground">{benefit.description}</p>
                 </div>
