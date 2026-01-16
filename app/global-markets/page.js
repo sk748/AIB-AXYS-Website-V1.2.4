@@ -110,9 +110,9 @@ export default function GlobalFundsPage() {
                         href={doc.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 text-sm font-medium"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-primary/30 text-brand-blue hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 text-sm font-medium"
                       >
-                        <Download className="w-4 h-4 text-brand-blue" />
+                        <Download className="w-4 h-4" />
                         {doc.name}
                       </a>
                     ))}
