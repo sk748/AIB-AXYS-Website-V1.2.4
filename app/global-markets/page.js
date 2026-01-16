@@ -1,14 +1,13 @@
 'use client';
 
 import GlassCard from '@/components/GlassCard';
-import { Download, TrendingUp, DollarSign, Globe, Building, Briefcase } from 'lucide-react';
+import { Download } from 'lucide-react';
 
 export default function GlobalFundsPage() {
   const funds = [
     {
       name: 'AXIOM Equity Fund',
       shortName: 'AEF',
-      icon: <TrendingUp className="w-10 h-10 text-[#00BCD4]" />,
       description: 'AEF adopts a blended investment strategy which consists of investment in both growth and value stocks, favouring stocks with sound fundamentals, strong management and sustainable growth driven strategies.',
       documents: [
         { name: 'Factsheet Class I', url: '#' },
@@ -21,7 +20,6 @@ export default function GlobalFundsPage() {
     {
       name: 'AXIOM Yield Fund',
       shortName: 'AYF',
-      icon: <DollarSign className="w-10 h-10 text-[#00BCD4]" />,
       description: 'Provides Investors with regular income and aims to outperform the average savings rate plus a premium by maximising risk adjusted returns.',
       documents: [
         { name: 'Flyer', url: '#' },
@@ -33,7 +31,6 @@ export default function GlobalFundsPage() {
     {
       name: 'AXIOM Africa Equity Fund',
       shortName: 'AAEF',
-      icon: <Globe className="w-10 h-10 text-[#00BCD4]" />,
       description: 'Designed to offer investors a unique opportunity to invest in best-in-class African stocks. The fund carefully selects and invests in companies that are expected to benefit from the various socio-economic structural changes unfolding in the region, such as the demographic wave and the digitisation revolution.',
       documents: [
         { name: 'Flyer', url: '#' },
@@ -46,7 +43,6 @@ export default function GlobalFundsPage() {
     {
       name: 'Dynamic Global Equity',
       shortName: 'DGE',
-      icon: <Building className="w-10 h-10 text-[#00BCD4]" />,
       description: 'The fund is a feeder fund which invests directly and solely in Fundsmith Equity Fund. The aim of the underlying fund is to provide long-term growth by investing in equities on a global basis and adopting a specific investment philosophy.',
       documents: [
         { name: 'Flyer', url: '#' },
@@ -59,7 +55,6 @@ export default function GlobalFundsPage() {
     {
       name: 'AXIOM Patrimoine',
       shortName: 'AP',
-      icon: <Briefcase className="w-10 h-10 text-[#00BCD4]" />,
       description: 'AXIOM Patrimoine is a multi-asset class investment fund designed to strengthen the financial security of investors. This investment fund benefits from different asset types, both domestically and internationally. When you invest in AXIOM Patrimoine, you will have the pleasure of seeing your capital sustainably grow in a risk-balanced way while retaining the possibility of accessing your capital at any time.',
       documents: [
         { name: 'Flyer', url: '#' },
@@ -92,21 +87,14 @@ export default function GlobalFundsPage() {
               className={`animate-stagger-${Math.min(index + 1, 4)}`}
             >
               <GlassCard className="p-8">
-                <div className="flex flex-col md:flex-row gap-6">
-                  {/* Icon and Title */}
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center gap-4 mb-4 md:mb-0">
-                      {fund.icon}
-                      <div>
-                        <h2 className="text-2xl font-bold text-foreground">{fund.name}</h2>
-                        <span className="text-sm text-muted-foreground">({fund.shortName})</span>
-                      </div>
-                    </div>
-                  </div>
+                {/* Title */}
+                <div className="mb-4">
+                  <h2 className="text-2xl font-bold text-foreground">{fund.name}</h2>
+                  <span className="text-sm text-muted-foreground">({fund.shortName})</span>
                 </div>
 
                 {/* Description */}
-                <p className="text-muted-foreground leading-relaxed mt-4 mb-6">
+                <p className="text-muted-foreground leading-relaxed mb-6">
                   {fund.description}
                 </p>
 
