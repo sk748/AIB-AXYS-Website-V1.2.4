@@ -186,13 +186,13 @@ export default function Home() {
           <GlassCard className="animate-stagger-3 bg-gray-50/80 dark:bg-transparent">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center py-8">
               <div>
-                <div className="text-6xl md:text-7xl font-bold text-primary mb-3">
+                <div className="text-6xl md:text-7xl font-bold text-brand-blue mb-3">
                   {stats.years}+
                 </div>
                 <div className="text-xl text-muted-foreground font-medium">Years in Market</div>
               </div>
               <div>
-                <div className="text-6xl md:text-7xl font-bold text-primary mb-3">
+                <div className="text-6xl md:text-7xl font-bold text-brand-blue mb-3">
                   {stats.clients.toLocaleString()}+
                 </div>
                 <div className="text-xl text-muted-foreground font-medium">Clients Served</div>
