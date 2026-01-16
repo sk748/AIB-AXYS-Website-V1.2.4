@@ -34,9 +34,7 @@ export default function PlatformsPage() {
           <GlassCard hover3d className="p-12">
             <div className="flex flex-col items-center text-center space-y-6">
               {/* Icon */}
-              <div className="p-6 rounded-full backdrop-blur-xl bg-white/20 dark:bg-white/10 border border-primary/20">
-                <Smartphone className="w-16 h-16 text-primary" />
-              </div>
+              <Smartphone className="w-16 h-16 text-[#00BCD4]" />
 
               {/* Title */}
               <h2 className="text-4xl font-bold">Digitrader</h2>
