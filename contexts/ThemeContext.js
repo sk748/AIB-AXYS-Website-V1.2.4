@@ -15,39 +15,37 @@ export const useTheme = () => {
   return context;
 };
 
+// Get initial theme synchronously to prevent flash
+const getInitialTheme = () => {
+  if (typeof window !== 'undefined') {
+    const storedTheme = localStorage.getItem('aib-theme');
+    return storedTheme === 'light' ? 'light' : 'dark';
+  }
+  return 'dark';
+};
+
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('dark');
-  const [mounted, setMounted] = useState(false);
 
+  // Set theme on mount from localStorage
   useEffect(() => {
-    setMounted(true);
-    // Get theme from localStorage only (no system preference detection)
     const storedTheme = localStorage.getItem('aib-theme');
-    if (storedTheme === 'light' || storedTheme === 'dark') {
-      setTheme(storedTheme);
-    } else {
-      // Default to dark mode
-      setTheme('dark');
-      localStorage.setItem('aib-theme', 'dark');
-    }
+    const initialTheme = storedTheme === 'light' ? 'light' : 'dark';
+    setTheme(initialTheme);
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(initialTheme);
   }, []);
 
+  // Update DOM and localStorage when theme changes
   useEffect(() => {
-    if (!mounted) return;
-    
-    const root = document.documentElement;
-    root.classList.remove('light', 'dark');
-    root.classList.add(theme);
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(theme);
     localStorage.setItem('aib-theme', theme);
-  }, [theme, mounted]);
+  }, [theme]);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
-
-  if (!mounted) {
-    return <div className="dark">{children}</div>;
-  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
