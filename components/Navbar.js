@@ -43,6 +43,7 @@ const Navbar = () => {
     { name: 'About', href: '/about' },
     { name: 'Research', href: '/research' },
     { name: 'Global Funds', href: '/global-markets' },
+    { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
   ];
 
