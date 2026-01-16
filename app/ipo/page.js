@@ -108,28 +108,28 @@ export default function IPOPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-semibold text-primary mb-2">Share Price Range</h3>
+                <h3 className="font-semibold text-brand-blue mb-2">Share Price Range</h3>
                 <p className="text-muted-foreground">KES 45 - KES 55</p>
               </div>
               
               <div>
-                <h3 className="font-semibold text-primary mb-2">Minimum Application</h3>
+                <h3 className="font-semibold text-brand-blue mb-2">Minimum Application</h3>
                 <p className="text-muted-foreground">100 Shares</p>
               </div>
               
               <div>
-                <h3 className="font-semibold text-primary mb-2">Lot Size</h3>
+                <h3 className="font-semibold text-brand-blue mb-2">Lot Size</h3>
                 <p className="text-muted-foreground">100 Shares</p>
               </div>
               
               <div>
-                <h3 className="font-semibold text-primary mb-2">Issue Size</h3>
+                <h3 className="font-semibold text-brand-blue mb-2">Issue Size</h3>
                 <p className="text-muted-foreground">KES 2.5 Billion</p>
               </div>
             </div>
 
             <div className="mt-6 pt-6 border-t border-border">
-              <h3 className="font-semibold text-primary mb-2">About Kenya Pipeline</h3>
+              <h3 className="font-semibold text-brand-blue mb-2">About Kenya Pipeline</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Kenya Pipeline Company is a state corporation established to provide efficient, reliable and cost-effective 
                 pipeline transportation and storage services for petroleum products. This IPO offers a unique opportunity 
