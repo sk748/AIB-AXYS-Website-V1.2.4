@@ -214,7 +214,7 @@ export default function Home() {
             <Link href="/ipo">
               <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <TrendingUp className="w-10 h-10 text-[#0017BF]" />
+                  <TrendingUp className="w-10 h-10 text-brand-blue" />
                   <h3 className="text-xl font-bold text-foreground">IPO Applications</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Access exclusive IPO opportunities in the Kenyan market with expert guidance.
@@ -227,7 +227,7 @@ export default function Home() {
             <Link href="/leverage">
               <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <BarChart3 className="w-10 h-10 text-[#0017BF]" />
+                  <BarChart3 className="w-10 h-10 text-brand-blue" />
                   <h3 className="text-xl font-bold text-foreground">Leveraged Trading</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Amplify your trading potential with competitive leverage rates and risk management.
@@ -240,7 +240,7 @@ export default function Home() {
             <Link href="/global-markets">
               <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <Globe className="w-10 h-10 text-[#0017BF]" />
+                  <Globe className="w-10 h-10 text-brand-blue" />
                   <h3 className="text-xl font-bold text-foreground">Global Funds</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Diversified investment solutions and global fund access.
@@ -253,7 +253,7 @@ export default function Home() {
             <Link href="/research">
               <GlassCard hover3d className="h-full hover:border-primary/50 cursor-pointer transition-all duration-300 bg-gray-50/80 dark:bg-transparent">
                 <div className="flex flex-col items-center text-center space-y-5 p-4">
-                  <Shield className="w-10 h-10 text-[#0017BF]" />
+                  <Shield className="w-10 h-10 text-brand-blue" />
                   <h3 className="text-xl font-bold text-foreground">Expert Research</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     In-depth market analysis and insights to guide your investment decisions.
