@@ -233,6 +233,7 @@ export default function AdminContactsPage() {
             </div>
           )}
         </div>
+      </div>
 
       {/* Contact Detail Modal */}
       {selectedContact && (
