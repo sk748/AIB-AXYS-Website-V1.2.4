@@ -20,7 +20,7 @@ export default function PlatformsPage() {
               {/* Logo */}
               <div className="w-full max-w-md animate-fade-up">
                 <Image
-                  src={theme === 'dark' ? '/digitrader-dark.png' : '/digitrader-white.png'}
+                  src="/digitrader-white.png"
                   alt="AIBAXYS DigiTrader"
                   width={800}
                   height={200}
