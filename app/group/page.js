@@ -43,13 +43,20 @@ export default function GroupPage() {
       <div className="container mx-auto px-4">
         {/* Header with AXYS Logo */}
         <div className="text-center mb-16 animate-fade-up">
-          <Image
-            src="/axys-logo.png"
-            alt="AXYS Group"
-            width={300}
-            height={100}
-            className="mx-auto mb-6 h-20 w-auto"
-          />
+          <a 
+            href="https://axys-group.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block hover:opacity-90 transition-opacity"
+          >
+            <Image
+              src="/axys-logo.png"
+              alt="AXYS Group"
+              width={300}
+              height={100}
+              className="mx-auto mb-6 h-20 w-auto"
+            />
+          </a>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A Fully Integrated Investment House
           </p>
