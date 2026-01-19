@@ -179,11 +179,7 @@ export default function ResearchPage() {
           <div className="text-center py-20">
             <FileText className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
             <p className="text-xl text-muted-foreground">
-              {filter === 'company' && selectedCompany 
-                ? `No research papers found for ${selectedCompany.name}` 
-                : filter === 'all' 
-                ? 'No research papers available yet' 
-                : 'No papers in this category'}
+              {filter === 'all' ? 'No research papers available yet' : 'No papers in this category'}
             </p>
           </div>
         )}
