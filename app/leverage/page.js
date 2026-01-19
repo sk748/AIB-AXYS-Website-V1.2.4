@@ -13,12 +13,12 @@ export default function LeveragePage() {
     {
       icon: <Shield className="w-8 h-8 text-[#00BCD4]" />,
       title: 'Bank-Led Security',
-      description: 'Secure account structures and automated clearance checks ensure your funds and shares are managed safely',
+      description: 'Client funds are deposited directly into their settlement account held at our partnering bank, with all withdrawals and refunds returning to the same account',
     },
     {
       icon: <Zap className="w-8 h-8 text-[#00BCD4]" />,
-      title: 'Fast Execution',
-      description: 'Lightning-fast trade execution with real-time market data',
+      title: 'Seamless Execution',
+      description: 'Smooth trade execution with real-time market data',
     },
   ];
 
@@ -37,7 +37,7 @@ export default function LeveragePage() {
     },
     {
       step: 3,
-      title: 'Seamless Application',
+      title: 'IPO Application Made Easy',
       icon: <Send className="w-6 h-6" />,
       description: 'We handle the administration. Your IPO application is processed and linked directly to your financing facility using a unique identifier.',
     },
