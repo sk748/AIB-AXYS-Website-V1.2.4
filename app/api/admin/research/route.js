@@ -1,6 +1,4 @@
 import { NextResponse } from 'next/server';
-import { writeFile, mkdir } from 'fs/promises';
-import path from 'path';
 import connectDB from '@/lib/mongodb';
 import ResearchPaper from '@/models/ResearchPaper';
 import { verifyAdminRequest } from '@/lib/auth';
@@ -39,6 +37,8 @@ export async function POST(request) {
     const title = formData.get('title');
     const description = formData.get('description');
     const category = formData.get('category');
+    const company = formData.get('company');
+    const sector = formData.get('sector');
     const tags = formData.get('tags');
 
     if (!file) {
@@ -46,6 +46,8 @@ export async function POST(request) {
     }
 
     // Create upload directory
+    const { mkdir, writeFile } = await import('fs/promises');
+    const path = await import('path');
     const uploadDir = path.join(process.cwd(), 'public', 'research');
     await mkdir(uploadDir, { recursive: true });
 
@@ -64,6 +66,8 @@ export async function POST(request) {
       title,
       description,
       category,
+      company: company || '',
+      sector: sector || '',
       fileName: file.name,
       fileUrl: `/research/${fileName}`,
       fileSize: file.size,
@@ -77,6 +81,41 @@ export async function POST(request) {
   } catch (error) {
     console.error('Upload research paper error:', error);
     return NextResponse.json({ error: 'Failed to upload paper' }, { status: 500 });
+  }
+}
+
+// PATCH - Update research paper
+export async function PATCH(request) {
+  try {
+    const adminData = verifyAdminRequest(request);
+    if (!adminData) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    await connectDB();
+
+    const { id, title, description, category, company, sector, tags } = await request.json();
+
+    const updateData = {};
+    if (title) updateData.title = title;
+    if (description !== undefined) updateData.description = description;
+    if (category) updateData.category = category;
+    if (company !== undefined) updateData.company = company;
+    if (sector !== undefined) updateData.sector = sector;
+    if (tags !== undefined) updateData.tags = tags.split(',').map(t => t.trim()).filter(t => t);
+
+    const paper = await ResearchPaper.findByIdAndUpdate(id, updateData, { new: true });
+
+    if (!paper) {
+      return NextResponse.json({ error: 'Paper not found' }, { status: 404 });
+    }
+
+    console.log('✅ Research paper updated:', paper._id);
+
+    return NextResponse.json({ paper }, { status: 200 });
+  } catch (error) {
+    console.error('Update research paper error:', error);
+    return NextResponse.json({ error: 'Failed to update paper' }, { status: 500 });
   }
 }
 
