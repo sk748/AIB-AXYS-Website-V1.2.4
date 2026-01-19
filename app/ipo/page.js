@@ -60,7 +60,7 @@ export default function IPOPage() {
 
                 <div className="mt-8 text-center">
                   <a 
-                    href="https://kpcipo.e-offer.app"
+                    href="https://kpcipo.e-offer.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
