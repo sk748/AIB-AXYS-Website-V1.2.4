@@ -2,18 +2,22 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import { ArrowLeft, Upload, FileText, Trash2, Eye, Download } from 'lucide-react';
+import { Upload, FileText, Trash2, Download, Edit, Save, X, Search } from 'lucide-react';
+import { nseCompanies, sectors } from '@/data/nseCompanies';
 
 export default function AdminResearchPage() {
   const router = useRouter();
   const [papers, setPapers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [editingPaper, setEditingPaper] = useState(null);
+  const [companySearch, setCompanySearch] = useState('');
   const [uploadForm, setUploadForm] = useState({
     title: '',
     description: '',
     category: 'market-analysis',
+    company: '',
+    sector: '',
     tags: '',
   });
 
