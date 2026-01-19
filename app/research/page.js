@@ -73,13 +73,24 @@ export default function ResearchPage() {
     // Filter by category (for non-company tabs)
     if (filter !== 'all' && filter !== 'company' && p.category !== filter) return false;
     
-    // For Company tab: show all papers, but filter by selected company if one is selected
+    // For Company tab: show all papers by default
     if (filter === 'company') {
+      // If a company is selected, filter by that company OR by search term in title
       if (selectedCompany) {
-        // Show papers that match the selected company
-        return p.company && p.company.toLowerCase() === selectedCompany.name.toLowerCase();
+        const searchMatch = p.company && p.company.toLowerCase().includes(selectedCompany.name.toLowerCase());
+        const titleMatch = p.title && p.title.toLowerCase().includes(selectedCompany.name.toLowerCase());
+        return searchMatch || titleMatch;
       }
-      // If no company selected, show all papers
+      
+      // If user is typing but hasn't selected, filter by search term
+      if (searchTerm && !selectedCompany) {
+        const searchLower = searchTerm.toLowerCase();
+        return (p.company && p.company.toLowerCase().includes(searchLower)) ||
+               (p.title && p.title.toLowerCase().includes(searchLower)) ||
+               (p.description && p.description.toLowerCase().includes(searchLower));
+      }
+      
+      // No search/selection: show all papers
       return true;
     }
     
