@@ -41,6 +41,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/group" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  AXYS Group
+                </Link>
+              </li>
+              <li>
                 <Link href="/platforms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Trading Platforms
                 </Link>
