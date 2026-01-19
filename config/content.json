@@ -1,5 +1,5 @@
 {
-  "ipoDate": "2026-02-16T23:59:59",
+  "ipoDate": "2026-02-19T23:59:59",
   "stats": {
     "yearsInMarket": 15,
     "clientsServed": 5000
@@ -57,22 +57,22 @@
   "ipoTimeline": [
     {
       "phase": "Application Open",
-      "date": "November 1, 2026",
-      "status": "pending"
+      "date": "19 January 2026",
+      "status": "active"
     },
     {
       "phase": "Application Closes",
-      "date": "November 30, 2026",
+      "date": "19 February 2026",
       "status": "pending"
     },
     {
-      "phase": "Allocation",
-      "date": "December 15, 2026",
+      "phase": "Allocation Results",
+      "date": "4 March 2026",
       "status": "pending"
     },
     {
       "phase": "Listing Date",
-      "date": "December 31, 2026",
+      "date": "9 March 2026",
       "status": "pending"
     }
   ]
