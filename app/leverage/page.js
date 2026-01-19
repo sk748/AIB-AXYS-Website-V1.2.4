@@ -66,9 +66,16 @@ export default function LeveragePage() {
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             <span className="gradient-text">Leverage KPC IPO</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Maximize your IPO investment potential with 5x leverage
           </p>
+          
+          {/* Apply Button */}
+          <a href="/contact?subject=leverage">
+            <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98">
+              Apply for Leverage
+            </button>
+          </a>
         </div>
 
         {/* Features Grid */}
