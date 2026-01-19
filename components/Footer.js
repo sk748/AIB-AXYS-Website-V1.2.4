@@ -122,7 +122,7 @@ const Footer = () => {
             
             {/* Regulatory Status */}
             <p>
-              <strong>Regulatory Status:</strong> AIB-AXYS Africa Limited is a licensed Stockbroker and Investment Adviser, 
+              <strong>Regulatory Status:</strong> AIB-AXYS Africa Limited is a licensed Stockbroker, 
               regulated by the Capital Markets Authority (CMA). Member of the Nairobi Securities Exchange (NSE) and 
               the Central Depository and Settlement Corporation (CDSC).
             </p>
