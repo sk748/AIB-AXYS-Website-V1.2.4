@@ -41,22 +41,33 @@ export default function PlatformsPage() {
               
               {/* Description */}
               <p className="text-lg text-muted-foreground max-w-2xl">
-                Our powerful mobile application for Android brings professional trading to your fingertips. 
+                Our powerful mobile application brings professional trading to your fingertips. 
                 Trade anywhere, anytime with the full power of the markets in your pocket.
               </p>
 
-              {/* Download Button */}
-              <Link 
-                href="https://play.google.com/store/apps/details?id=com.AibCapital.AibCapitalOnline"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4"
-              >
-                <button className="px-10 py-5 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98 flex items-center space-x-3">
-                  <Download className="w-6 h-6" />
-                  <span>Download on Google Play</span>
-                </button>
-              </Link>
+              {/* Download Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-4">
+                <Link 
+                  href="https://apps.apple.com/ke/app/aib-digitrader/id1481199787"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98 flex items-center space-x-3">
+                    <Download className="w-6 h-6" />
+                    <span>Download on App Store</span>
+                  </button>
+                </Link>
+                <Link 
+                  href="https://play.google.com/store/apps/details?id=com.AibCapital.AibCapitalOnline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98 flex items-center space-x-3">
+                    <Download className="w-6 h-6" />
+                    <span>Download on Google Play</span>
+                  </button>
+                </Link>
+              </div>
             </div>
           </GlassCard>
         </div>
