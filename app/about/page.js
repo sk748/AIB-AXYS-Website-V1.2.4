@@ -128,83 +128,50 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Mary Maloba */}
-            <GlassCard className="p-6">
-              <h4 className="text-xl font-bold text-foreground mb-2">Ms. Mary Maloba</h4>
-              <p className="text-brand-blue font-semibold text-sm mb-3">Ag. CEO & Compliance Manager</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Mary joined our team, bringing along with her a wealth of experience, having worked at Barclays Bank and Standard Chartered Bank Operations for a combined period of over 30 years. She possesses a broad range of specialist knowledge in the securities market in fund management, banking, custody services and stockbrokerage. She ensures that the company complies with all regulatory requirements while also serving as a risk manager. Her wide background in finance allows her to design effective controls to identify and mitigate key risks. She has International Capital Markets Qualification from Chartered Securities UK, banking and ATS certified by Nairobi Securities Exchange.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
+              <h4 className="text-lg font-bold text-foreground mb-2">Ms. Mary Maloba</h4>
+              <p className="text-brand-blue font-semibold text-sm">Ag. CEO & Compliance Manager</p>
             </GlassCard>
 
-            {/* Lemek Oltele */}
-            <GlassCard className="p-6">
-              <h4 className="text-xl font-bold text-foreground mb-2">Mr. Lemek Oltele</h4>
-              <p className="text-brand-blue font-semibold text-sm mb-3">Head of Business Development</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Lemek joins the team as the Head of Business Development, bringing with him over 16 years of experience in wealth management, investment advisory, and corporate banking, having worked in senior management roles at KCB Bank, SIB Bank, Acorn Holdings Africa, and Moran Capital Ltd. He possesses a broad range of specialist knowledge in private banking, diaspora investments, and the design of bespoke investment strategies. Driven by a passion for financial inclusion, he leads strategic initiatives to develop scalable growth solutions that bridge capital and opportunity across Africa. His background allows him to help individuals and institutions effectively build, preserve, and transfer wealth. He holds a Bachelor of Commerce in Finance from the University of Nairobi and is a Certified Public Accountant (CPA) and Certified Investment & Financial Analyst (CIFA).
-              </p>
+            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
+              <h4 className="text-lg font-bold text-foreground mb-2">Mr. Lemek Oltele</h4>
+              <p className="text-brand-blue font-semibold text-sm">Head of Business Development</p>
             </GlassCard>
 
-            {/* Priscilla Gichuhi */}
-            <GlassCard className="p-6">
-              <h4 className="text-xl font-bold text-foreground mb-2">Ms. Priscilla Gichuhi</h4>
-              <p className="text-brand-blue font-semibold text-sm mb-3">Head of Finance, HR & Administration</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Drawing from over 9 years of hands-on experience in financial services and manufacturing, Priscilla excels in steering revenue growth through meticulous financial planning and analysis. Her skill set encompasses the development and implementation of effective financial policies, precise budget management, and ensuring adherence to regulatory standards. She has a proven track record in optimizing financial resources, navigating successful audits, and elevating operational efficiency. In addition to her financial prowess, she has been instrumental in streamlining administrative processes, ensuring a harmonious organizational workflow. Her holistic approach positions her as a dynamic leader for the Finance, HR and Administration role. She is a Certified Public Accountant and holds a Bachelor of Commerce (Finance).
-              </p>
+            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
+              <h4 className="text-lg font-bold text-foreground mb-2">Ms. Priscilla Gichuhi</h4>
+              <p className="text-brand-blue font-semibold text-sm">Head of Finance, HR & Administration</p>
             </GlassCard>
 
-            {/* Nina Goswami */}
-            <GlassCard className="p-6">
-              <h4 className="text-xl font-bold text-foreground mb-2">Ms. Nina Goswami</h4>
-              <p className="text-brand-blue font-semibold text-sm mb-3">Head Manager Equity Trading</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Nina has over twenty-five years' experience in stock broking industry with years of experience in research, operations and dealing. She manages Client portfolios, buying and selling shares on behalf of clients. She also analyses Client business and gives investment advice based on market trends. In addition to financial advice, she is also involved marketing products for our Mauritius partner AXYS.
-              </p>
+            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
+              <h4 className="text-lg font-bold text-foreground mb-2">Ms. Nina Goswami</h4>
+              <p className="text-brand-blue font-semibold text-sm">Head Manager Equity Trading</p>
             </GlassCard>
 
-            {/* Veronica Wambua */}
-            <GlassCard className="p-6">
-              <h4 className="text-xl font-bold text-foreground mb-2">Ms. Veronica Wambua</h4>
-              <p className="text-brand-blue font-semibold text-sm mb-3">Customer Experience Manager</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Veronica has over fifteen years' experience in front office stock broking services rising up the ranks from Receptionist, PA, and Registrar Officer to Customer Care Manager. Her duties include overseeing the opening and closing CDS accounts, taking buy and sell orders, transmissions, immobilizations, placing and lifting of liens and private transfers. Veronica joined AIB in June 2006.
-              </p>
+            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
+              <h4 className="text-lg font-bold text-foreground mb-2">Ms. Veronica Wambua</h4>
+              <p className="text-brand-blue font-semibold text-sm">Customer Experience Manager</p>
             </GlassCard>
 
-            {/* Samuel Kimani */}
-            <GlassCard className="p-6">
-              <h4 className="text-xl font-bold text-foreground mb-2">Samuel Kimani</h4>
-              <p className="text-brand-blue font-semibold text-sm mb-3">Chief Accountant CPAII</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Kimani has over fifteen years' experience in the financial services sector, having worked for insurance firms such as Kenyan Alliance Insurance and ICEA in their respective accounts departments. Kimani joined AIB in October 2008 as an accountant.
-              </p>
+            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
+              <h4 className="text-lg font-bold text-foreground mb-2">Samuel Kimani</h4>
+              <p className="text-brand-blue font-semibold text-sm">Chief Accountant CPAII</p>
             </GlassCard>
 
-            {/* Ngige Jeff Wanjao */}
-            <GlassCard className="p-6">
-              <h4 className="text-xl font-bold text-foreground mb-2">Mr. Ngige Jeff Wanjao</h4>
-              <p className="text-brand-blue font-semibold text-sm mb-3">Wealth Management Professional</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Ngige is a wealth management professional and Advocate of the High Court of Kenya, working with institutional, corporate, and private investors regarding capital allocation, offshore investment strategy, and commercial deal execution. He possesses a broad range of specialist knowledge spanning diverse sectors including legal services, transaction advisory, infrastructure, fintech, and the capital markets. His background encompasses business development, stakeholder management, and regulatory-aligned execution, allowing him to effectively integrate legal, commercial, and investment considerations. He holds an LL.B. from Strathmore Law School, a Postgraduate Diploma in Law from the Kenya School of Law, and a Masterclass Certificate from the NSE Academy.
-              </p>
+            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
+              <h4 className="text-lg font-bold text-foreground mb-2">Mr. Ngige Jeff Wanjao</h4>
+              <p className="text-brand-blue font-semibold text-sm">Wealth Management Professional</p>
             </GlassCard>
 
-            {/* Peter Chege */}
-            <GlassCard className="p-6">
-              <h4 className="text-xl font-bold text-foreground mb-2">Peter Chege</h4>
-              <p className="text-brand-blue font-semibold text-sm mb-3">IT and Product Development Manager</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Master's in Information Systems, University of Nairobi (ongoing)
-              </p>
+            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
+              <h4 className="text-lg font-bold text-foreground mb-2">Peter Chege</h4>
+              <p className="text-brand-blue font-semibold text-sm">IT and Product Development Manager</p>
             </GlassCard>
 
-            {/* Samuel Mburu Kinuthia */}
-            <GlassCard className="p-6">
-              <h4 className="text-xl font-bold text-foreground mb-2">Samuel Mburu Kinuthia</h4>
-              <p className="text-brand-blue font-semibold text-sm mb-3">Project Support Lead</p>
+            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
+              <h4 className="text-lg font-bold text-foreground mb-2">Samuel Mburu Kinuthia</h4>
+              <p className="text-brand-blue font-semibold text-sm">Project Support Lead</p>
             </GlassCard>
           </div>
         </div>
