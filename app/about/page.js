@@ -155,7 +155,7 @@ export default function AboutPage() {
             </GlassCard>
 
             <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Samuel Kimani</h4>
+              <h4 className="text-lg font-bold text-foreground mb-2">Mr. Samuel Kimani</h4>
               <p className="text-brand-blue font-semibold text-sm">Chief Accountant CPAII</p>
             </GlassCard>
 
@@ -165,12 +165,12 @@ export default function AboutPage() {
             </GlassCard>
 
             <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Peter Chege</h4>
+              <h4 className="text-lg font-bold text-foreground mb-2">Mr. Peter Chege</h4>
               <p className="text-brand-blue font-semibold text-sm">IT and Product Development Manager</p>
             </GlassCard>
 
             <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Samuel Mburu Kinuthia</h4>
+              <h4 className="text-lg font-bold text-foreground mb-2">Mr. Samuel Mburu Kinuthia</h4>
               <p className="text-brand-blue font-semibold text-sm">Project Support Lead</p>
             </GlassCard>
           </div>
