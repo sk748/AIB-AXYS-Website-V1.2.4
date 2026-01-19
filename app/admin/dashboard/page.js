@@ -115,6 +115,13 @@ export default function AdminDashboard() {
       color: 'bg-green-50 text-green-600',
     },
     {
+      title: 'Page Visibility',
+      description: 'Show/hide pages from navigation',
+      icon: <Eye className="w-8 h-8" />,
+      href: '/admin/pages',
+      color: 'bg-indigo-50 text-indigo-600',
+    },
+    {
       title: 'Email Settings',
       description: 'Configure Outlook email integration',
       icon: <Settings className="w-8 h-8" />,
