@@ -41,6 +41,7 @@ const Navbar = () => {
     { name: 'Leverage', href: '/leverage' },
     { name: 'Platforms', href: '/platforms' },
     { name: 'About', href: '/about' },
+    { name: 'Group', href: '/group' },
     { name: 'Global Funds', href: '/global-markets' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
