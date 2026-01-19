@@ -1,157 +1,139 @@
 'use client';
 
-import GlassCard from '@/components/GlassCard';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Smartphone, Shield, Bell, TrendingUp, Lock, BarChart3, Zap, Globe } from 'lucide-react';
+import { Apple, Play } from 'lucide-react';
 
 export default function PlatformsPage() {
-  const features = [
-    {
-      icon: <TrendingUp className="w-6 h-6 text-[#00BCD4]" />,
-      title: 'Real-Time Data',
-      description: 'Live market prices and instant updates',
-    },
-    {
-      icon: <Bell className="w-6 h-6 text-[#00BCD4]" />,
-      title: 'Live Notifications',
-      description: 'Alerts for price movements and news',
-    },
-    {
-      icon: <Zap className="w-6 h-6 text-[#00BCD4]" />,
-      title: 'One-Tap Trading',
-      description: 'Execute trades instantly',
-    },
-    {
-      icon: <Lock className="w-6 h-6 text-[#00BCD4]" />,
-      title: 'Biometric Security',
-      description: 'Fingerprint & Face ID login',
-    },
-    {
-      icon: <BarChart3 className="w-6 h-6 text-[#00BCD4]" />,
-      title: 'Advanced Charts',
-      description: 'Technical analysis tools',
-    },
-    {
-      icon: <Globe className="w-6 h-6 text-[#00BCD4]" />,
-      title: '24/7 Access',
-      description: 'Trade anytime, anywhere',
-    },
-  ];
-
   return (
     <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16 animate-fade-up">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="gradient-text">Trading Platforms</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Professional trading tools at your fingertips
-          </p>
-        </div>
+      <div className="container mx-auto px-4 max-w-7xl">
+        {/* Main Content - Two Column Layout */}
+        <div className="grid md:grid-cols-2 gap-12 items-center min-h-[80vh]">
+          
+          {/* Left Column - Text Content */}
+          <div className="space-y-8 animate-fade-up">
+            {/* Title */}
+            <h1 className="text-5xl md:text-7xl font-bold text-brand-blue dark:text-[#4169E1]">
+              Digitrader
+            </h1>
 
-        {/* Main Platform Card */}
-        <div className="max-w-5xl mx-auto mb-16 animate-stagger-1">
-          <GlassCard className="p-8 md:p-12">
-            <div className="flex flex-col items-center text-center space-y-6">
-              {/* Icon */}
-              <Smartphone className="w-16 h-16 text-[#00BCD4]" />
-
-              {/* Title */}
-              <h2 className="text-4xl font-bold">Digitrader</h2>
-
-              {/* Subtitle */}
-              <p className="text-xl text-brand-blue font-semibold">
-                Online Share Trading Platform
+            {/* Description */}
+            <div className="space-y-4">
+              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+                Our Online Share Trading Platform (OST) is built to increase accessibility and proximity to stock brokerage services as it allows for secure e-transactions, real time market prices and order placement and most importantly, a 24-hour access to the account.
               </p>
-
-              {/* Description */}
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Our powerful mobile application brings professional trading to your fingertips. 
-                Trade anywhere, anytime with secure e-transactions, real-time market prices, 
-                order placement, and 24-hour account access.
+              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+                Through the OST, investors are able to access various reports such as portfolio valuations, transaction statements and stock holding reports via their mobile phones and web portal. Through this platform, clients are able to fund their trading accounts, receive payments and get market data from their mobile devices.
               </p>
+            </div>
 
-              {/* Download Buttons with Store Icons */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                <Link 
-                  href="https://apps.apple.com/ke/app/aib-digitrader/id1481199787"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105 active:scale-98 flex items-center space-x-3">
-                    <Image 
-                      src="/app-store-icon.jpg"
-                      alt="App Store"
-                      width={28}
-                      height={28}
-                      className="rounded"
-                    />
-                    <div className="text-left">
-                      <div className="text-xs">Download on the</div>
-                      <div className="text-sm font-bold">App Store</div>
-                    </div>
-                  </button>
-                </Link>
-                <Link 
-                  href="https://play.google.com/store/apps/details?id=com.AibCapital.AibCapitalOnline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105 active:scale-98 flex items-center space-x-3">
-                    <Image 
-                      src="/google-play-icon.png"
-                      alt="Google Play"
-                      width={28}
-                      height={28}
-                      className="rounded"
-                    />
-                    <div className="text-left">
-                      <div className="text-xs">GET IT ON</div>
-                      <div className="text-sm font-bold">Google Play</div>
-                    </div>
-                  </button>
-                </Link>
+            {/* Download Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link 
+                href="https://apps.apple.com/ke/app/aib-digitrader/id1481199787"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <div className="flex items-center gap-3 px-6 py-4 bg-black dark:bg-white text-white dark:text-black rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                  <Apple className="w-7 h-7" />
+                  <div className="text-left">
+                    <div className="text-xs opacity-80">Download on the</div>
+                    <div className="text-base font-bold">App Store</div>
+                  </div>
+                </div>
+              </Link>
+              
+              <Link 
+                href="https://play.google.com/store/apps/details?id=com.AibCapital.AibCapitalOnline"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <div className="flex items-center gap-3 px-6 py-4 bg-black dark:bg-white text-white dark:text-black rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                  <Play className="w-7 h-7 fill-current" />
+                  <div className="text-left">
+                    <div className="text-xs opacity-80">GET IT ON</div>
+                    <div className="text-base font-bold">Google Play</div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Column - Phone Mockups */}
+          <div className="relative flex items-center justify-center animate-stagger-1">
+            <div className="relative w-full max-w-2xl">
+              {/* Phone Mockup Images */}
+              <div className="relative flex items-center justify-center gap-4 md:gap-8">
+                {/* App Screen Phone */}
+                <div className="relative w-1/2 max-w-[280px] transform hover:scale-105 transition-transform duration-500">
+                  <Image
+                    src="/phone-mockup-app.png"
+                    alt="Digitrader App Interface"
+                    width={500}
+                    height={1000}
+                    className="w-full h-auto drop-shadow-2xl"
+                    priority
+                  />
+                </div>
+                
+                {/* Splash Screen Phone */}
+                <div className="relative w-1/2 max-w-[280px] transform hover:scale-105 transition-transform duration-500">
+                  <Image
+                    src="/phone-mockup-splash.png"
+                    alt="Digitrader Splash Screen"
+                    width={500}
+                    height={1000}
+                    className="w-full h-auto drop-shadow-2xl"
+                    priority
+                  />
+                </div>
               </div>
             </div>
-          </GlassCard>
-        </div>
-
-        {/* Features Grid */}
-        <div className="max-w-5xl mx-auto animate-stagger-2">
-          <h3 className="text-2xl font-bold text-center mb-8">
-            <span className="gradient-text">Platform Features</span>
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {features.map((feature, index) => (
-              <GlassCard key={index} hover3d className="p-6">
-                <div className="flex flex-col items-center text-center space-y-3">
-                  {feature.icon}
-                  <h4 className="font-bold text-foreground">{feature.title}</h4>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
-                </div>
-              </GlassCard>
-            ))}
           </div>
         </div>
 
-        {/* Additional Info */}
-        <div className="max-w-4xl mx-auto mt-16 animate-stagger-3">
-          <GlassCard className="p-8 text-center">
-            <Shield className="w-12 h-12 text-brand-blue mx-auto mb-4" />
-            <h2 className="text-2xl font-bold mb-4">Bank-Level Security</h2>
-            <p className="text-muted-foreground mb-6">
-              Digitrader uses state-of-the-art encryption and biometric authentication 
-              to keep your account and transactions secure at all times.
-            </p>
-            <a href="/contact">
-              <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98">
-                Need Help? Contact Us
-              </button>
-            </a>
-          </GlassCard>
+        {/* Bottom Branding */}
+        <div className="mt-20 pt-12 border-t border-border/50">
+          <div className="flex items-center justify-between max-w-6xl mx-auto px-4">
+            {/* AXYS Logo */}
+            <div className="w-32 md:w-40">
+              <Image
+                src="/axys-logo.png"
+                alt="AXYS"
+                width={200}
+                height={80}
+                className="w-full h-auto dark:hidden"
+              />
+              <Image
+                src="/axys-logo-dark.png"
+                alt="AXYS"
+                width={200}
+                height={80}
+                className="w-full h-auto hidden dark:block"
+              />
+            </div>
+
+            {/* AIB AXYS Logo */}
+            <div className="w-40 md:w-48">
+              <Image
+                src="/nwt-logo.png"
+                alt="AIB AXYS Africa"
+                width={250}
+                height={80}
+                className="w-full h-auto dark:hidden"
+              />
+              <Image
+                src="/nwt-logo-light.png"
+                alt="AIB AXYS Africa"
+                width={250}
+                height={80}
+                className="w-full h-auto hidden dark:block"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
