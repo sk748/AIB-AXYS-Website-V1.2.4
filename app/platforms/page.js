@@ -18,19 +18,19 @@ export default function PlatformsPage() {
             {/* Left Column - Logo and Buttons */}
             <div className="flex flex-col items-start justify-center space-y-12 md:pl-12 lg:pl-20">
               {/* Logo */}
-              <div className="w-full max-w-sm animate-fade-up">
+              <div className="w-full max-w-xl animate-fade-up">
                 <Image
                   src={theme === 'dark' ? '/digitrader-logo-dark-bg.png' : '/digitrader-logo-white-bg.png'}
                   alt="AIBAXYS DigiTrader"
-                  width={1200}
-                  height={300}
+                  width={1400}
+                  height={350}
                   className="w-full h-auto"
                   priority
                 />
               </div>
 
               {/* Download Buttons */}
-              <div className="flex flex-col gap-4 w-full max-w-sm animate-stagger-1">
+              <div className="flex flex-col gap-4 w-full max-w-xl animate-stagger-1">
                 <Link 
                   href="https://apps.apple.com/ke/app/aib-digitrader/id1481199787"
                   target="_blank"
