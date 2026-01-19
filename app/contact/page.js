@@ -97,7 +97,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-bold mb-1">Phone</h3>
-                  <p className="text-sm text-muted-foreground">+254 711 047 000</p>
+                  <p className="text-sm text-muted-foreground">+254 711 047000</p>
                   <p className="text-sm text-muted-foreground">Mon-Fri, 9AM-5PM EAT</p>
                 </div>
               </div>
