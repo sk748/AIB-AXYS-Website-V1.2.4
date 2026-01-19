@@ -12,7 +12,7 @@ const ResearchPaperSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      enum: ['market-analysis', 'stock-recommendations', 'ipo-analysis', 'sector-reports', 'other'],
+      enum: ['market-analysis', 'stock-recommendations', 'ipo-analysis', 'sector-reports', 'information-memorandums', 'other'],
       default: 'other',
     },
     fileName: {
