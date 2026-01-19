@@ -139,7 +139,7 @@ export default function Home() {
         ></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center space-y-8 animate-fade-up max-w-4xl mx-auto">
+          <div className="text-center space-y-8 animate-fade-up">
             {/* Large Centered Logo */}
             <div className="mb-8">
               <a 
