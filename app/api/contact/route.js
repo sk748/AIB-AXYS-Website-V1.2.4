@@ -1,15 +1,37 @@
 import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import Contact from '@/models/Contact';
+import Consent from '@/models/Consent';
 import EmailSettings from '@/models/EmailSettings';
 import { sendEmail } from '@/lib/email';
+import { rateLimit, sanitizeInput, isValidEmail, isValidPhone } from '@/lib/security';
+import { getIpAddress, getUserAgent } from '@/lib/audit';
 
 export async function POST(request) {
   try {
+    // Get IP for rate limiting
+    const ipAddress = getIpAddress(request);
+    
+    // Rate limit: 5 submissions per minute per IP
+    const rateCheck = rateLimit(ipAddress, 5, 60000);
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      );
+    }
+
     await connectDB();
 
     const body = await request.json();
-    const { name, email, phone, subject, message, hasCDSC, cdscNumber } = body;
+    let { name, email, phone, subject, message, hasCDSC, cdscNumber } = body;
+
+    // Sanitize inputs
+    name = sanitizeInput(name);
+    email = sanitizeInput(email);
+    phone = sanitizeInput(phone);
+    message = sanitizeInput(message);
+    cdscNumber = sanitizeInput(cdscNumber);
 
     // Validate required fields
     if (!name || !email || !phone || !subject || !message) {
@@ -20,8 +42,7 @@ export async function POST(request) {
     }
 
     // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!isValidEmail(email)) {
       return NextResponse.json(
         { error: 'Invalid email format' },
         { status: 400 }
@@ -39,6 +60,15 @@ export async function POST(request) {
       cdscNumber: cdscNumber || '',
       status: 'new',
       emailSent: false,
+    });
+
+    // Record consent for data processing
+    await Consent.create({
+      contactId: contact._id,
+      email,
+      consentType: 'data_processing',
+      consentGiven: true,
+      ipAddress,
     });
 
     console.log('✅ Contact saved to database:', contact._id);
