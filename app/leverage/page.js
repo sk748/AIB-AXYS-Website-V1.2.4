@@ -18,7 +18,7 @@ export default function LeveragePage() {
     {
       icon: <Zap className="w-8 h-8 text-[#00BCD4]" />,
       title: 'Seamless Execution',
-      description: 'Smooth trade execution with real-time market data',
+      description: 'Smooth trade execution with comprehensive market monitoring',
     },
   ];
 
