@@ -130,47 +130,47 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Ms. Mary Maloba</h4>
+              <h4 className="text-lg font-bold text-foreground mb-2">Mary Maloba</h4>
               <p className="text-brand-blue font-semibold text-sm">Ag. CEO & Compliance Manager</p>
             </GlassCard>
 
             <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Mr. Lemek Oltele</h4>
+              <h4 className="text-lg font-bold text-foreground mb-2">Lemek Oltele</h4>
               <p className="text-brand-blue font-semibold text-sm">Head of Business Development</p>
             </GlassCard>
 
             <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Ms. Priscilla Gichuhi</h4>
+              <h4 className="text-lg font-bold text-foreground mb-2">Priscilla Gichuhi</h4>
               <p className="text-brand-blue font-semibold text-sm">Head of Finance, HR & Administration</p>
             </GlassCard>
 
             <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Ms. Nina Goswami</h4>
+              <h4 className="text-lg font-bold text-foreground mb-2">Nina Goswami</h4>
               <p className="text-brand-blue font-semibold text-sm">Head Manager Equity Trading</p>
             </GlassCard>
 
             <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Ms. Veronica Wambua</h4>
+              <h4 className="text-lg font-bold text-foreground mb-2">Veronica Wambua</h4>
               <p className="text-brand-blue font-semibold text-sm">Customer Experience Manager</p>
             </GlassCard>
 
             <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Mr. Samuel Kimani</h4>
+              <h4 className="text-lg font-bold text-foreground mb-2">Samuel Kimani</h4>
               <p className="text-brand-blue font-semibold text-sm">Chief Accountant CPAII</p>
             </GlassCard>
 
             <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Mr. Ngige Jeff Wanjao</h4>
+              <h4 className="text-lg font-bold text-foreground mb-2">Ngige Jeff Wanjao</h4>
               <p className="text-brand-blue font-semibold text-sm">Wealth Management Professional</p>
             </GlassCard>
 
             <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Mr. Peter Chege</h4>
+              <h4 className="text-lg font-bold text-foreground mb-2">Peter Chege</h4>
               <p className="text-brand-blue font-semibold text-sm">IT and Product Development Manager</p>
             </GlassCard>
 
             <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Mr. Samuel Mburu Kinuthia</h4>
+              <h4 className="text-lg font-bold text-foreground mb-2">Samuel Mburu Kinuthia</h4>
               <p className="text-brand-blue font-semibold text-sm">Project Support Lead</p>
             </GlassCard>
           </div>
