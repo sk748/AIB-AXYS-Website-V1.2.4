@@ -93,35 +93,21 @@ export default function AdminContactsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link href="/admin/dashboard">
-                <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                  <ArrowLeft className="w-5 h-5" />
-                </button>
-              </Link>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">Contact Submissions</h1>
-                <p className="text-sm text-gray-500">{contacts.length} total submissions</p>
-              </div>
-            </div>
-            <button
-              onClick={exportToCSV}
-              className="flex items-center space-x-2 px-4 py-2 bg-[#0017bf] text-white rounded-lg hover:bg-[#0017bf]/90 transition-colors"
-            >
-              <Download className="w-4 h-4" />
-              <span>Export CSV</span>
-            </button>
-          </div>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Page Header */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-gray-900\">Contact Submissions</h1>
+        <div className="flex items-center justify-between mt-2">
+          <p className="text-gray-600\">{contacts.length} total submissions</p>
+          <button
+            onClick={exportToCSV}
+            className="flex items-center space-x-2 px-4 py-2 bg-[#0017bf] text-white rounded-lg hover:bg-[#0017bf]/90 transition-colors"
+          >
+            <Download className="w-4 h-4" />
+            <span>Export CSV</span>
+          </button>
         </div>
-      </header>
-
-      {/* Filters */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      </div>
         <div className="bg-white rounded-lg shadow p-4 mb-6">
           <div className="flex items-center space-x-4">
             <Filter className="w-5 h-5 text-gray-400" />
