@@ -9,9 +9,6 @@ export default function ResearchPage() {
   const [papers, setPapers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCompany, setSelectedCompany] = useState(null);
-  const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
     fetchPapers();
