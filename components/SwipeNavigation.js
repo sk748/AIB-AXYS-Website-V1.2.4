@@ -21,7 +21,6 @@ const SwipeNavigation = ({ children }) => {
     '/leverage',
     '/platforms',
     '/about',
-    '/research',
     '/global-markets',
     '/faq',
     '/contact',
