@@ -19,7 +19,7 @@ export default function PlatformsPage() {
             {/* Logo instead of text title */}
             <div className="w-full max-w-md">
               <Image
-                src={theme === 'dark' ? '/digitrader-logo-dark.png' : '/digitrader-logo-light.png'}
+                src={theme === 'dark' ? '/digitrader-logo-light.png' : '/digitrader-logo-dark.png'}
                 alt="Digitrader"
                 width={600}
                 height={150}
