@@ -44,6 +44,7 @@ export default function PlatformsPage() {
                   height={350}
                   className="w-full h-auto"
                   priority
+                  onLoad={() => setLogoLoaded(true)}
                 />
               </div>
 
