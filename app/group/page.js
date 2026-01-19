@@ -1,7 +1,9 @@
 'use client';
 
 import GlassCard from '@/components/GlassCard';
-import { Globe, Building2, Users, Shield, MapPin } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Globe, Users, Shield, MapPin } from 'lucide-react';
 
 export default function GroupPage() {
   const executiveDirectors = [
@@ -30,9 +32,7 @@ export default function GroupPage() {
   ];
 
   const stats = [
-    { value: '30+', label: 'Years of Experience' },
     { value: '170+', label: 'Employees' },
-    { value: '10,000+', label: 'Clients' },
     { value: 'USD 13.9+ BN', label: 'Client Assets' },
     { value: '85', label: 'Countries Served' },
     { value: '6', label: 'Continents' },
@@ -41,11 +41,15 @@ export default function GroupPage() {
   return (
     <div className="min-h-screen py-20">
       <div className="container mx-auto px-4">
-        {/* Header */}
+        {/* Header with AXYS Logo */}
         <div className="text-center mb-16 animate-fade-up">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="gradient-text">AXYS Group</span>
-          </h1>
+          <Image
+            src="/axys-logo.png"
+            alt="AXYS Group"
+            width={300}
+            height={100}
+            className="mx-auto mb-6 h-20 w-auto"
+          />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A Fully Integrated Investment House
           </p>
@@ -68,7 +72,7 @@ export default function GroupPage() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16 animate-stagger-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 animate-stagger-2">
           {stats.map((stat, index) => (
             <GlassCard key={index} className="p-6 text-center">
               <div className="text-2xl md:text-3xl font-bold text-brand-blue mb-2">{stat.value}</div>
@@ -93,14 +97,19 @@ export default function GroupPage() {
           </div>
         </div>
 
-        {/* Key Entities */}
+        {/* Key Entities with Logos */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 animate-stagger-3">
           <GlassCard className="p-8">
-            <div className="flex items-center space-x-4 mb-6">
-              <Building2 className="w-10 h-10 text-brand-blue" />
-              <h2 className="text-2xl font-bold">AXYS</h2>
+            <div className="flex items-center justify-center mb-6">
+              <Image
+                src="/axys-logo.png"
+                alt="AXYS"
+                width={180}
+                height={60}
+                className="h-12 w-auto"
+              />
             </div>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed text-center">
               Advanced capital markets solutions including brokerage services, global market execution, 
               research & advisory, and investment solutions. AXYS delivers above-market risk-adjusted 
               performance with industry-competitive fees.
@@ -108,11 +117,16 @@ export default function GroupPage() {
           </GlassCard>
 
           <GlassCard className="p-8">
-            <div className="flex items-center space-x-4 mb-6">
-              <Shield className="w-10 h-10 text-brand-blue" />
-              <h2 className="text-2xl font-bold">NWT</h2>
+            <div className="flex items-center justify-center mb-6">
+              <Image
+                src="/nwt-logo.png"
+                alt="NWT"
+                width={180}
+                height={60}
+                className="h-12 w-auto"
+              />
             </div>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed text-center">
               Specialised fund and fiduciary services including entity structuring, company secretarial, 
               estate planning, trust administration, and multi-jurisdictional compliance. NWT safeguards 
               and grows client wealth with confidence.
@@ -160,11 +174,15 @@ export default function GroupPage() {
               With a strategic presence across five key financial hubs, AXYS Group serves clients 
               across 85 countries and six continents with comprehensive multi-jurisdictional capabilities.
             </p>
-            <a href="/contact">
+            <Link 
+              href="https://axys-group.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98">
-                Get in Touch
+                Learn more
               </button>
-            </a>
+            </Link>
           </GlassCard>
         </div>
       </div>
