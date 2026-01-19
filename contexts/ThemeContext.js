@@ -25,12 +25,12 @@ const getInitialTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   // Set theme on mount from localStorage
   useEffect(() => {
     const storedTheme = localStorage.getItem('aib-theme');
-    const initialTheme = storedTheme === 'light' ? 'light' : 'dark';
+    const initialTheme = storedTheme === 'dark' ? 'dark' : 'light';
     setTheme(initialTheme);
     document.documentElement.classList.remove('light', 'dark');
     document.documentElement.classList.add(initialTheme);
