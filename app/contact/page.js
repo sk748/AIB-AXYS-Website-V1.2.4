@@ -1,12 +1,14 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import GlassCard from '@/components/GlassCard';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 export default function ContactPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,6 +18,14 @@ export default function ContactPage() {
     hasCDSC: '',
     cdscNumber: '',
   });
+
+  // Pre-select subject from URL parameter
+  useEffect(() => {
+    const subjectParam = searchParams.get('subject');
+    if (subjectParam) {
+      setFormData(prev => ({ ...prev, subject: subjectParam }));
+    }
+  }, [searchParams]);
 
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
