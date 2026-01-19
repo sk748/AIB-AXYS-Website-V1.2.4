@@ -62,6 +62,8 @@ export default function AdminResearchPage() {
       formData.append('title', uploadForm.title);
       formData.append('description', uploadForm.description);
       formData.append('category', uploadForm.category);
+      formData.append('company', uploadForm.company);
+      formData.append('sector', uploadForm.sector);
       formData.append('tags', uploadForm.tags);
 
       const response = await fetch('/api/admin/research', {
@@ -71,8 +73,9 @@ export default function AdminResearchPage() {
 
       if (response.ok) {
         alert('Research paper uploaded successfully!');
-        setUploadForm({ title: '', description: '', category: 'market-analysis', tags: '' });
+        setUploadForm({ title: '', description: '', category: 'market-analysis', company: '', sector: '', tags: '' });
         fileInput.value = '';
+        setCompanySearch('');
         fetchPapers();
       } else {
         const data = await response.json();
@@ -85,6 +88,50 @@ export default function AdminResearchPage() {
       setUploading(false);
     }
   };
+
+  const handleEdit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/api/admin/research', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id: editingPaper._id,
+          title: editingPaper.title,
+          description: editingPaper.description,
+          category: editingPaper.category,
+          company: editingPaper.company,
+          sector: editingPaper.sector,
+          tags: Array.isArray(editingPaper.tags) ? editingPaper.tags.join(', ') : editingPaper.tags,
+        }),
+      });
+
+      if (response.ok) {
+        alert('Paper updated successfully!');
+        setEditingPaper(null);
+        fetchPapers();
+      } else {
+        alert('Failed to update paper');
+      }
+    } catch (error) {
+      console.error('Update error:', error);
+      alert('Failed to update paper');
+    }
+  };
+
+  const selectCompany = (companyName) => {
+    const company = nseCompanies.find(c => c.name === companyName);
+    if (company) {
+      setUploadForm({ ...uploadForm, company: company.name, sector: company.sector });
+      setCompanySearch('');
+    }
+  };
+
+  const filteredCompanies = nseCompanies.filter(c =>
+    c.name.toLowerCase().includes(companySearch.toLowerCase()) ||
+    c.sector.toLowerCase().includes(companySearch.toLowerCase())
+  );
 
   const deletePaper = async (id) => {
     if (!confirm('Are you sure you want to delete this paper?')) return;
