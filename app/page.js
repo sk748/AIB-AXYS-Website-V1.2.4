@@ -155,7 +155,7 @@ export default function Home() {
             </div>
             
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-              Kenya's Leading Broker
+              A Leading Kenyan Broker
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-stagger-1">
