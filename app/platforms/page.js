@@ -3,8 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Apple, Play } from 'lucide-react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 export default function PlatformsPage() {
+  const { theme } = useTheme();
+
   return (
     <div className="min-h-screen py-20">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -13,10 +16,17 @@ export default function PlatformsPage() {
           
           {/* Left Column - Text Content */}
           <div className="space-y-8 animate-fade-up">
-            {/* Title */}
-            <h1 className="text-5xl md:text-7xl font-bold text-brand-blue dark:text-[#4169E1]">
-              Digitrader
-            </h1>
+            {/* Logo instead of text title */}
+            <div className="w-full max-w-md">
+              <Image
+                src={theme === 'dark' ? '/digitrader-logo-dark.png' : '/digitrader-logo-light.png'}
+                alt="Digitrader"
+                width={600}
+                height={150}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
 
             {/* Description */}
             <div className="space-y-4">
@@ -62,75 +72,16 @@ export default function PlatformsPage() {
             </div>
           </div>
 
-          {/* Right Column - Phone Mockups */}
+          {/* Right Column - Phone Mockup (Single Image with Both Phones) */}
           <div className="relative flex items-center justify-center animate-stagger-1">
             <div className="relative w-full max-w-2xl">
-              {/* Phone Mockup Images */}
-              <div className="relative flex items-center justify-center gap-4 md:gap-8">
-                {/* App Screen Phone */}
-                <div className="relative w-1/2 max-w-[280px] transform hover:scale-105 transition-transform duration-500">
-                  <Image
-                    src="/phone-mockup-app.png"
-                    alt="Digitrader App Interface"
-                    width={500}
-                    height={1000}
-                    className="w-full h-auto drop-shadow-2xl"
-                    priority
-                  />
-                </div>
-                
-                {/* Splash Screen Phone */}
-                <div className="relative w-1/2 max-w-[280px] transform hover:scale-105 transition-transform duration-500">
-                  <Image
-                    src="/phone-mockup-splash.png"
-                    alt="Digitrader Splash Screen"
-                    width={500}
-                    height={1000}
-                    className="w-full h-auto drop-shadow-2xl"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Branding */}
-        <div className="mt-20 pt-12 border-t border-border/50">
-          <div className="flex items-center justify-between max-w-6xl mx-auto px-4">
-            {/* AXYS Logo */}
-            <div className="w-32 md:w-40">
               <Image
-                src="/axys-logo.png"
-                alt="AXYS"
-                width={200}
-                height={80}
-                className="w-full h-auto dark:hidden"
-              />
-              <Image
-                src="/axys-logo-dark.png"
-                alt="AXYS"
-                width={200}
-                height={80}
-                className="w-full h-auto hidden dark:block"
-              />
-            </div>
-
-            {/* AIB AXYS Logo */}
-            <div className="w-40 md:w-48">
-              <Image
-                src="/nwt-logo.png"
-                alt="AIB AXYS Africa"
-                width={250}
-                height={80}
-                className="w-full h-auto dark:hidden"
-              />
-              <Image
-                src="/nwt-logo-light.png"
-                alt="AIB AXYS Africa"
-                width={250}
-                height={80}
-                className="w-full h-auto hidden dark:block"
+                src="/app-mockup-2.png"
+                alt="Digitrader Mobile App"
+                width={1000}
+                height={1000}
+                className="w-full h-auto drop-shadow-2xl"
+                priority
               />
             </div>
           </div>
