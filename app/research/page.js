@@ -3,12 +3,15 @@
 import { useEffect, useState } from 'react';
 import GlassCard from '@/components/GlassCard';
 import { FileText, Download, Calendar, Search } from 'lucide-react';
+import { nseCompanies } from '@/data/nseCompanies';
 
 export default function ResearchPage() {
   const [papers, setPapers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCompany, setSelectedCompany] = useState(null);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
     fetchPapers();
@@ -43,15 +46,41 @@ export default function ResearchPage() {
     { value: 'information-memorandums', label: 'Information Memorandums' },
   ];
 
+  // Filter companies based on search
+  const matchingCompanies = searchTerm 
+    ? nseCompanies.filter(c =>
+        c.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        c.sector.toLowerCase().includes(searchTerm.toLowerCase())
+      ).slice(0, 10)
+    : [];
+
+  // Select company from dropdown
+  const selectCompanyFromDropdown = (company) => {
+    setSelectedCompany(company);
+    setSearchTerm(company.name);
+    setShowDropdown(false);
+  };
+
+  // Clear company selection
+  const clearCompanySelection = () => {
+    setSelectedCompany(null);
+    setSearchTerm('');
+    setShowDropdown(false);
+  };
+
+  // Filter papers based on category and company selection
   const filteredPapers = papers.filter(p => {
-    // Filter by category
-    if (filter !== 'all' && p.category !== filter) return false;
+    // Filter by category (for non-company tabs)
+    if (filter !== 'all' && filter !== 'company' && p.category !== filter) return false;
     
-    // Filter by company search (only when Company category selected)
-    if (filter === 'company' && searchTerm) {
-      const search = searchTerm.toLowerCase();
-      return (p.company && p.company.toLowerCase().includes(search)) ||
-             (p.title && p.title.toLowerCase().includes(search));
+    // For Company tab: show all papers, but filter by selected company if one is selected
+    if (filter === 'company') {
+      if (selectedCompany) {
+        // Show papers that match the selected company
+        return p.company && p.company.toLowerCase() === selectedCompany.name.toLowerCase();
+      }
+      // If no company selected, show all papers
+      return true;
     }
     
     return true;
@@ -76,7 +105,10 @@ export default function ResearchPage() {
             {categories.map((cat) => (
               <button
                 key={cat.value}
-                onClick={() => { setFilter(cat.value); setSearchTerm(''); }}
+                onClick={() => { 
+                  setFilter(cat.value); 
+                  clearCompanySelection();
+                }}
                 className={`px-6 py-3 text-sm font-medium transition-colors ${
                   filter === cat.value
                     ? 'bg-primary text-primary-foreground'
@@ -97,10 +129,57 @@ export default function ResearchPage() {
               <input
                 type="text"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Search by company name..."
-                className="w-full pl-12 pr-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  setShowDropdown(true);
+                  setSelectedCompany(null);
+                }}
+                onFocus={() => setShowDropdown(true)}
+                placeholder="Search by company name or sector..."
+                className="w-full pl-12 pr-10 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
               />
+              {searchTerm && (
+                <button
+                  onClick={clearCompanySelection}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                >
+                  ✕
+                </button>
+              )}
+
+              {/* Company Dropdown */}
+              {showDropdown && matchingCompanies.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 border border-border rounded-lg shadow-lg max-h-80 overflow-y-auto z-10">
+                  {matchingCompanies.map((company, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => selectCompanyFromDropdown(company)}
+                      className="w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors border-b last:border-b-0"
+                    >
+                      <div className="font-medium text-sm text-foreground">{company.name}</div>
+                      <div className="text-xs text-muted-foreground">{company.sector}</div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Selected Company Indicator */}
+        {filter === 'company' && selectedCompany && (
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex items-center space-x-3 px-6 py-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+              <div>
+                <div className="text-sm font-semibold text-blue-900 dark:text-blue-100">{selectedCompany.name}</div>
+                <div className="text-xs text-blue-700 dark:text-blue-300">{selectedCompany.sector}</div>
+              </div>
+              <button
+                onClick={clearCompanySelection}
+                className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200"
+              >
+                ✕
+              </button>
             </div>
           </div>
         )}
@@ -127,12 +206,15 @@ export default function ResearchPage() {
                     {paper.title}
                   </h3>
 
-                  {/* Company Name (if category is company) */}
-                  {paper.category === 'company' && paper.company && (
+                  {/* Company Name */}
+                  {paper.company && (
                     <div className="text-center mb-2">
                       <span className="text-sm font-medium text-brand-blue">
                         {paper.company}
                       </span>
+                      {paper.sector && (
+                        <div className="text-xs text-muted-foreground">{paper.sector}</div>
+                      )}
                     </div>
                   )}
 
@@ -194,9 +276,11 @@ export default function ResearchPage() {
           <div className="text-center py-20">
             <FileText className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
             <p className="text-xl text-muted-foreground">
-              {filter === 'all' ? 'No research papers available yet' : 
-               filter === 'company' && searchTerm ? `No results found for "${searchTerm}"` :
-               'No papers in this category'}
+              {filter === 'company' && selectedCompany 
+                ? `No research papers found for ${selectedCompany.name}` 
+                : filter === 'all' 
+                ? 'No research papers available yet' 
+                : 'No papers in this category'}
             </p>
           </div>
         )}
@@ -204,3 +288,4 @@ export default function ResearchPage() {
     </div>
   );
 }
+
