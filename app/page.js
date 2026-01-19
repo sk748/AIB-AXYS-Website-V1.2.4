@@ -161,6 +161,8 @@ export default function Home() {
               </a>
             </div>
             
+            {/* Text content with constrained width for readability */}
+            <div className="max-w-4xl mx-auto space-y-8">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
               A Leading Kenyan Broker
             </h1>
