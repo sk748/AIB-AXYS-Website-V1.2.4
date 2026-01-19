@@ -74,10 +74,7 @@ export default function ResearchPage() {
             {categories.map((cat) => (
               <button
                 key={cat.value}
-                onClick={() => { 
-                  setFilter(cat.value); 
-                  clearCompanySelection();
-                }}
+                onClick={() => setFilter(cat.value)}
                 className={`px-6 py-3 text-sm font-medium transition-colors ${
                   filter === cat.value
                     ? 'bg-primary text-primary-foreground'
@@ -89,91 +86,6 @@ export default function ResearchPage() {
             ))}
           </div>
         </div>
-
-        {/* Company Search Bar (only show when Company category selected) */}
-        {filter === 'company' && (
-          <div className="flex justify-center mb-12 animate-fade-up">
-            <div className="relative w-full max-w-md">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground z-10 pointer-events-none" />
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={(e) => {
-                  setSearchTerm(e.target.value);
-                  setShowDropdown(true);
-                  setSelectedCompany(null);
-                }}
-                onFocus={() => searchTerm && setShowDropdown(true)}
-                onClick={() => searchTerm && setShowDropdown(true)}
-                placeholder="Search by company name or sector..."
-                className="w-full pl-12 pr-10 py-3 border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-background text-foreground"
-              />
-              {searchTerm && (
-                <button
-                  onClick={clearCompanySelection}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground z-10 p-1 hover:bg-muted rounded"
-                  type="button"
-                >
-                  ✕
-                </button>
-              )}
-
-              {/* Company Dropdown */}
-              {showDropdown && searchTerm && matchingCompanies.length > 0 && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 border-2 border-primary rounded-lg shadow-2xl max-h-[400px] overflow-y-auto z-50">
-                  <div className="sticky top-0 bg-blue-50 dark:bg-blue-900 px-4 py-2 border-b border-blue-200 dark:border-blue-700">
-                    <div className="text-xs font-semibold text-blue-900 dark:text-blue-100">
-                      {matchingCompanies.length} {matchingCompanies.length === 1 ? 'company' : 'companies'} found - Click to select
-                    </div>
-                  </div>
-                  <div className="p-2">
-                    {matchingCompanies.map((company, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        onMouseDown={(e) => {
-                          e.preventDefault();
-                          selectCompanyFromDropdown(company);
-                        }}
-                        className="w-full text-left px-4 py-3 hover:bg-blue-100 dark:hover:bg-blue-900 active:bg-blue-200 dark:active:bg-blue-800 transition-colors rounded-lg mb-1 cursor-pointer group"
-                      >
-                        <div className="font-semibold text-sm text-foreground group-hover:text-primary">
-                          {company.name}
-                        </div>
-                        <div className="text-xs text-muted-foreground mt-0.5">
-                          📍 {company.sector}
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                  <div className="sticky bottom-0 bg-gray-50 dark:bg-gray-700 px-4 py-2 border-t text-center">
-                    <div className="text-xs text-muted-foreground">
-                      Scroll for more • Click to select
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Selected Company Indicator */}
-        {filter === 'company' && selectedCompany && (
-          <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center space-x-3 px-6 py-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-              <div>
-                <div className="text-sm font-semibold text-blue-900 dark:text-blue-100">{selectedCompany.name}</div>
-                <div className="text-xs text-blue-700 dark:text-blue-300">{selectedCompany.sector}</div>
-              </div>
-              <button
-                onClick={clearCompanySelection}
-                className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200"
-              >
-                ✕
-              </button>
-            </div>
-          </div>
-        )}
 
         {/* Papers Grid */}
         {loading ? (
