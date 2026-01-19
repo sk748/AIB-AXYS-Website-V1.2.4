@@ -18,12 +18,12 @@ export default function PlatformsPage() {
             {/* Left Column - Logo and Buttons */}
             <div className="flex flex-col items-start justify-center space-y-12 md:pl-12 lg:pl-20">
               {/* Logo */}
-              <div className="w-full max-w-lg animate-fade-up">
+              <div className="w-full max-w-sm animate-fade-up">
                 <Image
                   src={theme === 'dark' ? '/digitrader-logo-dark-bg.png' : '/digitrader-logo-white-bg.png'}
                   alt="AIBAXYS DigiTrader"
-                  width={1000}
-                  height={250}
+                  width={1200}
+                  height={300}
                   className="w-full h-auto"
                   priority
                 />
@@ -55,7 +55,7 @@ export default function PlatformsPage() {
                   <div className="flex items-center gap-3 px-6 py-4 bg-[#191970] dark:bg-white text-white dark:text-black rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl w-full">
                     <Play className="w-7 h-7 fill-current" />
                     <div className="text-left">
-                      <div className="text-xs opacity-80">GET IT ON</div>
+                      <div className="text-xs opacity-80">Download on the</div>
                       <div className="text-base font-bold">Google Play</div>
                     </div>
                   </div>
