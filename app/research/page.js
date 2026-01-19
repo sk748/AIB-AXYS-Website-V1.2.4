@@ -160,17 +160,22 @@ export default function ResearchPage() {
 
               {/* Company Dropdown */}
               {showDropdown && matchingCompanies.length > 0 && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 border border-border rounded-lg shadow-lg max-h-80 overflow-y-auto z-10">
-                  {matchingCompanies.map((company, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => selectCompanyFromDropdown(company)}
-                      className="w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors border-b last:border-b-0"
-                    >
-                      <div className="font-medium text-sm text-foreground">{company.name}</div>
-                      <div className="text-xs text-muted-foreground">{company.sector}</div>
-                    </button>
-                  ))}
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 border border-border rounded-lg shadow-lg max-h-96 overflow-y-auto z-10">
+                  <div className="p-2">
+                    <div className="text-xs text-muted-foreground px-2 py-1 mb-1">
+                      {matchingCompanies.length} {matchingCompanies.length === 1 ? 'company' : 'companies'} found
+                    </div>
+                    {matchingCompanies.map((company, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => selectCompanyFromDropdown(company)}
+                        className="w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors rounded-lg"
+                      >
+                        <div className="font-medium text-sm text-foreground">{company.name}</div>
+                        <div className="text-xs text-muted-foreground">{company.sector}</div>
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
