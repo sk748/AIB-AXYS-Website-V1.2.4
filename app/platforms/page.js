@@ -83,7 +83,7 @@ export default function PlatformsPage() {
                 >
                   <button className="px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105 active:scale-98 flex items-center space-x-3">
                     <Image 
-                      src="https://customer-assets.emergentagent.com/job_351bb877-bd56-4a94-bdd6-d30f7159f785/artifacts/yrrdf3kh_app-store-logo-icon-software-apple-phone-symbol-black-design-mobile-illustration-free-vector.jpg"
+                      src="/app-store-icon.jpg"
                       alt="App Store"
                       width={28}
                       height={28}
@@ -102,7 +102,7 @@ export default function PlatformsPage() {
                 >
                   <button className="px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105 active:scale-98 flex items-center space-x-3">
                     <Image 
-                      src="https://customer-assets.emergentagent.com/job_351bb877-bd56-4a94-bdd6-d30f7159f785/artifacts/9hmmvuwz_images%20%281%29.png"
+                      src="/google-play-icon.png"
                       alt="Google Play"
                       width={28}
                       height={28}
