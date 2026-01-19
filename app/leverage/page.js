@@ -55,7 +55,7 @@ export default function LeveragePage() {
     'Unified Document Signing – One upfront sign-off for all processes',
     'Automatic Refund Processing – Oversubscription refunds go straight to your principal',
     'Dedicated support team',
-    'Real-time risk monitoring',
+    'Risk monitoring',
   ];
 
   return (
