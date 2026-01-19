@@ -37,12 +37,12 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'IPO', href: '/ipo' },
-    { name: 'Leverage', href: '/leverage' },
-    { name: 'Platforms', href: '/platforms' },
     { name: 'About', href: '/about' },
     { name: 'Group', href: '/group' },
-    { name: 'Global Funds', href: '/global-markets' },
+    { name: 'Platforms', href: '/platforms' },
+    { name: 'Services', href: '/services' },
+    { name: 'IPO', href: '/ipo' },
+    { name: 'Leverage', href: '/leverage' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
   ];
