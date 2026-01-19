@@ -16,16 +16,15 @@ export default function PlatformsPage() {
           
           {/* Left Column - Text Content */}
           <div className="space-y-8 animate-fade-up">
-            {/* Logo instead of text title */}
-            <div className="w-full max-w-md bg-white dark:bg-white rounded-lg p-4">
-              <Image
-                src="/digitrader-logo-dark.png"
-                alt="Digitrader"
-                width={600}
-                height={150}
-                className="w-full h-auto"
-                priority
-              />
+            {/* Logo - Text based to match brand */}
+            <div className="flex items-center gap-3">
+              <div className="text-brand-blue dark:text-[#4169E1] flex flex-col">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-brand-blue dark:bg-[#4169E1] transform skew-x-[-15deg]"></div>
+                  <span className="text-5xl md:text-6xl font-bold tracking-tight">AIBAXYS</span>
+                </div>
+                <span className="text-3xl md:text-4xl font-bold pl-10">DigiTrader</span>
+              </div>
             </div>
 
             {/* Description */}
