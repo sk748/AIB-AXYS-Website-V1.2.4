@@ -92,6 +92,7 @@ export default function PlatformsPage() {
                   height={1000}
                   className="w-full h-auto drop-shadow-2xl"
                   priority
+                  onLoad={() => setImageLoaded(true)}
                 />
               </div>
             </div>
@@ -119,5 +120,6 @@ export default function PlatformsPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }
