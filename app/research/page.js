@@ -84,7 +84,10 @@ export default function ResearchPage() {
             {categories.map((cat) => (
               <button
                 key={cat.value}
-                onClick={() => setFilter(cat.value)}
+                onClick={() => { 
+                  setFilter(cat.value);
+                  setSearchTerm(''); // Clear search when changing category
+                }}
                 className={`px-6 py-3 text-sm font-medium transition-colors ${
                   filter === cat.value
                     ? 'bg-primary text-primary-foreground'
@@ -96,6 +99,31 @@ export default function ResearchPage() {
             ))}
           </div>
         </div>
+
+        {/* Company Search Bar (only show when Company category selected) */}
+        {filter === 'company' && (
+          <div className="flex justify-center mb-12 animate-fade-up">
+            <div className="relative w-full max-w-md">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search by company name..."
+                className="w-full pl-12 pr-10 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
+              />
+              {searchTerm && (
+                <button
+                  onClick={() => setSearchTerm('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground p-1 hover:bg-muted rounded"
+                  type="button"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Papers Grid */}
         {loading ? (
