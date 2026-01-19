@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import GlassCard from '@/components/GlassCard';
-import { FileText, Download, Calendar } from 'lucide-react';
+import { FileText, Download, Calendar, Search } from 'lucide-react';
 
 export default function ResearchPage() {
   const [papers, setPapers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetchPapers();
