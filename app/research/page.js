@@ -144,6 +144,7 @@ export default function ResearchPage() {
                   setSelectedCompany(null);
                 }}
                 onFocus={() => searchTerm && setShowDropdown(true)}
+                onClick={() => searchTerm && setShowDropdown(true)}
                 onBlur={() => {
                   // Delay to allow click on dropdown item
                   setTimeout(() => setShowDropdown(false), 200);
