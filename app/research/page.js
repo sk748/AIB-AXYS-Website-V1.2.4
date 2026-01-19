@@ -46,54 +46,18 @@ export default function ResearchPage() {
     { value: 'information-memorandums', label: 'Information Memorandums' },
   ];
 
-  // Filter companies based on search
-  const matchingCompanies = searchTerm 
-    ? nseCompanies.filter(c =>
-        c.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        c.sector.toLowerCase().includes(searchTerm.toLowerCase())
-      ).slice(0, 10)
-    : [];
-
-  // Select company from dropdown
-  const selectCompanyFromDropdown = (company) => {
-    console.log('Company selected:', company);
-    setSelectedCompany(company);
-    setSearchTerm(company.name);
-    setShowDropdown(false);
-  };
-
-  // Clear company selection
-  const clearCompanySelection = () => {
-    setSelectedCompany(null);
-    setSearchTerm('');
-    setShowDropdown(false);
-  };
-
-  // Filter papers based on category and company selection
+  // Filter papers based on category
   const filteredPapers = papers.filter(p => {
-    // Filter by category (for non-company tabs)
+    // Filter by category (except for 'all' and 'company')
     if (filter !== 'all' && filter !== 'company' && p.category !== filter) return false;
     
-    // For Company tab: show all papers by default
+    // For Company tab: show all papers
     if (filter === 'company') {
-      // If a company is selected, filter by that company
-      if (selectedCompany) {
-        const companyNameLower = selectedCompany.name.toLowerCase();
-        const searchMatch = p.company && p.company.toLowerCase().includes(companyNameLower);
-        const titleMatch = p.title && p.title.toLowerCase().includes(companyNameLower);
-        const descMatch = p.description && p.description.toLowerCase().includes(companyNameLower);
-        console.log('Filtering for:', selectedCompany.name, 'Paper:', p.title, 'Matches:', searchMatch || titleMatch || descMatch);
-        return searchMatch || titleMatch || descMatch;
-      }
-      
-      // If user is typing but hasn't selected, show all papers (let them browse)
-      return true;
+      return true; // Show all papers
     }
     
     return true;
   });
-
-  console.log('Filter:', filter, 'Selected Company:', selectedCompany?.name, 'Filtered Papers:', filteredPapers.length);
 
   return (
     <div className="min-h-screen py-20">
