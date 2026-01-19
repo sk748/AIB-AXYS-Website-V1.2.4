@@ -39,6 +39,7 @@ export default function ResearchPage() {
     { value: 'stock-recommendations', label: 'Stock Recommendations' },
     { value: 'ipo-analysis', label: 'IPO Analysis' },
     { value: 'sector-reports', label: 'Sector Reports' },
+    { value: 'information-memorandums', label: 'Information Memorandums' },
   ];
 
   const filteredPapers = filter === 'all' 
