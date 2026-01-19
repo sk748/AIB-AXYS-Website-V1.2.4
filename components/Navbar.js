@@ -55,8 +55,8 @@ const Navbar = () => {
           <Link href="/" className="flex items-center space-x-2 w-[180px]">
             <Image
               src={theme === 'dark' 
-                ? 'https://customer-assets.emergentagent.com/job_33cba548-cc10-4443-ba2a-5d85d6be63d5/artifacts/83rf6q6x_NEW%20AIB%20AXYS%20AFRICA%20LOGO%20DARK%20BG.svg'
-                : 'https://customer-assets.emergentagent.com/job_33cba548-cc10-4443-ba2a-5d85d6be63d5/artifacts/c84w37kp_NEW%20AIB%20AXYS%20AFRICA%20LOGO%20WHITE%20BG.svg'
+                ? '/aib-axys-logo-dark.svg'
+                : '/aib-axys-logo-light.svg'
               }
               alt="AIB-AXYS Africa Logo"
               width={180}

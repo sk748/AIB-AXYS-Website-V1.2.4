@@ -143,12 +143,12 @@ export default function Home() {
             {/* Large Centered Logo */}
             <div className="mb-8">
               <img
-                src="https://customer-assets.emergentagent.com/job_33cba548-cc10-4443-ba2a-5d85d6be63d5/artifacts/83rf6q6x_NEW%20AIB%20AXYS%20AFRICA%20LOGO%20DARK%20BG.svg"
+                src="/aib-axys-logo-dark.svg"
                 alt="AIB-AXYS Africa"
                 className="dark:block hidden w-full max-w-2xl mx-auto h-auto"
               />
               <img
-                src="https://customer-assets.emergentagent.com/job_33cba548-cc10-4443-ba2a-5d85d6be63d5/artifacts/c84w37kp_NEW%20AIB%20AXYS%20AFRICA%20LOGO%20WHITE%20BG.svg"
+                src="/aib-axys-logo-light.svg"
                 alt="AIB-AXYS Africa"
                 className="dark:hidden block w-full max-w-2xl mx-auto h-auto"
               />
