@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import GlassCard from '@/components/GlassCard';
-import { FileText, Download, Calendar, Tag } from 'lucide-react';
+import { FileText, Download, Calendar, Search } from 'lucide-react';
 
 export default function ResearchPage() {
   const [papers, setPapers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetchPapers();
@@ -36,15 +37,25 @@ export default function ResearchPage() {
   const categories = [
     { value: 'all', label: 'All Reports' },
     { value: 'market-analysis', label: 'Market Analysis' },
-    { value: 'stock-recommendations', label: 'Stock Recommendations' },
     { value: 'ipo-analysis', label: 'IPO Analysis' },
     { value: 'sector-reports', label: 'Sector Reports' },
+    { value: 'company', label: 'Company' },
     { value: 'information-memorandums', label: 'Information Memorandums' },
   ];
 
-  const filteredPapers = filter === 'all' 
-    ? papers 
-    : papers.filter(p => p.category === filter);
+  const filteredPapers = papers.filter(p => {
+    // Filter by category
+    if (filter !== 'all' && p.category !== filter) return false;
+    
+    // Filter by company search (only when Company category selected)
+    if (filter === 'company' && searchTerm) {
+      const search = searchTerm.toLowerCase();
+      return (p.company && p.company.toLowerCase().includes(search)) ||
+             (p.title && p.title.toLowerCase().includes(search));
+    }
+    
+    return true;
+  });
 
   return (
     <div className="min-h-screen py-20">
@@ -60,12 +71,12 @@ export default function ResearchPage() {
         </div>
 
         {/* Category Filter */}
-        <div className="flex justify-center mb-12 animate-stagger-1">
-          <div className="inline-flex rounded-lg border border-border overflow-hidden">
+        <div className="flex justify-center mb-8 animate-stagger-1">
+          <div className="inline-flex rounded-lg border border-border overflow-hidden flex-wrap">
             {categories.map((cat) => (
               <button
                 key={cat.value}
-                onClick={() => setFilter(cat.value)}
+                onClick={() => { setFilter(cat.value); setSearchTerm(''); }}
                 className={`px-6 py-3 text-sm font-medium transition-colors ${
                   filter === cat.value
                     ? 'bg-primary text-primary-foreground'
@@ -77,6 +88,22 @@ export default function ResearchPage() {
             ))}
           </div>
         </div>
+
+        {/* Company Search Bar (only show when Company category selected) */}
+        {filter === 'company' && (
+          <div className="flex justify-center mb-12 animate-fade-up">
+            <div className="relative w-full max-w-md">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search by company name..."
+                className="w-full pl-12 pr-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
+              />
+            </div>
+          </div>
+        )}
 
         {/* Papers Grid */}
         {loading ? (
@@ -99,6 +126,15 @@ export default function ResearchPage() {
                   <h3 className="text-lg font-bold text-center mb-3 text-foreground">
                     {paper.title}
                   </h3>
+
+                  {/* Company Name (if category is company) */}
+                  {paper.category === 'company' && paper.company && (
+                    <div className="text-center mb-2">
+                      <span className="text-sm font-medium text-brand-blue">
+                        {paper.company}
+                      </span>
+                    </div>
+                  )}
 
                   {/* Category Badge */}
                   <div className="flex justify-center mb-3">
@@ -158,7 +194,9 @@ export default function ResearchPage() {
           <div className="text-center py-20">
             <FileText className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
             <p className="text-xl text-muted-foreground">
-              {filter === 'all' ? 'No research papers available yet' : 'No papers in this category'}
+              {filter === 'all' ? 'No research papers available yet' : 
+               filter === 'company' && searchTerm ? `No results found for "${searchTerm}"` :
+               'No papers in this category'}
             </p>
           </div>
         )}
