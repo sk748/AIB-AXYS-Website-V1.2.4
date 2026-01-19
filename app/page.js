@@ -163,27 +163,28 @@ export default function Home() {
             
             {/* Text content with constrained width for readability */}
             <div className="max-w-4xl mx-auto space-y-8">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-              A Leading Kenyan Broker
-            </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-stagger-1">
-              Local Stocks and Bonds, International Equities, ETFs and Offshore Funds
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 animate-stagger-2">
-              <Link href="/ipo">
-                <button className="w-full sm:w-auto px-10 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98 flex items-center justify-center space-x-2">
-                  <span>Explore IPOs</span>
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-              </Link>
+              <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+                A Leading Kenyan Broker
+              </h1>
               
-              <Link href="/platforms">
-                <button className="w-full sm:w-auto px-10 py-4 glass rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 active:scale-98">
-                  Trading Platforms
-                </button>
-              </Link>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-stagger-1">
+                Local Stocks and Bonds, International Equities, ETFs and Offshore Funds
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 animate-stagger-2">
+                <Link href="/ipo">
+                  <button className="w-full sm:w-auto px-10 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98 flex items-center justify-center space-x-2">
+                    <span>Explore IPOs</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
+                
+                <Link href="/platforms">
+                  <button className="w-full sm:w-auto px-10 py-4 glass rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 active:scale-98">
+                    Trading Platforms
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
