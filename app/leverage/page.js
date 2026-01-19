@@ -64,7 +64,7 @@ export default function LeveragePage() {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="gradient-text">IPO Financing</span>
+            <span className="gradient-text">Leverage KPC IPO</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Maximize your IPO investment potential with 5x leverage
