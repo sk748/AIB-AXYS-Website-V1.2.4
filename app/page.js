@@ -151,12 +151,12 @@ export default function Home() {
                 <img
                   src="/aib-axys-logo-dark.svg"
                   alt="AIB-AXYS Africa"
-                  className="dark:block hidden w-full max-w-2xl mx-auto h-auto"
+                  className="dark:block hidden w-full max-w-xl mx-auto h-auto"
                 />
                 <img
                   src="/aib-axys-logo-light.svg"
                   alt="AIB-AXYS Africa"
-                  className="dark:hidden block w-full max-w-2xl mx-auto h-auto"
+                  className="dark:hidden block w-full max-w-xl mx-auto h-auto"
                 />
               </a>
             </div>
