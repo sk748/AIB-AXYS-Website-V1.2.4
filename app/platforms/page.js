@@ -20,7 +20,7 @@ export default function PlatformsPage() {
               {/* Logo */}
               <div className="w-full max-w-md animate-fade-up">
                 <Image
-                  src="/digitrader-white.png"
+                  src={theme === 'dark' ? '/digitrader-logo-dark-bg.png' : '/digitrader-logo-white-bg.png'}
                   alt="AIBAXYS DigiTrader"
                   width={800}
                   height={200}
@@ -37,7 +37,7 @@ export default function PlatformsPage() {
                   rel="noopener noreferrer"
                   className="group w-full"
                 >
-                  <div className="flex items-center gap-3 px-6 py-4 bg-black dark:bg-white text-white dark:text-black rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl w-full">
+                  <div className="flex items-center gap-3 px-6 py-4 bg-[#0017bf] dark:bg-white text-white dark:text-black rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl w-full">
                     <Apple className="w-7 h-7" />
                     <div className="text-left">
                       <div className="text-xs opacity-80">Download on the</div>
@@ -52,7 +52,7 @@ export default function PlatformsPage() {
                   rel="noopener noreferrer"
                   className="group w-full"
                 >
-                  <div className="flex items-center gap-3 px-6 py-4 bg-black dark:bg-white text-white dark:text-black rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl w-full">
+                  <div className="flex items-center gap-3 px-6 py-4 bg-[#0017bf] dark:bg-white text-white dark:text-black rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl w-full">
                     <Play className="w-7 h-7 fill-current" />
                     <div className="text-left">
                       <div className="text-xs opacity-80">GET IT ON</div>
