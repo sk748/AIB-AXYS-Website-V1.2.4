@@ -1,24 +1,49 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import GlassCard from '@/components/GlassCard';
-import content from '@/config/content.json';
-import { Search, Download, Calendar } from 'lucide-react';
+import { FileText, Download, Calendar, Tag } from 'lucide-react';
 
 export default function ResearchPage() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filteredResearch, setFilteredResearch] = useState(content.research);
+  const [papers, setPapers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState('all');
 
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-    const filtered = content.research.filter(
-      (item) =>
-        item.title.toLowerCase().includes(query.toLowerCase()) ||
-        item.category.toLowerCase().includes(query.toLowerCase()) ||
-        item.description.toLowerCase().includes(query.toLowerCase())
-    );
-    setFilteredResearch(filtered);
+  useEffect(() => {
+    fetchPapers();
+  }, []);
+
+  const fetchPapers = async () => {
+    try {
+      const response = await fetch('/api/research');
+      const data = await response.json();
+      setPapers(data.papers || []);
+    } catch (error) {
+      console.error('Error fetching papers:', error);
+    } finally {
+      setLoading(false);
+    }
   };
+
+  const handleDownload = async (paperId) => {
+    try {
+      await fetch(`/api/research/download?id=${paperId}`);
+    } catch (error) {
+      console.error('Download error:', error);
+    }
+  };
+
+  const categories = [
+    { value: 'all', label: 'All Reports' },
+    { value: 'market-analysis', label: 'Market Analysis' },
+    { value: 'stock-recommendations', label: 'Stock Recommendations' },
+    { value: 'ipo-analysis', label: 'IPO Analysis' },
+    { value: 'sector-reports', label: 'Sector Reports' },
+  ];
+
+  const filteredPapers = filter === 'all' 
+    ? papers 
+    : papers.filter(p => p.category === filter);
 
   return (
     <div className="min-h-screen py-20">
@@ -26,62 +51,114 @@ export default function ResearchPage() {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="gradient-text">Market Research</span>
+            <span className="gradient-text">Research & Insights</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Expert analysis and insights to guide your investment decisions
+            Expert market analysis and investment research to guide your decisions
           </p>
         </div>
 
-        {/* Search Bar */}
-        <div className="max-w-2xl mx-auto mb-12 animate-stagger-1">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-            <input
-              type="text"
-              placeholder="Search research reports..."
-              value={searchQuery}
-              onChange={(e) => handleSearch(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 glass rounded-lg bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
-            />
+        {/* Category Filter */}
+        <div className="flex justify-center mb-12 animate-stagger-1">
+          <div className="inline-flex rounded-lg border border-border overflow-hidden">
+            {categories.map((cat) => (
+              <button
+                key={cat.value}
+                onClick={() => setFilter(cat.value)}
+                className={`px-6 py-3 text-sm font-medium transition-colors ${
+                  filter === cat.value
+                    ? 'bg-primary text-primary-foreground'
+                    : 'bg-background hover:bg-muted text-foreground'
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Research Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-stagger-2">
-          {filteredResearch.map((item) => (
-            <GlassCard key={item.id} hover3d className="flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 text-xs font-semibold rounded-full bg-primary/20 text-brand-blue">
-                    {item.category}
-                  </span>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    {new Date(item.date).toLocaleDateString('en-US', {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric',
-                    })}
+        {/* Papers Grid */}
+        {loading ? (
+          <div className="flex justify-center py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+          </div>
+        ) : filteredPapers.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto animate-stagger-2">
+            {filteredPapers.map((paper, index) => (
+              <GlassCard key={paper._id} hover3d className="p-6">
+                <div className="flex flex-col h-full">
+                  {/* Icon */}
+                  <div className="flex justify-center mb-4">
+                    <div className="p-4 bg-primary/10 rounded-lg">
+                      <FileText className="w-8 h-8 text-brand-blue" />
+                    </div>
                   </div>
+
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-center mb-3 text-foreground">
+                    {paper.title}
+                  </h3>
+
+                  {/* Category Badge */}
+                  <div className="flex justify-center mb-3">
+                    <span className="px-3 py-1 text-xs bg-primary/10 text-brand-blue rounded-full">
+                      {paper.category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                    </span>
+                  </div>
+
+                  {/* Description */}
+                  {paper.description && (
+                    <p className="text-sm text-muted-foreground text-center mb-4 flex-1">
+                      {paper.description}
+                    </p>
+                  )}
+
+                  {/* Tags */}
+                  {paper.tags && paper.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 justify-center mb-4">
+                      {paper.tags.map((tag, idx) => (
+                        <span key={idx} className="px-2 py-1 text-xs bg-muted text-muted-foreground rounded">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Meta Info */}
+                  <div className="flex items-center justify-center space-x-4 text-xs text-muted-foreground mb-4">
+                    <div className="flex items-center space-x-1">
+                      <Calendar className="w-3 h-3" />
+                      <span>{new Date(paper.publishedDate).toLocaleDateString()}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Download className="w-3 h-3" />
+                      <span>{paper.downloadCount} downloads</span>
+                    </div>
+                  </div>
+
+                  {/* Download Button */}
+                  <a
+                    href={paper.fileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => handleDownload(paper._id)}
+                    className="w-full"
+                  >
+                    <button className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98 flex items-center justify-center space-x-2">
+                      <Download className="w-4 h-4" />
+                      <span>Download PDF</span>
+                    </button>
+                  </a>
                 </div>
-
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{item.description}</p>
-              </div>
-
-              <button className="w-full mt-4 px-4 py-3 glass rounded-lg font-semibold hover:bg-primary/20 transition-all duration-300 flex items-center justify-center space-x-2 hover:scale-105 active:scale-98">
-                <Download className="w-4 h-4" />
-                <span>Download Report</span>
-              </button>
-            </GlassCard>
-          ))}
-        </div>
-
-        {/* No Results */}
-        {filteredResearch.length === 0 && (
+              </GlassCard>
+            ))}
+          </div>
+        ) : (
           <div className="text-center py-20">
-            <p className="text-xl text-muted-foreground">No research reports found matching your search.</p>
+            <FileText className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
+            <p className="text-xl text-muted-foreground">
+              {filter === 'all' ? 'No research papers available yet' : 'No papers in this category'}
+            </p>
           </div>
         )}
       </div>
