@@ -59,9 +59,15 @@ export default function IPOPage() {
                 </div>
 
                 <div className="mt-8 text-center">
-                  <button className="px-8 py-4 bg-[#FF3B3F] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#FF3B3F]/50 transition-all duration-300 hover:scale-105 active:scale-98">
-                    Apply Now
-                  </button>
+                  <a 
+                    href="https://kpcipo.e-offer.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="px-8 py-4 bg-[#FF3B3F] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#FF3B3F]/50 transition-all duration-300 hover:scale-105 active:scale-98">
+                      Apply Now
+                    </button>
+                  </a>
                 </div>
               </div>
             )}
