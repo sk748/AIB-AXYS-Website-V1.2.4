@@ -17,9 +17,9 @@ export default function PlatformsPage() {
           {/* Left Column - Text Content */}
           <div className="space-y-8 animate-fade-up">
             {/* Logo instead of text title */}
-            <div className="w-full max-w-md">
+            <div className="w-full max-w-md bg-white dark:bg-white rounded-lg p-4">
               <Image
-                src={theme === 'dark' ? '/digitrader-logo-light.png' : '/digitrader-logo-dark.png'}
+                src="/digitrader-logo-dark.png"
                 alt="Digitrader"
                 width={600}
                 height={150}
