@@ -139,6 +139,7 @@ export default function AdminResearchPage() {
                   <option value="stock-recommendations">Stock Recommendations</option>
                   <option value="ipo-analysis">IPO Analysis</option>
                   <option value="sector-reports">Sector Reports</option>
+                  <option value="information-memorandums">Information Memorandums</option>
                   <option value="other">Other</option>
                 </select>
               </div>
