@@ -189,21 +189,6 @@ export default function AboutPage() {
           ))}
         </div>
 
-        {/* Key Differentiators */}
-        <div className="max-w-5xl mx-auto mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            <span className="gradient-text">Why Choose Us</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {differentiators.map((item, index) => (
-              <GlassCard key={index} className="p-6">
-                <h3 className="text-lg font-bold text-brand-blue mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </GlassCard>
-            ))}
-          </div>
-        </div>
-
         {/* Regulatory Info */}
         <div className="max-w-4xl mx-auto">
           <GlassCard className="p-8 text-center">
