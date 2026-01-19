@@ -152,7 +152,7 @@ export default function AboutPage() {
           <GlassCard className="p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">Regulatory Status</h2>
             <p className="text-muted-foreground">
-              AIB-AXYS Africa Limited is a licensed Stockbroker and Investment Adviser, 
+              AIB-AXYS Africa Limited is a licensed Stockbroker, 
               regulated by the Capital Markets Authority (CMA). Member of the Nairobi Securities Exchange (NSE) 
               and the Central Depository and Settlement Corporation (CDSC).
             </p>
