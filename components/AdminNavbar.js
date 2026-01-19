@@ -53,6 +53,7 @@ export default function AdminNavbar() {
     { name: 'Research', href: '/admin/research', icon: <FileText className="w-4 h-4" /> },
     { name: 'IPO Settings', href: '/admin/ipo-settings', icon: <TrendingUp className="w-4 h-4" /> },
     { name: 'Pages', href: '/admin/pages', icon: <Eye className="w-4 h-4" /> },
+    { name: 'GDPR', href: '/admin/gdpr', icon: <Shield className="w-4 h-4" /> },
     { name: 'Users', href: '/admin/users', icon: <Shield className="w-4 h-4" /> },
     { name: 'Settings', href: '/admin/settings', icon: <Settings className="w-4 h-4" /> },
   ];
