@@ -56,6 +56,7 @@ export default function ResearchPage() {
 
   // Select company from dropdown
   const selectCompanyFromDropdown = (company) => {
+    console.log('Company selected:', company);
     setSelectedCompany(company);
     setSearchTerm(company.name);
     setShowDropdown(false);
@@ -75,27 +76,24 @@ export default function ResearchPage() {
     
     // For Company tab: show all papers by default
     if (filter === 'company') {
-      // If a company is selected, filter by that company OR by search term in title
+      // If a company is selected, filter by that company
       if (selectedCompany) {
-        const searchMatch = p.company && p.company.toLowerCase().includes(selectedCompany.name.toLowerCase());
-        const titleMatch = p.title && p.title.toLowerCase().includes(selectedCompany.name.toLowerCase());
-        return searchMatch || titleMatch;
+        const companyNameLower = selectedCompany.name.toLowerCase();
+        const searchMatch = p.company && p.company.toLowerCase().includes(companyNameLower);
+        const titleMatch = p.title && p.title.toLowerCase().includes(companyNameLower);
+        const descMatch = p.description && p.description.toLowerCase().includes(companyNameLower);
+        console.log('Filtering for:', selectedCompany.name, 'Paper:', p.title, 'Matches:', searchMatch || titleMatch || descMatch);
+        return searchMatch || titleMatch || descMatch;
       }
       
-      // If user is typing but hasn't selected, filter by search term
-      if (searchTerm && !selectedCompany) {
-        const searchLower = searchTerm.toLowerCase();
-        return (p.company && p.company.toLowerCase().includes(searchLower)) ||
-               (p.title && p.title.toLowerCase().includes(searchLower)) ||
-               (p.description && p.description.toLowerCase().includes(searchLower));
-      }
-      
-      // No search/selection: show all papers
+      // If user is typing but hasn't selected, show all papers (let them browse)
       return true;
     }
     
     return true;
   });
+
+  console.log('Filter:', filter, 'Selected Company:', selectedCompany?.name, 'Filtered Papers:', filteredPapers.length);
 
   return (
     <div className="min-h-screen py-20">
