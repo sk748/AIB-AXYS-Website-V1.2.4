@@ -117,6 +117,13 @@ export default function AdminDashboard() {
       color: 'bg-indigo-50 text-indigo-600',
     },
     {
+      title: 'User Management',
+      description: 'Manage admin users and permissions',
+      icon: <Users className="w-8 h-8" />,
+      href: '/admin/users',
+      color: 'bg-pink-50 text-pink-600',
+    },
+    {
       title: 'Email Settings',
       description: 'Configure Outlook email integration',
       icon: <Settings className="w-8 h-8" />,
@@ -126,37 +133,7 @@ export default function AdminDashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <LayoutDashboard className="w-8 h-8 text-[#0017bf]" />
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-                <p className="text-sm text-gray-500">AIB-AXYS Africa Management Portal</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Link href="/" target="_blank" className="text-sm text-gray-600 hover:text-[#0017bf]">
-                <Eye className="w-5 h-5 inline mr-1" />
-                View Website
-              </Link>
-              <button
-                onClick={handleLogout}
-                className="flex items-center space-x-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors"
-              >
-                <LogOut className="w-4 h-4" />
-                <span>Logout</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"">
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {statCards.map((stat, index) => (
