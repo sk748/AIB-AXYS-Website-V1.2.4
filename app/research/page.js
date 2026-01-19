@@ -145,10 +145,6 @@ export default function ResearchPage() {
                 }}
                 onFocus={() => searchTerm && setShowDropdown(true)}
                 onClick={() => searchTerm && setShowDropdown(true)}
-                onBlur={() => {
-                  // Delay to allow click on dropdown item
-                  setTimeout(() => setShowDropdown(false), 200);
-                }}
                 placeholder="Search by company name or sector..."
                 className="w-full pl-12 pr-10 py-3 border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-background text-foreground"
               />
