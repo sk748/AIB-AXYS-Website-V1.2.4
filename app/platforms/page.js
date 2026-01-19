@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Apple, Play } from 'lucide-react';
@@ -7,9 +8,26 @@ import { useTheme } from '@/contexts/ThemeContext';
 
 export default function PlatformsPage() {
   const { theme } = useTheme();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [logoLoaded, setLogoLoaded] = useState(false);
+
+  // Show content only when images are loaded
+  const showContent = imageLoaded && logoLoaded;
 
   return (
-    <div className="min-h-screen">
+    <>
+      {/* Loading Screen */}
+      {!showContent && (
+        <div className="fixed inset-0 bg-background flex items-center justify-center z-50">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-primary mx-auto mb-4"></div>
+            <p className="text-lg text-muted-foreground">Loading...</p>
+          </div>
+        </div>
+      )}
+
+      {/* Main Content */}
+      <div className={`min-h-screen transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
       {/* Hero Section - Full Viewport Height */}
       <section className="min-h-screen flex items-center justify-center py-20">
         <div className="container mx-auto px-4 max-w-7xl">
