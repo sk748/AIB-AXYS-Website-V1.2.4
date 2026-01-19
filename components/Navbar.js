@@ -11,8 +11,24 @@ const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showNavbarLogo, setShowNavbarLogo] = useState(false);
+  const [pageVisibility, setPageVisibility] = useState({});
   const pathname = usePathname();
   const isHomePage = pathname === '/';
+
+  useEffect(() => {
+    // Fetch page visibility settings
+    fetchPageVisibility();
+  }, []);
+
+  const fetchPageVisibility = async () => {
+    try {
+      const response = await fetch('/api/page-visibility');
+      const data = await response.json();
+      setPageVisibility(data.settings || {});
+    } catch (error) {
+      console.error('Error fetching page visibility:', error);
+    }
+  };
 
   useEffect(() => {
     // Only apply scroll logic on home page
@@ -35,17 +51,25 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHomePage]);
 
-  const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Group', href: '/group' },
-    { name: 'Platforms', href: '/platforms' },
-    { name: 'Services', href: '/services' },
-    { name: 'IPO', href: '/ipo' },
-    { name: 'Leverage', href: '/leverage' },
-    { name: 'FAQ', href: '/faq' },
-    { name: 'Contact', href: '/contact' },
+  const allNavLinks = [
+    { name: 'Home', href: '/', pageName: 'home' },
+    { name: 'About', href: '/about', pageName: 'about' },
+    { name: 'Group', href: '/group', pageName: 'group' },
+    { name: 'Platforms', href: '/platforms', pageName: 'platforms' },
+    { name: 'Services', href: '/services', pageName: 'services' },
+    { name: 'Research', href: '/research', pageName: 'research' },
+    { name: 'IPO', href: '/ipo', pageName: 'ipo' },
+    { name: 'Leverage', href: '/leverage', pageName: 'leverage' },
+    { name: 'FAQ', href: '/faq', pageName: 'faq' },
+    { name: 'Contact', href: '/contact', pageName: 'contact' },
   ];
+
+  // Filter nav links based on visibility settings
+  const navLinks = allNavLinks.filter(link => {
+    const visibility = pageVisibility[link.pageName];
+    // Show if no settings loaded yet (default) or if showInNav is true
+    return !visibility || visibility.showInNav !== false;
+  });
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 dark:bg-[#0a0a0f]/60 border-b border-gray-200/20 dark:border-white/10">
