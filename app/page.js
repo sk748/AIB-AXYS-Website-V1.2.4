@@ -141,7 +141,7 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center space-y-8 animate-fade-up">
             {/* Large Centered Logo */}
-            <div className="mb-8">
+            <div className="mb-8 px-4">
               <a 
                 href="https://axys-group.com/" 
                 target="_blank" 
@@ -151,12 +151,12 @@ export default function Home() {
                 <img
                   src="/aib-axys-logo-dark.svg"
                   alt="AIB-AXYS Africa"
-                  className="dark:block hidden w-full max-w-6xl mx-auto h-auto"
+                  className="dark:block hidden w-[70vw] max-w-none mx-auto h-auto"
                 />
                 <img
                   src="/aib-axys-logo-light.svg"
                   alt="AIB-AXYS Africa"
-                  className="dark:hidden block w-full max-w-6xl mx-auto h-auto"
+                  className="dark:hidden block w-[70vw] max-w-none mx-auto h-auto"
                 />
               </a>
             </div>
