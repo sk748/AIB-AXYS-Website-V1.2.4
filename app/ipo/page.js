@@ -108,8 +108,8 @@ export default function IPOPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-semibold text-brand-blue mb-2">Share Price Range</h3>
-                <p className="text-muted-foreground">KES 45 - KES 55</p>
+                <h3 className="font-semibold text-brand-blue mb-2">Share Price</h3>
+                <p className="text-muted-foreground">KES 9.00</p>
               </div>
               
               <div>
@@ -124,16 +124,17 @@ export default function IPOPage() {
               
               <div>
                 <h3 className="font-semibold text-brand-blue mb-2">Issue Size</h3>
-                <p className="text-muted-foreground">KES 2.5 Billion</p>
+                <p className="text-muted-foreground">11,812,644,350 Shares</p>
               </div>
             </div>
 
             <div className="mt-6 pt-6 border-t border-border">
-              <h3 className="font-semibold text-brand-blue mb-2">About Kenya Pipeline</h3>
+              <h3 className="font-semibold text-brand-blue mb-2">About Kenya Pipeline Company</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Kenya Pipeline Company is a state corporation established to provide efficient, reliable and cost-effective 
-                pipeline transportation and storage services for petroleum products. This IPO offers a unique opportunity 
-                to invest in Kenya's critical infrastructure.
+                Kenya Pipeline Company Limited (KPC) is a State Corporation wholly owned by the Government of Kenya. 
+                Its mandate is to develop, operate, and maintain an efficient, safe, reliable, and cost-effective system 
+                for the transportation, storage, and distribution of refined petroleum products from Mombasa to the hinterland. 
+                The Company operates a pipeline network of 1,342 km and a total storage capacity of 1,138,324 m³.
               </p>
             </div>
           </GlassCard>
