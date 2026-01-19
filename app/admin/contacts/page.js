@@ -282,7 +282,6 @@ export default function AdminContactsPage() {
           </div>
         </div>
       )}
-    </div>
     </>
   );
 }
