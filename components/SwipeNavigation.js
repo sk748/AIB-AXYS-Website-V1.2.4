@@ -13,6 +13,39 @@ const SwipeNavigation = ({ children }) => {
   const [isSwiping, setIsSwiping] = useState(false);
   const [swipeProgress, setSwipeProgress] = useState(0);
   const [swipeDirection, setSwipeDirection] = useState(null);
+  const [showIndicators, setShowIndicators] = useState(true);
+  const hideTimerRef = useRef(null);
+
+  // Auto-hide indicators after 4 seconds of inactivity
+  useEffect(() => {
+    const resetHideTimer = () => {
+      setShowIndicators(true);
+      if (hideTimerRef.current) {
+        clearTimeout(hideTimerRef.current);
+      }
+      hideTimerRef.current = setTimeout(() => {
+        setShowIndicators(false);
+      }, 4000);
+    };
+
+    resetHideTimer();
+
+    // Reset timer on any user interaction
+    const handleInteraction = () => resetHideTimer();
+    
+    window.addEventListener('touchstart', handleInteraction);
+    window.addEventListener('touchmove', handleInteraction);
+    window.addEventListener('click', handleInteraction);
+
+    return () => {
+      if (hideTimerRef.current) {
+        clearTimeout(hideTimerRef.current);
+      }
+      window.removeEventListener('touchstart', handleInteraction);
+      window.removeEventListener('touchmove', handleInteraction);
+      window.removeEventListener('click', handleInteraction);
+    };
+  }, [pathname]);
 
   // Define page order for navigation - matches navbar order
   const pages = [
