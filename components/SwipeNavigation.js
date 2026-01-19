@@ -192,7 +192,7 @@ const SwipeNavigation = ({ children }) => {
             className={`h-2 rounded-full transition-all duration-300 ${
               index === currentIndex
                 ? 'bg-primary w-4'
-                : 'bg-white/30 w-2 hover:bg-white/50'
+                : 'bg-transparent border-2 border-primary dark:border-white w-2 hover:bg-primary/30 dark:hover:bg-white/30'
             }`}
             aria-label={`Go to ${page === '/' ? 'Home' : page.slice(1)}`}
           />
