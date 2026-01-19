@@ -46,11 +46,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/research" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Research
-                </Link>
-              </li>
-              <li>
                 <Link href="/faq" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   FAQ
                 </Link>
@@ -74,7 +69,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/leverage" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Leveraged Trading
+                  IPO Financing
                 </Link>
               </li>
               <li>
@@ -95,7 +90,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone className="w-4 h-4 text-brand-blue" />
-                <span>+254 711 047 000</span>
+                <span>+254 711 047000</span>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4 text-brand-blue" />
@@ -109,9 +104,30 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 dark:border-[#1e2a3d] mt-8 pt-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} AIB-AXYS Africa. All rights reserved.
+        {/* Disclaimer Section */}
+        <div className="border-t border-gray-200 dark:border-[#1e2a3d] mt-8 pt-8">
+          <div className="space-y-4 text-xs text-muted-foreground leading-relaxed">
+            {/* Risk Disclaimer */}
+            <p>
+              <strong>Risk Disclaimer:</strong> Investing in the Nairobi Securities Exchange (NSE) and global capital markets involves risk. 
+              The value of stocks and fixed income instruments can fluctuate, and you may receive back less than your original investment. 
+              Past performance of any security or research insight is not a reliable indicator of future results. 
+              Please ensure you fully understand the risks involved or seek independent financial advice before trading.
+            </p>
+            
+            {/* Regulatory Status */}
+            <p>
+              <strong>Regulatory Status:</strong> AIB-AXYS Africa Limited is a licensed Stockbroker and Investment Adviser, 
+              regulated by the Capital Markets Authority (CMA). Member of the Nairobi Securities Exchange (NSE) and 
+              the Central Depository and Settlement Corporation (CDSC).
+            </p>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-200 dark:border-[#1e2a3d] mt-6 pt-6 text-center">
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} AIB-AXYS Africa Limited. All rights reserved.
           </p>
         </div>
       </div>
