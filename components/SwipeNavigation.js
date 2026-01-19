@@ -14,15 +14,15 @@ const SwipeNavigation = ({ children }) => {
   const [swipeProgress, setSwipeProgress] = useState(0);
   const [swipeDirection, setSwipeDirection] = useState(null);
 
-  // Define page order for navigation
+  // Define page order for navigation - matches navbar order
   const pages = [
     '/',
-    '/ipo',
-    '/leverage',
-    '/platforms',
     '/about',
     '/group',
-    '/global-markets',
+    '/platforms',
+    '/services',
+    '/ipo',
+    '/leverage',
     '/faq',
     '/contact',
   ];
