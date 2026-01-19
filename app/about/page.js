@@ -73,7 +73,7 @@ export default function AboutPage() {
         {/* Story Section */}
         <div className="max-w-4xl mx-auto mb-24 animate-stagger-1">
           <GlassCard className="p-8">
-            <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">Our Story</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 AIB-AXYS Africa is a distinguished member of AXYS Group, a fully integrated investment house 
