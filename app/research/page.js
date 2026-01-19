@@ -43,14 +43,23 @@ export default function ResearchPage() {
     { value: 'information-memorandums', label: 'Information Memorandums' },
   ];
 
-  // Filter papers based on category
+  // Filter papers based on category and search
   const filteredPapers = papers.filter(p => {
     // Filter by category (except for 'all' and 'company')
     if (filter !== 'all' && filter !== 'company' && p.category !== filter) return false;
     
-    // For Company tab: show all papers
+    // For Company tab with search: filter by search term
+    if (filter === 'company' && searchTerm) {
+      const searchLower = searchTerm.toLowerCase();
+      const companyMatch = p.company && p.company.toLowerCase().includes(searchLower);
+      const titleMatch = p.title && p.title.toLowerCase().includes(searchLower);
+      const descMatch = p.description && p.description.toLowerCase().includes(searchLower);
+      return companyMatch || titleMatch || descMatch;
+    }
+    
+    // For Company tab without search: show all papers
     if (filter === 'company') {
-      return true; // Show all papers
+      return true;
     }
     
     return true;
