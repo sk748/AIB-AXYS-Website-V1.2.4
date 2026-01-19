@@ -1,7 +1,7 @@
 'use client';
 
 import GlassCard from '@/components/GlassCard';
-import { TrendingUp, Shield, Zap, CheckCircle } from 'lucide-react';
+import { TrendingUp, Shield, Zap, CheckCircle, FileText, Wallet, Send, ArrowRightLeft } from 'lucide-react';
 
 export default function LeveragePage() {
   const features = [
@@ -12,8 +12,8 @@ export default function LeveragePage() {
     },
     {
       icon: <Shield className="w-8 h-8 text-[#00BCD4]" />,
-      title: 'Risk Management',
-      description: 'Advanced tools to help you manage and mitigate trading risks',
+      title: 'Bank-Led Security',
+      description: 'Secure account structures and automated clearance checks ensure your funds and shares are managed safely',
     },
     {
       icon: <Zap className="w-8 h-8 text-[#00BCD4]" />,
@@ -22,12 +22,39 @@ export default function LeveragePage() {
     },
   ];
 
+  const processSteps = [
+    {
+      step: 1,
+      title: 'Simple Onboarding',
+      icon: <FileText className="w-6 h-6" />,
+      description: 'Express your interest and sign a single Master Document Pack. If you don\'t have a CDSC account, we\'ll help you open one immediately.',
+    },
+    {
+      step: 2,
+      title: 'Account & Funding',
+      icon: <Wallet className="w-6 h-6" />,
+      description: 'Once approved, a dedicated transaction account is opened. You simply deposit your Cash Cover, and we top up the rest to create your 100% funding pool.',
+    },
+    {
+      step: 3,
+      title: 'Seamless Application',
+      icon: <Send className="w-6 h-6" />,
+      description: 'We handle the administration. Your IPO application is processed and linked directly to your financing facility using a unique identifier.',
+    },
+    {
+      step: 4,
+      title: 'Flexible Exit & Refunds',
+      icon: <ArrowRightLeft className="w-6 h-6" />,
+      description: 'IPO refunds are credited back to your account automatically. When you are ready to sell, or if an exit trigger occurs, settlement is handled directly through the bank.',
+    },
+  ];
+
   const benefits = [
     'Amplify your trading potential',
     '5x leverage for qualified investors',
-    'Professional trading tools',
+    'Unified Document Signing – One upfront sign-off for all processes',
+    'Automatic Refund Processing – Oversubscription refunds go straight to your principal',
     'Dedicated support team',
-    'Transparent fee structure',
     'Real-time risk monitoring',
   ];
 
@@ -37,10 +64,10 @@ export default function LeveragePage() {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="gradient-text">Leveraged Trading</span>
+            <span className="gradient-text">IPO Financing</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Maximize your trading potential with 5x leverage
+            Maximize your IPO investment potential with 5x leverage
           </p>
         </div>
 
@@ -57,8 +84,45 @@ export default function LeveragePage() {
           ))}
         </div>
 
+        {/* How It Works Section */}
+        <div className="max-w-6xl mx-auto mb-16 animate-stagger-2">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            <span className="gradient-text">How It Works</span>
+          </h2>
+          
+          {/* Process Timeline */}
+          <div className="relative">
+            {/* Horizontal line - hidden on mobile */}
+            <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-[#0017BF] via-[#00BCD4] to-[#0017BF]"></div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {processSteps.map((step, index) => (
+                <div key={index} className="relative">
+                  {/* Step Number Circle */}
+                  <div className="flex justify-center mb-6">
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#0017BF] to-[#00BCD4] flex items-center justify-center relative z-10">
+                      <div className="w-20 h-20 rounded-full bg-background flex flex-col items-center justify-center">
+                        <span className="text-2xl font-bold text-brand-blue">{step.step}</span>
+                        <div className="text-brand-blue">{step.icon}</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <GlassCard className="p-6 h-full">
+                    <h3 className="text-lg font-bold text-center mb-3 text-brand-blue">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground text-center leading-relaxed">
+                      {step.description}
+                    </p>
+                  </GlassCard>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto animate-stagger-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto animate-stagger-3">
           {/* Benefits */}
           <GlassCard className="p-8">
             <h2 className="text-2xl font-bold mb-6">Key Benefits</h2>
@@ -82,13 +146,13 @@ export default function LeveragePage() {
                   <span className="text-3xl font-bold text-brand-blue">1:4</span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Multiply your trading power by 5 with our professional leverage offering
+                  Multiply your IPO investment power by 5 with our professional financing facility
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Suitable for experienced traders</li>
-                  <li>• Professional risk management required</li>
+                  <li>• Suitable for experienced investors</li>
+                  <li>• Bank-secured account structure</li>
                   <li>• Competitive interest rates</li>
-                  <li>• Real-time margin monitoring</li>
+                  <li>• Automatic refund processing</li>
                 </ul>
               </div>
             </div>
@@ -96,11 +160,11 @@ export default function LeveragePage() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16 animate-stagger-3">
+        <div className="text-center mt-16 animate-stagger-4">
           <GlassCard className="p-8 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4">Ready to Start?</h2>
+            <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="text-muted-foreground mb-6">
-              Contact our team to discuss leverage trading requirements
+              Contact our team to discuss IPO financing options and requirements
             </p>
             <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98">
               Get Started
