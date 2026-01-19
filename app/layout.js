@@ -13,17 +13,19 @@ export const metadata = {
 const themeScript = `
   (function() {
     var theme = localStorage.getItem('aib-theme');
-    if (theme === 'light') {
-      document.documentElement.classList.add('light');
-    } else {
+    if (theme === 'dark') {
+      document.documentElement.classList.remove('light');
       document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
     }
   })();
 `;
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className="light" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
