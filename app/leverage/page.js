@@ -27,7 +27,7 @@ export default function LeveragePage() {
       step: 1,
       title: 'Simple Onboarding',
       icon: <FileText className="w-6 h-6" />,
-      description: 'Express your interest and sign a single Master Document Pack. If you don\'t have a CDSC account, we\'ll help you open one immediately.',
+      description: 'Express your interest and sign a single Master Document Pack. If you don\'t have a CDSC account, visit our offices or download DigiTrader to open one.',
     },
     {
       step: 2,
@@ -39,7 +39,7 @@ export default function LeveragePage() {
       step: 3,
       title: 'IPO Application Made Easy',
       icon: <Send className="w-6 h-6" />,
-      description: 'We handle the administration. Your IPO application is processed and linked directly to your financing facility using a unique identifier.',
+      description: 'We handle the administration. Your IPO application is processed and linked directly to your financing facility.',
     },
     {
       step: 4,
