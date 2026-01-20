@@ -121,15 +121,14 @@ const Footer = () => {
             <p>
               <strong>Risk Disclaimer:</strong> Investing in the Nairobi Securities Exchange (NSE) and global capital markets involves risk. 
               The value of stocks and fixed income instruments can fluctuate, and you may receive back less than your original investment. 
-              Past performance of any security or research insight is not a reliable indicator of future results. 
+              Past performance is not indicative of future returns. 
               Please ensure you fully understand the risks involved or seek independent financial advice before trading.
             </p>
             
             {/* Regulatory Status */}
             <p>
-              <strong>Regulatory Status:</strong> AIB-AXYS Africa Limited is a licensed Stockbroker, 
-              regulated by the Capital Markets Authority (CMA). Member of the Nairobi Securities Exchange (NSE) and 
-              the Central Depository and Settlement Corporation (CDSC).
+              <strong>Regulatory Status:</strong> AIB-AXYS Africa is licensed and regulated by the Capital Markets Authority (CMA) and Central Bank of Kenya (CBK). 
+              Member of the Nairobi Securities Exchange (NSE) and the Central Depository and Settlement Corporation (CDSC).
             </p>
           </div>
         </div>
