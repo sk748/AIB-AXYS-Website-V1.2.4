@@ -20,9 +20,9 @@ export default function ServicesPage() {
     {
       icon: <DollarSign className="w-12 h-12 text-[#00BCD4]" />,
       title: 'Bonds Trading',
-      description: 'The Bonds Dealing Desk offers investors access to Fixed Income securities including T-bills, T-bonds, and Corporate bonds. Our bond dealers have over 20 years of combined experience in the Kenyan market.',
+      description: 'The Bonds Dealing Desk offers investors access to Fixed Income securities including T-bills, Euro bonds, T-bonds, and Corporate bonds. Our bond dealers have over 20 years of combined experience in the Kenyan market.',
       features: [
-        'Access to T-bills, T-bonds, and Corporate bonds',
+        'Access to T-bills, Euro bonds, T-bonds, and Corporate bonds',
         'Primary and secondary market access',
         'Expert dealers with 20+ years experience',
         'Regular insights on interest rate movements',
