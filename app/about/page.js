@@ -37,33 +37,20 @@ export default function AboutPage() {
   ];
 
   const management = [
+    { name: 'Bansri Pattni', role: 'Chief Executive Officer' },
     { name: 'Mary Maloba', role: 'Ag. CEO & Compliance Manager' },
     { name: 'Lemek Oltele', role: 'Head of Business Development' },
-    { name: 'Nina Goswami', role: 'Head Manager Equity Trading' },
+    { name: 'Nina Goswami', role: 'Head of Equity Trading' },
     { name: 'Priscilla Gichuhi', role: 'Head of Finance, HR & Administration' },
   ];
 
-  const differentiators = [
-    {
-      title: 'Performance & Fees',
-      description: 'Delivers above market risk-adjusted performance with industry-competitive fees.',
-    },
-    {
-      title: 'Professional Team',
-      description: 'Experienced team with domestic and international backgrounds, agile and client-focused.',
-    },
-    {
-      title: 'Independent',
-      description: 'Access to investment products based on in-house research, not constrained by affiliations.',
-    },
-    {
-      title: 'Open Architecture',
-      description: 'Flexible approach to investing with extensive due diligence on product selection.',
-    },
-    {
-      title: 'Cutting Edge Tech',
-      description: 'Utilizes state-of-the-art technology, including the Digitrader platform.',
-    },
+  const team = [
+    { name: 'Ngige Jeff Wanjao', role: 'Wealth Management' },
+    { name: 'Maureen Wanjiku', role: 'Wealth Management' },
+    { name: 'Ian Mudiri', role: 'Wealth Management' },
+    { name: 'Veronica Wambua', role: 'Customer Service' },
+    { name: 'Peter Chege', role: 'IT, Products and Innovation' },
+    { name: 'Sam Kinuthia', role: 'Project Support Lead' },
   ];
 
   return (
@@ -83,7 +70,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto mb-24 animate-stagger-1">
           <GlassCard className="p-8">
             <h2 className="text-3xl font-bold mb-6 text-center">Our Story</h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-center">
               <p>
                 AIB-AXYS Africa is a distinguished member of AXYS Group, a fully integrated investment house 
                 born from the union of two long-established institutions: AIB Capital Limited and Apex Africa Capital Limited. 
@@ -93,19 +80,20 @@ export default function AboutPage() {
               <p>
                 We serve both retail and institutional investors, as well as High Net Worth Individuals (HNWIs), 
                 providing comprehensive investment solutions including local equities and bonds, global market execution, 
-                offshore funds access, research & advisory, and portfolio management services.
+                offshore funds access, research & advisory, and wealth management services.
               </p>
               <p>
                 With 30+ years of experience, 170+ employees across the group, and over 10,000 clients worldwide, 
-                we manage client assets exceeding USD 13.9 billion. Our reach extends across 85 countries and six continents.
+                AXYS Group operates across 85 countries and six continents. We combine local market expertise with 
+                global reach to deliver exceptional value to our clients.
               </p>
             </div>
           </GlassCard>
         </div>
 
         {/* Board of Directors */}
-        <div className="max-w-5xl mx-auto mb-24 animate-stagger-2">
-          <div className="text-center mb-16">
+        <div className="max-w-6xl mx-auto mb-24 animate-stagger-2">
+          <div className="text-center mb-12">
             <Users className="w-16 h-16 text-brand-blue mx-auto mb-4" />
             <h2 className="text-3xl font-bold mb-4 text-brand-blue">Board of Directors</h2>
             <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -136,8 +124,30 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {management.map((member, index) => (
+              <GlassCard 
+                key={index}
+                className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105"
+              >
+                <h4 className="text-lg font-bold text-foreground mb-2">{member.name}</h4>
+                <p className="text-brand-blue font-semibold text-sm">{member.role}</p>
+              </GlassCard>
+            ))}
+          </div>
+        </div>
+
+        {/* Team */}
+        <div className="max-w-6xl mx-auto mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-brand-blue">Team</h2>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              Our dedicated professionals delivering excellence
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {team.map((member, index) => (
               <GlassCard 
                 key={index}
                 className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105"
@@ -167,9 +177,8 @@ export default function AboutPage() {
           <GlassCard className="p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">Regulatory Status</h2>
             <p className="text-muted-foreground">
-              AIB-AXYS Africa Limited is a licensed Stockbroker, 
-              regulated by the Capital Markets Authority (CMA). Member of the Nairobi Securities Exchange (NSE) 
-              and the Central Depository and Settlement Corporation (CDSC).
+              AIB-AXYS Africa is licensed and regulated by the Capital Markets Authority (CMA) and Central Bank of Kenya (CBK). 
+              It is also a member of Nairobi Securities Exchange (NSE) and Central Depository and Settlement Corporation (CDSC).
             </p>
           </GlassCard>
         </div>
