@@ -130,8 +130,29 @@ export default function AboutPage() {
                 className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105"
               >
                 <h4 className="text-lg font-bold text-foreground mb-2">{member.name}</h4>
-                <p className="text-brand-blue font-semibold text-sm mb-1">{member.role}</p>
-                <p className="text-xs text-muted-foreground">{member.type}</p>
+                <p className="text-brand-blue font-semibold text-sm">{member.role}</p>
+              </GlassCard>
+            ))}
+          </div>
+        </div>
+
+        {/* Management */}
+        <div className="max-w-6xl mx-auto mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-brand-blue">Management</h2>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              Our leadership team driving operational excellence
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {management.map((member, index) => (
+              <GlassCard 
+                key={index}
+                className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105"
+              >
+                <h4 className="text-lg font-bold text-foreground mb-2">{member.name}</h4>
+                <p className="text-brand-blue font-semibold text-sm">{member.role}</p>
               </GlassCard>
             ))}
           </div>
@@ -147,50 +168,15 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Mary Maloba</h4>
-              <p className="text-brand-blue font-semibold text-sm">Ag. CEO & Compliance Manager</p>
-            </GlassCard>
-
-            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Lemek Oltele</h4>
-              <p className="text-brand-blue font-semibold text-sm">Head of Business Development</p>
-            </GlassCard>
-
-            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Priscilla Gichuhi</h4>
-              <p className="text-brand-blue font-semibold text-sm">Head of Finance, HR & Administration</p>
-            </GlassCard>
-
-            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Nina Goswami</h4>
-              <p className="text-brand-blue font-semibold text-sm">Head Manager Equity Trading</p>
-            </GlassCard>
-
-            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Veronica Wambua</h4>
-              <p className="text-brand-blue font-semibold text-sm">Customer Experience Manager</p>
-            </GlassCard>
-
-            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Samuel Kimani</h4>
-              <p className="text-brand-blue font-semibold text-sm">Chief Accountant CPAII</p>
-            </GlassCard>
-
-            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Ngige Jeff Wanjao</h4>
-              <p className="text-brand-blue font-semibold text-sm">Wealth Management Professional</p>
-            </GlassCard>
-
-            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Peter Chege</h4>
-              <p className="text-brand-blue font-semibold text-sm">IT and Product Development Manager</p>
-            </GlassCard>
-
-            <GlassCard className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105">
-              <h4 className="text-lg font-bold text-foreground mb-2">Samuel Mburu Kinuthia</h4>
-              <p className="text-brand-blue font-semibold text-sm">Project Support Lead</p>
-            </GlassCard>
+            {team.map((member, index) => (
+              <GlassCard 
+                key={index}
+                className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105"
+              >
+                <h4 className="text-lg font-bold text-foreground mb-2">{member.name}</h4>
+                <p className="text-brand-blue font-semibold text-sm">{member.role}</p>
+              </GlassCard>
+            ))}
           </div>
         </div>
 
