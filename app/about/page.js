@@ -43,15 +43,6 @@ export default function AboutPage() {
     { name: 'Priscilla Gichuhi', role: 'Head of Finance, HR & Administration' },
   ];
 
-  const team = [
-    { name: 'Bansri Pattni', role: 'Chief Executive Officer' },
-    { name: 'Veronica Wambua', role: 'Customer Experience Manager' },
-    { name: 'Samuel Kimani', role: 'Chief Accountant CPAII' },
-    { name: 'Ngige Jeff Wanjao', role: 'Wealth Management Professional' },
-    { name: 'Peter Chege', role: 'IT and Product Development Manager' },
-    { name: 'Samuel Mburu Kinuthia', role: 'Project Support Lead' },
-  ];
-
   const differentiators = [
     {
       title: 'Performance & Fees',
