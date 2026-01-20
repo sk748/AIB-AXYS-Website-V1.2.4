@@ -158,28 +158,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* The Team */}
-        <div className="max-w-6xl mx-auto mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-brand-blue">The Team</h2>
-            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Meet the dedicated professionals driving our mission forward
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {team.map((member, index) => (
-              <GlassCard 
-                key={index}
-                className="p-6 transition-all duration-500 hover:shadow-xl hover:shadow-[#0017BF]/20 hover:scale-105"
-              >
-                <h4 className="text-lg font-bold text-foreground mb-2">{member.name}</h4>
-                <p className="text-brand-blue font-semibold text-sm">{member.role}</p>
-              </GlassCard>
-            ))}
-          </div>
-        </div>
-
         {/* Values Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 animate-stagger-3">
           {values.map((value, index) => (
