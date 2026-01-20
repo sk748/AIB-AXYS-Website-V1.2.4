@@ -150,7 +150,7 @@ export default function GroupPage() {
         </div>
 
         {/* Call to Action */}
-        <div className="max-w-3xl mx-auto animate-stagger-4">
+        <div className="max-w-3xl mx-auto mb-16 animate-stagger-4">
           <GlassCard className="p-12 text-center">
             <h2 className="text-3xl font-bold mb-4">Global Reach, Local Expertise</h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
@@ -167,6 +167,55 @@ export default function GroupPage() {
               </button>
             </Link>
           </GlassCard>
+        </div>
+
+        {/* Global Offices */}
+        <div className="max-w-6xl mx-auto animate-stagger-5">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            <span className="gradient-text">Offices Around the World</span>
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <GlassCard className="p-6 text-center hover:scale-105 transition-all">
+              <div className="text-4xl mb-3">🇲🇺</div>
+              <h3 className="font-bold text-foreground">Mauritius</h3>
+              <p className="text-sm text-muted-foreground">Headquarters</p>
+            </GlassCard>
+            <GlassCard className="p-6 text-center hover:scale-105 transition-all">
+              <div className="text-4xl mb-3">🇰🇪</div>
+              <h3 className="font-bold text-foreground">Kenya</h3>
+              <p className="text-sm text-muted-foreground">Nairobi</p>
+            </GlassCard>
+            <GlassCard className="p-6 text-center hover:scale-105 transition-all">
+              <div className="text-4xl mb-3">🇿🇦</div>
+              <h3 className="font-bold text-foreground">South Africa</h3>
+              <p className="text-sm text-muted-foreground">Regional Hub</p>
+            </GlassCard>
+            <GlassCard className="p-6 text-center hover:scale-105 transition-all">
+              <div className="text-4xl mb-3">🇬🇧</div>
+              <h3 className="font-bold text-foreground">United Kingdom</h3>
+              <p className="text-sm text-muted-foreground">London</p>
+            </GlassCard>
+            <GlassCard className="p-6 text-center hover:scale-105 transition-all">
+              <div className="text-4xl mb-3">🇫🇷</div>
+              <h3 className="font-bold text-foreground">France</h3>
+              <p className="text-sm text-muted-foreground">Paris</p>
+            </GlassCard>
+            <GlassCard className="p-6 text-center hover:scale-105 transition-all">
+              <div className="text-4xl mb-3">🇨🇭</div>
+              <h3 className="font-bold text-foreground">Switzerland</h3>
+              <p className="text-sm text-muted-foreground">Geneva</p>
+            </GlassCard>
+            <GlassCard className="p-6 text-center hover:scale-105 transition-all">
+              <div className="text-4xl mb-3">🇦🇪</div>
+              <h3 className="font-bold text-foreground">UAE</h3>
+              <p className="text-sm text-muted-foreground">Dubai</p>
+            </GlassCard>
+            <GlassCard className="p-6 text-center hover:scale-105 transition-all">
+              <div className="text-4xl mb-3">🌍</div>
+              <h3 className="font-bold text-foreground">Global</h3>
+              <p className="text-sm text-muted-foreground">85+ Countries</p>
+            </GlassCard>
+          </div>
         </div>
       </div>
     </div>
