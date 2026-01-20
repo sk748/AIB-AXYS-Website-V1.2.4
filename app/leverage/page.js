@@ -176,6 +176,9 @@ export default function LeveragePage() {
             <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-98">
               Get Started
             </button>
+            <p className="text-xs text-muted-foreground mt-4 italic">
+              *Terms and conditions apply. Subject to approval and eligibility requirements.
+            </p>
           </GlassCard>
         </div>
       </div>
