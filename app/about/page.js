@@ -50,7 +50,7 @@ export default function AboutPage() {
     { name: 'Ian Mudiri', role: 'Wealth Management' },
     { name: 'Veronica Wambua', role: 'Customer Service' },
     { name: 'Peter Chege', role: 'IT, Products and Innovation' },
-    { name: 'Sam Kinuthia', role: 'Project Support Lead' },
+    { name: 'Samuel Mburu Kinuthia', role: 'Project Support Lead' },
   ];
 
   return (
