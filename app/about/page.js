@@ -27,11 +27,29 @@ export default function AboutPage() {
   ];
 
   const boardMembers = [
-    { name: 'Charles M. Omanga', role: 'Chairman, AIB-AXYS', type: 'Non-Executive Director' },
-    { name: 'Michel Guy Ravilland', role: 'AXYS Group Chairman', type: 'Non-Executive Director' },
-    { name: 'Ian Sababady', role: 'Managing Director, AXYS Capital Management', type: 'Non-Executive Director' },
-    { name: 'Derek A. Waruhiu', role: 'Former Director West Africa Coca-Cola', type: 'Independent Director' },
-    { name: 'Bansri Pattni', role: 'Chief Executive Officer', type: 'Executive Director' },
+    { name: 'Charles Makori Omanga', role: 'Chairperson - Independent Non-Executive Director' },
+    { name: 'Michel Guy Rivalland', role: 'Non-executive Director' },
+    { name: 'Kenneth Wendell Ian Sababady', role: 'Non-executive Director' },
+    { name: 'Derek Arthur Waruhiu', role: 'Non-executive & Independent Director' },
+    { name: 'Khilan Gulabchand Shah', role: 'Non-executive & Independent Director' },
+    { name: 'Yasser Soolayman Doobory', role: 'Alternate to Mr. Michel - Non-executive Director' },
+    { name: 'Cedric Beguier', role: 'Alternate to Mr. Ian - Non-executive Director' },
+  ];
+
+  const management = [
+    { name: 'Mary Maloba', role: 'Ag. CEO & Compliance Manager' },
+    { name: 'Lemek Oltele', role: 'Head of Business Development' },
+    { name: 'Nina Goswami', role: 'Head Manager Equity Trading' },
+    { name: 'Priscilla Gichuhi', role: 'Head of Finance, HR & Administration' },
+  ];
+
+  const team = [
+    { name: 'Bansri Pattni', role: 'Chief Executive Officer' },
+    { name: 'Veronica Wambua', role: 'Customer Experience Manager' },
+    { name: 'Samuel Kimani', role: 'Chief Accountant CPAII' },
+    { name: 'Ngige Jeff Wanjao', role: 'Wealth Management Professional' },
+    { name: 'Peter Chege', role: 'IT and Product Development Manager' },
+    { name: 'Samuel Mburu Kinuthia', role: 'Project Support Lead' },
   ];
 
   const differentiators = [
