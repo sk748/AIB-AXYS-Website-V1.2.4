@@ -46,11 +46,13 @@ export default function ServicesPage() {
       title: 'Offshore Funds Access',
       description: 'Seamless access to world-class offshore investment opportunities designed for long-term value creation, transparency, and investor confidence.',
       features: [
-        'Dynamic Global Equity Feeder Fund',
         'Axiom Africa Equity Fund',
-        'Portfolio diversification beyond local markets',
-        'Long-term value creation focus',
-        'Access to global and African opportunities'
+        'Dynamic Global Equity Feeder Fund',
+        'Global Sharia Funds - Sukuk and Halal Equities',
+        'Global Fixed Income Funds',
+        'Global Multi-Asset/ Special Funds',
+        'Global Index/ Money Market Funds',
+        'Global Exchange Traded Funds (ETFs)'
       ]
     },
     {
@@ -67,7 +69,7 @@ export default function ServicesPage() {
     },
     {
       icon: <Users className="w-12 h-12 text-[#00BCD4]" />,
-      title: 'Portfolio Advisory',
+      title: 'Wealth Management',
       description: 'Expert guidance for High Net Worth Individuals, Corporates, and Institutional investors. We construct and design investment portfolios tailored to your specific needs and risk profiles.',
       features: [
         'Tailored portfolio construction',
