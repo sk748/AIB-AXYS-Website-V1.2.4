@@ -74,9 +74,12 @@ export async function POST(request) {
     console.log('✅ Contact saved to database:', contact._id);
 
     // Determine recipient email based on subject
-    let recipientEmail = 'info@aib-axysafrica.com';
+    const defaultEmail = process.env.CONTACT_EMAIL_DEFAULT || 'info@aib-axysafrica.com';
+    const generalEmail = process.env.CONTACT_EMAIL_GENERAL || 'feedback@aib-axysafrica.com';
+    
+    let recipientEmail = defaultEmail;
     if (subject === 'general') {
-      recipientEmail = 'feedback@aib-axysafrica.com';
+      recipientEmail = generalEmail;
     }
 
     // Get subject label
@@ -199,47 +202,44 @@ ${message}
       </html>
     `;
 
-    // Try to send email (will work when email settings are configured)
+    // Send email
     try {
-      // Check if email is configured in database
-      const emailSettings = await EmailSettings.findOne();
-      
-      if (emailSettings && emailSettings.isConfigured) {
-        // Update email lib to use DB settings
-        process.env.EMAIL_HOST = emailSettings.host;
-        process.env.EMAIL_PORT = emailSettings.port.toString();
-        process.env.EMAIL_USER = emailSettings.user;
-        process.env.EMAIL_PASS = emailSettings.password;
-        process.env.EMAIL_FROM = emailSettings.fromEmail;
-        
-        const emailResult = await sendEmail({
-          to: recipientEmail,
-          subject: `New ${subjectLabel} Inquiry - ${name}`,
-          text: emailText,
-          html: emailHtml,
-        });
+      const emailResult = await sendEmail({
+        to: recipientEmail,
+        subject: `New ${subjectLabel} Inquiry - ${name}`,
+        text: emailText,
+        html: emailHtml,
+      });
 
-        if (emailResult.success) {
-          // Update contact as email sent
-          await Contact.findByIdAndUpdate(contact._id, { emailSent: true });
-          console.log('✅ Email sent successfully');
-        }
-      } else {
-        console.log('ℹ️ Email not configured. Submission saved to database only.');
+      if (!emailResult.success) {
+        // Email service not configured, but we'll still return success
+        console.log('⚠️  Email service not configured. Message logged.');
+        console.log('To:', recipientEmail);
+        console.log('Content:', emailText);
       }
-    } catch (emailError) {
-      console.error('Email sending failed:', emailError.message);
-      // Continue - message is already saved in database
-    }
 
-    return NextResponse.json(
-      {
-        success: true,
-        message: 'Message sent successfully',
-        contactId: contact._id,
-      },
-      { status: 200 }
-    );
+      return NextResponse.json(
+        {
+          success: true,
+          message: 'Message sent successfully',
+          recipient: recipientEmail,
+          emailConfigured: emailResult.success,
+        },
+        { status: 200 }
+      );
+    } catch (emailError) {
+      console.error('Email sending failed:', emailError);
+      
+      // Still return success to user, but log the error
+      return NextResponse.json(
+        {
+          success: true,
+          message: 'Message received. Our team will contact you soon.',
+          note: 'Email delivery issue - message logged for manual follow-up',
+        },
+        { status: 200 }
+      );
+    }
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json(
