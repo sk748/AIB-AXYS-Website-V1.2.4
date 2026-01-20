@@ -99,8 +99,8 @@ export default function LeveragePage() {
           
           {/* Process Timeline */}
           <div className="relative">
-            {/* Horizontal line - hidden on mobile */}
-            <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-[#0017BF] via-[#00BCD4] to-[#0017BF]"></div>
+            {/* Horizontal line - hidden on mobile, shortened to prevent overlap */}
+            <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-[#0017BF] via-[#00BCD4] to-[#0017BF]"></div>
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {processSteps.map((step, index) => (
