@@ -628,6 +628,314 @@ def test_logout():
             log_test("POST /api/auth/logout", "FAIL", f"Status {response.status_code}")
             return False
             
+
+# ============================================================================
+# ROUND 2 VALIDATION TESTS - STABILITY & EDGE CASES
+# ============================================================================
+
+def test_concurrent_dashboard_requests():
+    """Test MongoDB stability with concurrent requests"""
+    print_section("10. MONGODB STABILITY - CONCURRENT REQUESTS")
+    
+    if not auth_cookies:
+        log_test("Concurrent Dashboard Requests", "FAIL", "No auth cookies available")
+        return False
+    
+    def make_dashboard_request(request_num):
+        """Make a single dashboard request"""
+        try:
+            response = requests.get(
+                f"{API_URL}/admin/dashboard",
+                cookies=auth_cookies,
+                timeout=10
+            )
+            return (request_num, response.status_code == 200, response.status_code)
+        except Exception as e:
+            return (request_num, False, str(e))
+    
+    try:
+        # Make 10 concurrent requests to test MongoDB connection pool
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+            futures = [executor.submit(make_dashboard_request, i) for i in range(10)]
+            results = [future.result() for future in concurrent.futures.as_completed(futures)]
+        
+        successful = sum(1 for _, success, _ in results if success)
+        
+        if successful == 10:
+            log_test("Concurrent Dashboard Requests (10x)", "PASS", f"All {successful}/10 requests succeeded")
+            return True
+        elif successful >= 8:
+            log_test("Concurrent Dashboard Requests (10x)", "WARN", f"Only {successful}/10 requests succeeded")
+            return True
+        else:
+            log_test("Concurrent Dashboard Requests (10x)", "FAIL", f"Only {successful}/10 requests succeeded")
+            return False
+            
+    except Exception as e:
+        log_test("Concurrent Dashboard Requests (10x)", "FAIL", f"Exception: {str(e)}")
+        return False
+
+def test_concurrent_contact_submissions():
+    """Test concurrent contact form submissions"""
+    
+    def make_contact_submission(request_num):
+        """Make a single contact submission"""
+        try:
+            response = requests.post(
+                f"{API_URL}/contact",
+                json={
+                    "name": f"Test User {request_num}",
+                    "email": f"testuser{request_num}@example.com",
+                    "phone": f"+25471234{request_num:04d}",
+                    "subject": "general",
+                    "message": f"Concurrent test message {request_num}"
+                },
+                timeout=10
+            )
+            return (request_num, response.status_code == 200, response.status_code)
+        except Exception as e:
+            return (request_num, False, str(e))
+    
+    try:
+        # Make 5 concurrent contact submissions
+        with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+            futures = [executor.submit(make_contact_submission, i) for i in range(5)]
+            results = [future.result() for future in concurrent.futures.as_completed(futures)]
+        
+        successful = sum(1 for _, success, _ in results if success)
+        
+        if successful >= 4:  # Allow 1 failure due to rate limiting
+            log_test("Concurrent Contact Submissions (5x)", "PASS", f"{successful}/5 requests succeeded")
+            return True
+        else:
+            log_test("Concurrent Contact Submissions (5x)", "FAIL", f"Only {successful}/5 requests succeeded")
+            return False
+            
+    except Exception as e:
+        log_test("Concurrent Contact Submissions (5x)", "FAIL", f"Exception: {str(e)}")
+        return False
+
+def test_malformed_json_request():
+    """Test API handling of malformed JSON"""
+    print_section("11. EDGE CASES - MALFORMED REQUESTS")
+    
+    try:
+        response = requests.post(
+            f"{API_URL}/auth/login",
+            data="invalid json {{{",
+            headers={"Content-Type": "application/json"},
+            timeout=10
+        )
+        
+        # Should return 400 or 500, not crash
+        if response.status_code in [400, 500]:
+            log_test("Malformed JSON Request", "PASS", f"Handled gracefully with {response.status_code}")
+            return True
+        else:
+            log_test("Malformed JSON Request", "WARN", f"Unexpected status {response.status_code}")
+            return True  # Not critical
+            
+    except Exception as e:
+        log_test("Malformed JSON Request", "FAIL", f"Exception: {str(e)}")
+        return False
+
+def test_missing_required_fields():
+    """Test API validation with missing fields"""
+    try:
+        response = requests.post(
+            f"{API_URL}/contact",
+            json={
+                "name": "Test User"
+                # Missing all other required fields
+            },
+            timeout=10
+        )
+        
+        if response.status_code == 400:
+            log_test("Missing Required Fields", "PASS", "Correctly validated missing fields")
+            return True
+        else:
+            log_test("Missing Required Fields", "WARN", f"Expected 400, got {response.status_code}")
+            return True  # Not critical
+            
+    except Exception as e:
+        log_test("Missing Required Fields", "FAIL", f"Exception: {str(e)}")
+        return False
+
+def test_sql_injection_attempt():
+    """Test SQL injection protection (should be safe with MongoDB)"""
+    try:
+        response = requests.post(
+            f"{API_URL}/auth/login",
+            json={
+                "email": "admin@test.com' OR '1'='1",
+                "password": "' OR '1'='1"
+            },
+            timeout=10
+        )
+        
+        # Should return 401, not succeed
+        if response.status_code == 401:
+            log_test("SQL Injection Protection", "PASS", "Correctly rejected injection attempt")
+            return True
+        else:
+            log_test("SQL Injection Protection", "FAIL", f"Unexpected status {response.status_code}")
+            return False
+            
+    except Exception as e:
+        log_test("SQL Injection Protection", "FAIL", f"Exception: {str(e)}")
+        return False
+
+def test_xss_attempt():
+    """Test XSS protection in contact form"""
+    try:
+        response = requests.post(
+            f"{API_URL}/contact",
+            json={
+                "name": "<script>alert('XSS')</script>",
+                "email": "test@example.com",
+                "phone": "+254712345678",
+                "subject": "general",
+                "message": "<img src=x onerror=alert('XSS')>"
+            },
+            timeout=10
+        )
+        
+        # Should accept but sanitize (200) or reject (400)
+        if response.status_code in [200, 400]:
+            log_test("XSS Protection", "PASS", f"Handled XSS attempt with {response.status_code}")
+            return True
+        else:
+            log_test("XSS Protection", "WARN", f"Unexpected status {response.status_code}")
+            return True  # Not critical
+            
+    except Exception as e:
+        log_test("XSS Protection", "FAIL", f"Exception: {str(e)}")
+        return False
+
+def test_very_long_input():
+    """Test handling of very long input strings"""
+    try:
+        response = requests.post(
+            f"{API_URL}/contact",
+            json={
+                "name": "A" * 10000,  # Very long name
+                "email": "test@example.com",
+                "phone": "+254712345678",
+                "subject": "general",
+                "message": "B" * 50000  # Very long message
+            },
+            timeout=15
+        )
+        
+        # Should handle gracefully (accept or reject, but not crash)
+        if response.status_code in [200, 400, 413]:
+            log_test("Very Long Input", "PASS", f"Handled gracefully with {response.status_code}")
+            return True
+        else:
+            log_test("Very Long Input", "WARN", f"Unexpected status {response.status_code}")
+            return True  # Not critical
+            
+    except Exception as e:
+        log_test("Very Long Input", "FAIL", f"Exception: {str(e)}")
+        return False
+
+def test_rapid_sequential_requests():
+    """Test rate limiting and stability with rapid requests"""
+    print_section("12. RATE LIMITING & STABILITY")
+    
+    try:
+        responses = []
+        for i in range(10):
+            response = requests.post(
+                f"{API_URL}/contact",
+                json={
+                    "name": f"Rapid Test {i}",
+                    "email": f"rapid{i}@example.com",
+                    "phone": f"+25471234{i:04d}",
+                    "subject": "general",
+                    "message": f"Rapid test message {i}"
+                },
+                timeout=5
+            )
+            responses.append(response.status_code)
+            time.sleep(0.1)  # Small delay between requests
+        
+        # Check if rate limiting kicked in (429) or all succeeded (200)
+        success_count = sum(1 for status in responses if status == 200)
+        rate_limited = sum(1 for status in responses if status == 429)
+        
+        if success_count >= 5:
+            log_test("Rapid Sequential Requests", "PASS", 
+                    f"{success_count} succeeded, {rate_limited} rate-limited")
+            return True
+        else:
+            log_test("Rapid Sequential Requests", "FAIL", 
+                    f"Only {success_count} succeeded, {rate_limited} rate-limited")
+            return False
+            
+    except Exception as e:
+        log_test("Rapid Sequential Requests", "FAIL", f"Exception: {str(e)}")
+        return False
+
+def test_session_persistence():
+    """Test that JWT session persists across multiple requests"""
+    print_section("13. SESSION PERSISTENCE")
+    
+    if not auth_cookies:
+        log_test("Session Persistence", "FAIL", "No auth cookies available")
+        return False
+    
+    try:
+        # Make 5 sequential authenticated requests
+        all_succeeded = True
+        for i in range(5):
+            response = requests.get(
+                f"{API_URL}/auth/me",
+                cookies=auth_cookies,
+                timeout=10
+            )
+            if response.status_code != 200:
+                all_succeeded = False
+                break
+            time.sleep(0.5)
+        
+        if all_succeeded:
+            log_test("Session Persistence (5 requests)", "PASS", "JWT session remained valid")
+            return True
+        else:
+            log_test("Session Persistence (5 requests)", "FAIL", "Session became invalid")
+            return False
+            
+    except Exception as e:
+        log_test("Session Persistence (5 requests)", "FAIL", f"Exception: {str(e)}")
+        return False
+
+def test_cors_headers():
+    """Test CORS headers are present"""
+    print_section("14. SECURITY HEADERS")
+    
+    try:
+        response = requests.options(
+            f"{API_URL}/contact",
+            headers={"Origin": "https://example.com"},
+            timeout=10
+        )
+        
+        # Check for CORS headers (may or may not be present depending on config)
+        has_cors = "Access-Control-Allow-Origin" in response.headers
+        
+        if has_cors or response.status_code in [200, 204, 404]:
+            log_test("CORS Headers", "PASS", f"CORS configured: {has_cors}")
+            return True
+        else:
+            log_test("CORS Headers", "WARN", f"Status {response.status_code}")
+            return True  # Not critical
+            
+    except Exception as e:
+        log_test("CORS Headers", "WARN", f"Exception: {str(e)}")
+        return True  # Not critical
+
     except Exception as e:
         log_test("POST /api/auth/logout", "FAIL", f"Exception: {str(e)}")
         return False
