@@ -113,75 +113,129 @@
 ## backend:
   - task: "Admin Dashboard API"
     implemented: true
-    working: "unknown"
+    working: true
     file: "app/api/admin/dashboard/route.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: "unknown"
           agent: "main"
           comment: "Added force-dynamic export. Needs testing after Next.js upgrade to 15.1.0"
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED - GET /api/admin/dashboard returns correct stats (totalContacts, newContacts, ipoApplications, leverageApplications, totalResearch, publishedResearch, recentContacts). Authentication properly enforced (401 without token). force-dynamic working correctly."
   
   - task: "Admin Authentication API"
     implemented: true
-    working: "unknown"
+    working: true
     file: "app/api/auth/login/route.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: "unknown"
           agent: "main"
           comment: "Added force-dynamic export. Needs testing after Next.js upgrade to 15.1.0"
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED - All auth endpoints working: POST /api/auth/login (successful login with JWT cookie), GET /api/auth/me (retrieves current admin), POST /api/auth/logout (clears cookie). Invalid credentials properly rejected with 401. Unauthorized requests properly rejected."
 
   - task: "Contact Form API"
     implemented: true
-    working: "unknown"
+    working: true
     file: "app/api/contact/route.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: "unknown"
           agent: "main"
           comment: "Needs testing after Next.js upgrade"
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED - POST /api/contact successfully accepts submissions. Input validation working (rejects invalid email, missing fields). Contact saved to database. Public endpoint accessible without authentication."
 
   - task: "Research Papers API"
     implemented: true
-    working: "unknown"
+    working: true
     file: "app/api/admin/research/route.js"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: "unknown"
           agent: "main"
           comment: "Added force-dynamic export. Needs testing"
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED - GET /api/admin/research returns papers list. Authentication properly enforced (401 without token). force-dynamic working correctly."
 
   - task: "IPO Settings API"
     implemented: true
-    working: "unknown"
+    working: true
     file: "app/api/admin/ipo-settings/route.js"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: "unknown"
           agent: "main"
           comment: "Added force-dynamic export. Needs testing"
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED - GET /api/admin/ipo-settings returns settings (name, targetDate, applyNowLink, isActive). PUT /api/admin/ipo-settings successfully updates settings with authentication. force-dynamic working correctly."
 
   - task: "MongoDB Connection with Build Prevention"
     implemented: true
-    working: "unknown"
+    working: true
     file: "lib/mongodb.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: "unknown"
           agent: "main"
           comment: "Implemented build-phase detection. MongoDB connects successfully in runtime. Needs build test"
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED - MongoDB connection stable across all API endpoints. All database queries executing successfully. No connection errors during testing. Build prevention working (no errors during build phase)."
+  
+  - task: "Contact Management APIs"
+    implemented: true
+    working: true
+    file: "app/api/admin/contacts/route.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED - GET /api/admin/contacts returns all contacts. Filtering by status works (GET /api/admin/contacts?status=new). PATCH /api/admin/contacts successfully updates contact status and notes. Authentication properly enforced."
+  
+  - task: "Page Settings APIs"
+    implemented: true
+    working: true
+    file: "app/api/admin/page-settings/route.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED - GET /api/admin/page-settings returns all 10 page settings. GET /api/page-visibility (public endpoint) returns settings map. Both endpoints working correctly."
+  
+  - task: "User Management APIs"
+    implemented: true
+    working: true
+    file: "app/api/admin/users/route.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED - GET /api/admin/users returns admin users list. Super-admin permissions properly enforced. force-dynamic working correctly."
 
 ## frontend:
   - task: "Homepage"
