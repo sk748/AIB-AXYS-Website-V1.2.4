@@ -27,11 +27,44 @@ const nextConfig = {
       {
         source: "/(.*)",
         headers: [
-          { key: "X-Frame-Options", value: "ALLOWALL" },
-          { key: "Content-Security-Policy", value: "frame-ancestors *;" },
-          { key: "Access-Control-Allow-Origin", value: process.env.CORS_ORIGINS || "*" },
-          { key: "Access-Control-Allow-Methods", value: "GET, POST, PUT, DELETE, OPTIONS" },
-          { key: "Access-Control-Allow-Headers", value: "*" },
+          // Security Headers - Production Ready
+          { 
+            key: "X-Frame-Options", 
+            value: "SAMEORIGIN" // Changed from ALLOWALL for security
+          },
+          { 
+            key: "X-Content-Type-Options", 
+            value: "nosniff" 
+          },
+          { 
+            key: "X-XSS-Protection", 
+            value: "1; mode=block" 
+          },
+          { 
+            key: "Referrer-Policy", 
+            value: "strict-origin-when-cross-origin" 
+          },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()"
+          },
+          { 
+            key: "Content-Security-Policy", 
+            value: "frame-ancestors 'self';" // Restrict to same origin
+          },
+          // CORS Headers - Configurable via environment
+          { 
+            key: "Access-Control-Allow-Origin", 
+            value: process.env.CORS_ORIGINS || "*" 
+          },
+          { 
+            key: "Access-Control-Allow-Methods", 
+            value: "GET, POST, PUT, DELETE, PATCH, OPTIONS" 
+          },
+          { 
+            key: "Access-Control-Allow-Headers", 
+            value: "Content-Type, Authorization" 
+          },
         ],
       },
     ];
