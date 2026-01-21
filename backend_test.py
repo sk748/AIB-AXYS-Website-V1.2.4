@@ -945,14 +945,16 @@ def test_cors_headers():
 # ============================================================================
 
 def run_all_tests():
-    """Run all backend tests"""
+    """Run all backend tests - ROUND 2 VALIDATION"""
     print("\n" + "="*80)
-    print("  AIB-AXYS BACKEND API TEST SUITE")
-    print("  Testing after Next.js 15.1.0 upgrade and force-dynamic implementation")
+    print("  AIB-AXYS BACKEND API TEST SUITE - ROUND 2 VALIDATION")
+    print("  Comprehensive stability testing after Phase 1 fixes")
     print("="*80)
     print(f"\nBase URL: {BASE_URL}")
     print(f"API URL: {API_URL}")
     print(f"Test Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"Next.js Version: 15.1.0")
+    print(f"React Version: 19.2.3")
     
     # Run all tests in sequence
     tests = [
@@ -992,6 +994,18 @@ def run_all_tests():
         
         # Logout
         test_logout,
+        
+        # ROUND 2 VALIDATION TESTS
+        test_concurrent_dashboard_requests,
+        test_concurrent_contact_submissions,
+        test_malformed_json_request,
+        test_missing_required_fields,
+        test_sql_injection_attempt,
+        test_xss_attempt,
+        test_very_long_input,
+        test_rapid_sequential_requests,
+        test_session_persistence,
+        test_cors_headers,
     ]
     
     for test in tests:
