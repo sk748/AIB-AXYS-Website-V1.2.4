@@ -2,7 +2,7 @@
 
 ## Admin Portal Access
 
-**Live Admin URL**: https://kenyabroker.preview.emergentagent.com/admin/login
+**Live Admin URL**: https://axyskenya.preview.emergentagent.com/admin/login
 
 ### Login Credentials:
 - **Email**: sk@horizonafrica.com
@@ -15,32 +15,32 @@
 ### Main Admin Pages:
 
 1. **Login**: 
-   - https://kenyabroker.preview.emergentagent.com/admin/login
+   - https://axyskenya.preview.emergentagent.com/admin/login
 
 2. **Dashboard**: 
-   - https://kenyabroker.preview.emergentagent.com/admin/dashboard
+   - https://axyskenya.preview.emergentagent.com/admin/dashboard
 
 3. **Contact Submissions**: 
-   - https://kenyabroker.preview.emergentagent.com/admin/contacts
+   - https://axyskenya.preview.emergentagent.com/admin/contacts
 
 4. **Research Papers**: 
-   - https://kenyabroker.preview.emergentagent.com/admin/research
+   - https://axyskenya.preview.emergentagent.com/admin/research
 
 5. **IPO Settings**: 
-   - https://kenyabroker.preview.emergentagent.com/admin/ipo-settings
+   - https://axyskenya.preview.emergentagent.com/admin/ipo-settings
 
 6. **Page Visibility**: 
-   - https://kenyabroker.preview.emergentagent.com/admin/pages
+   - https://axyskenya.preview.emergentagent.com/admin/pages
 
 7. **Email Settings**: 
-   - https://kenyabroker.preview.emergentagent.com/admin/settings
+   - https://axyskenya.preview.emergentagent.com/admin/settings
 
 ---
 
 ## How to Login
 
 ### Step 1: Open Admin Portal
-Go to: **https://kenyabroker.preview.emergentagent.com/admin/login**
+Go to: **https://axyskenya.preview.emergentagent.com/admin/login**
 
 ### Step 2: Enter Credentials
 - Email: **sk@horizonafrica.com**
@@ -54,7 +54,7 @@ You'll be redirected to the dashboard
 ## Troubleshooting
 
 ### If Login Page Doesn't Load:
-1. Check that the main website works: https://kenyabroker.preview.emergentagent.com
+1. Check that the main website works: https://axyskenya.preview.emergentagent.com
 2. Try refreshing the page (Ctrl+F5 or Cmd+Shift+R)
 3. Clear browser cache and try again
 4. Check server is running: `sudo supervisorctl status nextjs`
@@ -110,7 +110,7 @@ You'll be redirected to the dashboard
 
 ## 🎯 Quick Start
 
-1. **Go to**: https://kenyabroker.preview.emergentagent.com/admin/login
+1. **Go to**: https://axyskenya.preview.emergentagent.com/admin/login
 2. **Login** with sk@horizonafrica.com / Admin@2026
 3. **Explore** the dashboard and admin features!
 
