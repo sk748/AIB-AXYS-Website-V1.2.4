@@ -119,7 +119,8 @@ export default function PrivacyPage() {
               <li>Encrypted data transmission (HTTPS/TLS)</li>
               <li>Password hashing (bcrypt)</li>
               <li>Access control and role-based permissions</li>
-              <li>Regular security audits</n              <li>Secure admin authentication (JWT tokens)</li>
+              <li>Regular security audits</li>
+              <li>Secure admin authentication (JWT tokens)</li>
               <li>Rate limiting to prevent abuse</li>
               <li>Input sanitization to prevent attacks</li>
             </ul>
