@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """
-Backend API Testing Suite for AIB-AXYS Africa
+Backend API Testing Suite for AIB-AXYS Africa - ROUND 2 VALIDATION
 Tests all backend endpoints after Next.js 15.1.0 upgrade and force-dynamic implementation
+This is a comprehensive validation to ensure all Phase 1 fixes are stable
 """
 
 import requests
 import json
 import sys
+import time
+import concurrent.futures
 from datetime import datetime
 
 # Configuration
