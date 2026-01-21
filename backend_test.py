@@ -628,6 +628,9 @@ def test_logout():
             log_test("POST /api/auth/logout", "FAIL", f"Status {response.status_code}")
             return False
             
+    except Exception as e:
+        log_test("POST /api/auth/logout", "FAIL", f"Exception: {str(e)}")
+        return False
 
 # ============================================================================
 # ROUND 2 VALIDATION TESTS - STABILITY & EDGE CASES
