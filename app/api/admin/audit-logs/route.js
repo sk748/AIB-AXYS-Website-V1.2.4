@@ -1,3 +1,6 @@
+// Force dynamic rendering for admin routes
+export const dynamic = 'force-dynamic';
+
 import { NextResponse } from 'next/server';
 import { getAuditLogs } from '@/lib/audit';
 import { verifyAdminRequest } from '@/lib/auth';
